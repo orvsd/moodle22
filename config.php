@@ -44,6 +44,8 @@ $CFG->sslproxy = true;
 // Now you need to tell Moodle where it is located. Specify the full
 // web address to where moodle has been installed.
 $CFG->wwwroot   = 'https://' . $_SERVER['FQDN'];
+$CFG->dataroot  = '/data/moodledata/' . $_SERVER['USER'] . '/' . $_SERVER['FQDN'];
+$CFG->directorypermissions = 02770;
 
 //=========================================================================
 // ALL DONE!  To continue installation, visit your main page with a browser
