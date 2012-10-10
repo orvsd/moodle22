@@ -39,7 +39,11 @@ require_once('/data/moodledata/' . $_SERVER['USER'] . '/' . $_SERVER['FQDN'] . '
 
 // Enable when using external SSL appliance for performance reasons.
 // Please note that site may be accessible via https: or https:, but not both!
-      $CFG->sslproxy = true;
+$CFG->sslproxy = true;
+
+// Now you need to tell Moodle where it is located. Specify the full
+// web address to where moodle has been installed.
+$CFG->wwwroot   = 'https://' . $_SERVER['FQDN'];
 
 //=========================================================================
 // ALL DONE!  To continue installation, visit your main page with a browser
