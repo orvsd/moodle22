@@ -36,6 +36,7 @@ $CFG = new stdClass();
 //=========================================================================
 // Include relevant configuration from glusterfs mount.
 require_once('/data/moodledata/' . $_SERVER['USER'] . '/' . $_SERVER['FQDN'] . '/config.php');
+
 // Enable when using external SSL appliance for performance reasons.
 // Please note that site may be accessible via https: or https:, but not both!
       $CFG->sslproxy = true;
