@@ -35,7 +35,7 @@ $CFG = new stdClass();
 // 1. ORVSD CONFIG
 //=========================================================================
 // Include relevant configuration from glusterfs mount.
-require_once('/data/moodledata/' . $_SERVER['USER'] . '/' . $_SERVER['FQDN'] . '/config.php');
+require_once('/data/moodledata/' . $_SERVER['USER'] . '/moodle22/' . $_SERVER['FQDN'] . '/config.php');
 
 // Enable when using external SSL appliance for performance reasons.
 // Please note that site may be accessible via https: or https:, but not both!
@@ -44,7 +44,7 @@ $CFG->sslproxy = true;
 // Now you need to tell Moodle where it is located. Specify the full
 // web address to where moodle has been installed.
 $CFG->wwwroot   = 'https://' . $_SERVER['FQDN'];
-$CFG->dataroot  = '/data/moodledata/' . $_SERVER['USER'] . '/' . $_SERVER['FQDN'];
+$CFG->dataroot  = '/data/moodledata/' . $_SERVER['USER'] . '/moodle22/' . $_SERVER['FQDN'];
 $CFG->directorypermissions = 02770;
 
 //=========================================================================
