@@ -35,7 +35,10 @@ $CFG = new stdClass();
 // 1. ORVSD CONFIG
 //=========================================================================
 // Include relevant configuration from glusterfs mount.
-require_once('/data/moodledata/' . $_SERVER['USER'] . '/moodle22/' . $_SERVER['FQDN'] . '/config.php');
+$orvsdcwd = explode("/", getcwd());
+$orvsduser = $orvsdcwd[3];
+$orvsdfqdn = $orvsdcwd[5];
+require_once('/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn . '/config.php');
 
 // Enable when using external SSL appliance for performance reasons.
 // Please note that site may be accessible via https: or https:, but not both!
