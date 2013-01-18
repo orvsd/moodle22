@@ -301,11 +301,16 @@
     $title = $courseshortname.': ' . format_string($data->name);
 
     if ($PAGE->user_allowed_editing()) {
-        $buttons = '<table><tr><td><form method="get" action="view.php"><div>'.
-            '<input type="hidden" name="id" value="'.$cm->id.'" />'.
-            '<input type="hidden" name="edit" value="'.($PAGE->user_is_editing()?'off':'on').'" />'.
-            '<input type="submit" value="'.get_string($PAGE->user_is_editing()?'blockseditoff':'blocksediton').'" /></div></form></td></tr></table>';
-        $PAGE->set_button($buttons);
+        // Change URL parameter and block display string value depending on whether editing is enabled or not
+        if ($PAGE->user_is_editing()) {
+            $urlediting = 'off';
+            $strediting = get_string('blockseditoff');
+        } else {
+            $urlediting = 'on';
+            $strediting = get_string('blocksediton');
+        }
+        $url = new moodle_url($CFG->wwwroot.'/mod/data/view.php', array('id' => $cm->id, 'edit' => $urlediting));
+        $PAGE->set_button($OUTPUT->single_button($url, $strediting));
     }
 
     if ($mode == 'asearch') {
@@ -519,7 +524,7 @@ if ($showactivity) {
 
             $what = ' DISTINCT r.id, r.approved, r.timecreated, r.timemodified, r.userid, u.firstname, u.lastname';
             $count = ' COUNT(DISTINCT c.recordid) ';
-            $tables = '{data_content} c,{data_records} r, {data_content} cs, {user} u ';
+            $tables = '{data_content} c,{data_records} r, {user} u ';
             $where =  'WHERE c.recordid = r.id
                          AND r.dataid = :dataid
                          AND r.userid = u.id ';
@@ -550,8 +555,7 @@ if ($showactivity) {
                     $advparams = array_merge($advparams, $val->params);
                 }
             } else if ($search) {
-                $where .= ' AND cs.recordid = r.id ';
-                $searchselect = " AND (".$DB->sql_like('cs.content', ':search1', false)." OR ".$DB->sql_like('u.firstname', ':search2', false)." OR ".$DB->sql_like('u.lastname', ':search3', false)." ) ";
+                $searchselect = " AND (".$DB->sql_like('c.content', ':search1', false)." OR ".$DB->sql_like('u.firstname', ':search2', false)." OR ".$DB->sql_like('u.lastname', ':search3', false)." ) ";
                 $params['search1'] = "%$search%";
                 $params['search2'] = "%$search%";
                 $params['search3'] = "%$search%";
@@ -566,7 +570,7 @@ if ($showactivity) {
 
             $what = ' DISTINCT r.id, r.approved, r.timecreated, r.timemodified, r.userid, u.firstname, u.lastname, ' . $sortcontentfull . ' AS sortorder ';
             $count = ' COUNT(DISTINCT c.recordid) ';
-            $tables = '{data_content} c, {data_records} r, {data_content} cs, {user} u ';
+            $tables = '{data_content} c, {data_records} r, {user} u ';
             $where =  'WHERE c.recordid = r.id
                          AND r.dataid = :dataid
                          AND r.userid = u.id ';
@@ -601,8 +605,7 @@ if ($showactivity) {
                     $advparams = array_merge($advparams, $val->params);
                 }
             } else if ($search) {
-                $where .= ' AND cs.recordid = r.id ';
-                $searchselect = " AND (".$DB->sql_like('cs.content', ':search1', false)." OR ".$DB->sql_like('u.firstname', ':search2', false)." OR ".$DB->sql_like('u.lastname', ':search3', false)." ) ";
+                $searchselect = " AND (".$DB->sql_like('c.content', ':search1', false)." OR ".$DB->sql_like('u.firstname', ':search2', false)." OR ".$DB->sql_like('u.lastname', ':search3', false)." ) ";
                 $params['search1'] = "%$search%";
                 $params['search2'] = "%$search%";
                 $params['search3'] = "%$search%";
@@ -761,7 +764,7 @@ if ($showactivity) {
         $records = array();
     }
 
-    if ($mode == '' && !empty($CFG->enableportfolios)) {
+    if ($mode == '' && !empty($CFG->enableportfolios) && !empty($records)) {
         require_once($CFG->libdir . '/portfoliolib.php');
         $button = new portfolio_add_button();
         $button->set_callback_options('data_portfolio_caller', array('id' => $cm->id), '/mod/data/locallib.php');
