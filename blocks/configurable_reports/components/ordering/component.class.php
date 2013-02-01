@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -21,16 +22,14 @@
   * @date: 2009
   */
 
-abstract class component_ordering extends component_base{
-    
-	function plugin_classes(){
-	    return array(
-            'categoryfieldorder' => 'plugin_categoryfieldorder',
-            'coursefieldorder'   => 'plugin_coursefieldorder',
-            'userfieldorder'     => 'plugin_userfieldorder',
-	    );
-	}
+class component_ordering extends component_base{
 	
+	function init(){
+		$this->plugins = true;
+		$this->ordering = false;
+		$this->form = false;
+		$this->help = true;
+	}
 }
 
 ?>

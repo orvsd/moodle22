@@ -26,21 +26,30 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');    ///  It must be included from a Moodle page
 }
 
-require_once($CFG->dirroot.'/blocks/configurable_reports/components/plugin_form.class.php');
+require_once($CFG->libdir.'/formslib.php');
 
-class roleincourse_form extends plugin_form {
+class roleincourse_form extends moodleform {
     function definition() {
-        global $DB;
+        global $DB, $USER, $CFG;
 
         $mform =& $this->_form;
 
-        $mform->addElement('header', 'plughead', get_string('roleincourse','block_configurable_reports'), '');
-
-		$userroles = $DB->get_records_menu('role', null, 'name', 'id, name');
+        $mform->addElement('header', '', get_string('roleincourse','block_configurable_reports'), '');
+	
+		$roles = $DB->get_records('role');
+		
+		$userroles = array();
+		foreach($roles as $r)
+			$userroles[$r->id] = $r->name;
+			
         $mform->addElement('select', 'roleid', get_string('roles'), $userroles);
+		
+       
+        // buttons
+        $this->add_action_buttons(true, get_string('add'));
 
-        $this->add_action_buttons();
     }
+
 }
 
 ?>

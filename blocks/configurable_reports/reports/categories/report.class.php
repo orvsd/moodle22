@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -21,23 +22,12 @@
   * @date: 2009
   */
 
-require_once("$CFG->dirroot/blocks/configurable_reports/reports/report_dataset.class.php");
+class report_categories extends report_base{
+	
+	function init(){
+		$this->components = array('columns','conditions','ordering','filters','template','permissions','calcs','plot');
+	}	
 
-class report_categories extends report_dataset_base{
-
-    function component_classes(){
-        return array(
-	        'columns'     => 'component_columns_category',
-	        'conditions'  => 'component_conditions_category',
-            'ordering'    => 'component_ordering_category',
-	        'filters'     => 'component_filters_category',
-	        'permissions' => 'component_permissions',
-	        'calcs'       => 'component_calcs',
-	        'plot'        => 'component_plot',
-	        'template'    => 'component_template',
-		);
-    }
-    
 	function get_all_elements(){
 		global $DB;
 		
@@ -47,19 +37,20 @@ class report_categories extends report_dataset_base{
 			$elements[] = $result->id;
 		}
 		$rs->close();
-		
 		return $elements;
 	}
 	
-	function get_rows(array $elements, $sqlorder = ''){
+	function get_rows($elements, $sqlorder = ''){
 		global $DB, $CFG;
 		
-		if (empty($elements)) {
-		    return array();
-		}
-		list($usql, $params) = $DB->get_in_or_equal($elements);			
+		$finalelements = array();
 		
-		return $DB->get_records_select('course_categories', "id $usql", $params, $sqlorder);
+		if(!empty($elements)){
+			list($usql, $params) = $DB->get_in_or_equal($elements);			
+			return $DB->get_records_select('course_categories',"id $usql", $params, $sqlorder);
+		}	
+		
+		return $finalelements;
 	}
 	
 }

@@ -1,7 +1,6 @@
 <?php
 
 $capabilities = array(
-//TODO: createreports
 
     'block/configurable_reports:managereports' => array(
 

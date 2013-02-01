@@ -22,16 +22,26 @@
   * @date: 2009
   */
 
-require_once($CFG->dirroot.'/blocks/configurable_reports/components/permissions/plugin.class.php');
+require_once($CFG->dirroot.'/blocks/configurable_reports/plugin.class.php');
 
-class plugin_reportscapabilities extends permissions_plugin{
+class plugin_reportscapabilities extends plugin_base{
 	
-	function summary($instance){
+	function init(){
+		$this->form = false;
+		$this->unique = true;
+		$this->fullname = get_string('reportscapabilities','block_configurable_reports');
+		$this->reporttypes = array('courses','sql','users','timeline','categories');
+	}
+	
+	function summary($data){
 		return get_string('reportscapabilities_summary','block_configurable_reports');
 	}
 	
-	function execute($userid, $context, $instance){
-		return has_capability('moodle/site:viewreports', context_system::instance(), $userid);
+	function execute($userid, $context, $data){
+		global $DB, $CFG;
+		
+		return has_capability('moodle/site:viewreports',get_context_instance(CONTEXT_SYSTEM),$userid);
+		
 	}
 	
 }

@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -21,44 +22,73 @@
   * @date: 2009
   */
 
-require_once($CFG->dirroot.'/blocks/configurable_reports/components/filters/plugin.class.php');
+require_once($CFG->dirroot.'/blocks/configurable_reports/plugin.class.php');
 
-class plugin_categories extends filters_plugin{
+class plugin_categories extends plugin_base{
 	
-	function execute($finalelements, $instance){
-		if (! ($filter = optional_param('filter_categories', 0, PARAM_INT))) {
+	function init(){
+		$this->form = false;
+		$this->unique = true;
+		$this->fullname = get_string('filtercategories','block_configurable_reports');
+		$this->reporttypes = array('categories','sql');
+	}
+	
+	function summary($data){
+		return get_string('filtercategories_summary','block_configurable_reports');
+	}
+	
+	function execute($finalelements, $data){
+		
+		$filter_categories = optional_param('filter_categories',0,PARAM_INT);
+		if(!$filter_categories)
 			return $finalelements;
+		
+		if($this->report->type != 'sql'){
+				return array($filter_categories);			
+		}
+		else{
+			if(preg_match("/%%FILTER_CATEGORIES:([^%]+)%%/i",$finalelements,
+    $output)){
+				$replace = ' AND '.$output[1].' = '.$filter_categories;				
+				return str_replace('%%FILTER_CATEGORIES:'.$output[1].'%%',$replace,$finalelements);
+			}			
+		}		
+		return $finalelements;
+	}
+	
+	function print_filter(&$mform){
+		global $DB, $CFG;
+		
+		$filter_categories = optional_param('filter_categories',0,PARAM_INT);
+		
+		$reportclassname = 'report_'.$this->report->type;	
+		$reportclass = new $reportclassname($this->report);
+		
+		if($this->report->type != 'sql'){
+			$components = cr_unserialize($this->report->components);		
+			$conditions = $components['conditions'];
+					
+			$categorieslist = $reportclass->elements_by_conditions($conditions);
+		}
+		else{
+			$categorieslist = array_keys($DB->get_records('course'));
 		}
 		
-		return $this->filter_elements($finalelements, $filter);
-	}
-	
-	function filter_elements($finalelements, $filter){
-	    return array($filter);
-	}
-	
-	function get_category_ids(){
-	    return $this->report->get_elements_by_conditions();
-	}
-	
-	function print_filter(&$mform, $instance){
-		global $DB;
+		$courseoptions = array();
+		$courseoptions[0] = get_string('choose');
 		
-		$filter_categories = optional_param('filter_categories', 0, PARAM_INT);
-		
-		$catids = $this->get_category_ids();
-		if(empty($catids)){
-		    return;
-		}   
-		
-		$courseoptions = array(0 => get_string('choose'));
-		$categories = $DB->get_records_list('course_categories', 'id', $catids);
-		foreach($categories as $cat){
-			$courseoptions[$cat->id] = format_string($cat->name);				
+		if(!empty($categorieslist)){
+			list($usql, $params) = $DB->get_in_or_equal($categorieslist);
+			$categories = $DB->get_records_select('course_categories',"id $usql",$params);
+			
+			foreach($categories as $c){
+				$courseoptions[$c->id] = format_string($c->name);				
+			}
 		}
 		
 		$mform->addElement('select', 'filter_categories', get_string('category'), $courseoptions);
 		$mform->setType('filter_categories', PARAM_INT);
+		
 	}
 	
 }

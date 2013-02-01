@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -25,19 +26,21 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');    ///  It must be included from a Moodle page
 }
 
-require_once($CFG->dirroot.'/blocks/configurable_reports/components/calcs/plugin_form.class.php');
+require_once($CFG->libdir.'/formslib.php');
 
-class max_form extends calcs_plugin_form {
+class max_form extends moodleform {
     function definition() {
-        $mform =& $this->_form;
-        $plugclass = $this->_customdata['plugclass'];
+        global $DB, $USER, $CFG;
 
-        $mform->addElement('header', 'plughead', get_string('max','block_configurable_reports'), '');
-        $options = $plugclass->report->get_column_options();
-        $mform->addElement('select', 'column', get_string('column','block_configurable_reports'), $options);
-    
-        $this->add_action_buttons();
+        $mform =& $this->_form;
+
+		$this->_customdata['compclass']->add_form_elements($mform,$this->_customdata['report']->components);
+	      
+        // buttons
+        $this->add_action_buttons(true, get_string('add'));
+
     }
+
 }
 
 ?>

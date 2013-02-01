@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -28,17 +29,18 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');    ///  It must be included from a Moodle page
 }
 
-require_once($CFG->dirroot.'/blocks/configurable_reports/components/component_form.class.php');
+require_once($CFG->libdir.'/formslib.php');
 
-class customsql_form extends component_form {
-    
-    function definition() {
+class customsql_form extends moodleform {
+ function definition() {
         global $DB, $CFG;
 
         $mform =& $this->_form;
 
-        $mform->addElement('textarea', 'querysql', get_string('querysql', 'block_configurable_reports'), 'rows="25" cols="60"');
-        $mform->addRule('querysql', get_string('required'), 'required', null, 'client');
+        $mform->addElement('textarea', 'querysql', get_string('querysql', 'block_configurable_reports'),
+                'rows="25" cols="60"');
+        $mform->addRule('querysql', get_string('required'),
+                'required', null, 'client');
         $mform->setType('querysql', PARAM_RAW);
 
         $mform->addElement('static', 'note', '', get_string('listofsqlreports', 'block_configurable_reports'));
@@ -68,13 +70,15 @@ class customsql_form extends component_form {
 
 		// Now try running the SQL, and ensure it runs without errors.
         } else {
-            $compclass = $this->_customdata['compclass'];
-			$sql = $compclass->report->prepare_sql($sql);
-            $rs = $compclass->report->execute_query($sql, 2);
+            
+			$sql = $this->_customdata['reportclass']->prepare_sql($sql);
+            $rs = $this->_customdata['reportclass']->execute_query($sql, 2);
             if (!$rs) {
                 $errors['querysql'] = get_string('queryfailed', 'block_configurable_reports', $db->ErrorMsg());
-            } else if (!empty($data['singlerow']) && rs_EOF($rs)) {
-                $errors['querysql'] = get_string('norowsreturned', 'block_configurable_reports');
+            } else if (!empty($data['singlerow'])) {
+                if (rs_EOF($rs)) {
+                    $errors['querysql'] = get_string('norowsreturned', 'block_configurable_reports');
+                } 
             }
 
             if ($rs) {
@@ -84,6 +88,7 @@ class customsql_form extends component_form {
 
         return $errors;
     }
+    
 }
 
 ?>
