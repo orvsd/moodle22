@@ -391,7 +391,7 @@ $mainquery", $mainparams);
         return $result;
     }
 
-    function email_digest() {
+    static function email_digest() {
         global $CFG, $PERF;
 
         // Do digest mails if required. Note this is based on server time not
@@ -793,8 +793,7 @@ $mainquery", $mainparams);
         // Trim subject length (not sure why but
         // email_to_user does); note that I did it more
         // aggressively due to use of textlib.
-        $textlib = textlib_get_instance();
-        $mail->Subject = $textlib->substr($subject, 0, 200);
+        $mail->Subject = textlib::substr($subject, 0, 200);
 
         // Loop through in batches of specified size
         $copy = array();

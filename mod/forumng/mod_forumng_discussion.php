@@ -594,9 +594,11 @@ class mod_forumng_discussion {
                 $linear = array();
                 $this->rootpost->build_linear_children($linear);
                 $nextunread = array();
+                $dump = '';
                 foreach ($linear as $index=>$post) {
                     $nextunread[$index] = null;
-                    if ($post->is_unread()) {
+                    if ($post->is_unread() &&
+                            (!$post->get_deleted() || $post->can_undelete($dump))) {
                         for ($j = $index-1; $j>=0; $j--) {
                             if ($nextunread[$j]) {
                                 break;
@@ -608,7 +610,8 @@ class mod_forumng_discussion {
                 $previous = null;
                 foreach ($linear as $index=>$post) {
                     $post->set_unread_list($nextunread[$index], $previous);
-                    if ($post->is_unread()) {
+                    if ($post->is_unread() &&
+                            (!$post->get_deleted() || $post->can_undelete($dump))) {
                         $previous = $post;
                     }
                 }
@@ -1005,7 +1008,7 @@ WHERE
             // Get list of all affected post ids (includes edited, deleted)
             // that have attachments
             $postids = $DB->get_records('forumng_posts', array(
-                    'discussionid' => $this->get_id(), 'attachments' => 1), '', 'id');
+                    'discussionid' => $this->get_id()), '', 'id');
 
             // Loop through all posts copying attachments & deleting old one
             foreach ($postids as $postid=>$junk) {
@@ -1784,14 +1787,14 @@ WHERE
         }
 
         // If there is cached data, use it
-        if ($this->groupscache) {
+        if ($this->groupscache && $cacheall) {
             if (!array_key_exists($userid, $this->groupscache)) {
                 // This can happen in rare cases when sending out email. If there
                 // is only one post from user X in a discussion, and that post is
                 // deleted/moved to another discussion between when it gets the
                 // list of all posts and when it tries to cache this list of groups
-                // for the individual discussion, then you will get this exception.
-                throw new coding_exception("Unknown discussion user");
+                // for the individual discussion.
+                return $this->get_user_groups($userid, false);// Re-call to use code below.
             }
             return $this->groupscache[$userid];
         }

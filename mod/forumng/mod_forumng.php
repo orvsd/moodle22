@@ -79,6 +79,8 @@ class mod_forumng {
     const GRADING_MIN = 4;
     /** Grading: Sum of ratings. */
     const GRADING_SUM = 5;
+    /** Grading: Teacher grades students */
+    const GRADING_MANUAL = 6;
 
     /** Feed type: No feeds provided. */
     const FEEDTYPE_NONE = 0;
@@ -247,6 +249,7 @@ class mod_forumng {
     public static function get_grading_options() {
         return array (
             self::GRADING_NONE => get_string('grading_none', 'forumng'),
+            self::GRADING_MANUAL => get_string('teacher_grades_students', 'forumng'),
             self::GRADING_AVERAGE => get_string('grading_average', 'forumng'),
             self::GRADING_COUNT => get_string('grading_count', 'forumng'),
             self::GRADING_MAX => get_string('grading_max', 'forumng'),
@@ -401,6 +404,14 @@ class mod_forumng {
             && ($created == 0 || $this->forumfields->ratinguntil==0
                 || $created<$this->forumfields->ratinguntil)
             && has_capability('mod/forumng:rate', $this->get_context());
+    }
+
+    /**
+     * @return bool True if current user can grade a user
+     */
+    public function can_grade() {
+        return $this->get_grading() == self::GRADING_MANUAL
+            && has_capability('mod/forumng:grade', $this->get_context());
     }
 
     /** @return int ID of course that contains this forum */
@@ -668,6 +679,14 @@ WHERE
     /** @return int GRADING_xx constant */
     public function get_grading() {
         return $this->forumfields->grading;
+    }
+
+    /**
+     * @return int Scale used for ratings; 0 = disable,
+     *   positive integer = 0..N scale, negative integer = defined scale
+     */
+    public function get_grading_scale() {
+        return $this->forumfields->gradingscale;
     }
 
     /**
@@ -1051,7 +1070,8 @@ WHERE
         // the grade information
         $gradechanged = false;
         if ($previousfields->grading != $this->forumfields->grading ||
-            $previousfields->ratingscale != $this->forumfields->ratingscale) {
+            $previousfields->ratingscale != $this->forumfields->ratingscale ||
+            $previousfields->gradingscale != $this->forumfields->gradingscale) {
             $this->update_grades();
         }
 
@@ -1862,6 +1882,9 @@ WHERE
         global $DB, $FORUMNG_CACHE;
         $userid = mod_forumng_utils::get_real_userid($userid);
 
+        if (!isset($FORUMNG_CACHE)) {
+            $FORUMNG_CACHE = new stdClass;
+        }
         if (!isset($FORUMNG_CACHE->subscriptioninfo)) {
             $FORUMNG_CACHE->subscriptioninfo = array();
         }
@@ -2664,8 +2687,9 @@ WHERE
         $transaction = $DB->start_delegated_transaction();
 
         // Calculate grades for requested user(s)
-        if ($this->get_grading() == self::GRADING_NONE) {
-            // Except don't bother if grading is not enabled
+        if ($this->get_grading() == self::GRADING_NONE ||
+                $this->get_grading() == self::GRADING_MANUAL) {
+            // Except don't bother if grading is not enabled or manual.
             $grades = array();
         } else {
             $grades = $this->get_user_grades($userid);
@@ -2782,7 +2806,12 @@ WHERE fd.forumngid = ?";
             'itemname' => $this->get_name(),
             'idnumber' => $idnumber);
 
-        $scale = $this->get_rating_scale();
+        if ($this->get_grading() == self::GRADING_MANUAL) {
+            $scale = $this->get_grading_scale();
+            $grades = null;
+        } else {
+            $scale = $this->get_rating_scale();
+        }
         if (!$this->get_grading()) {
             $params['gradetype'] = GRADE_TYPE_NONE;
         } else if ($scale > 0) {
@@ -3634,149 +3663,114 @@ WHERE
     }
 
     /**
+     * Prints form JavaScript (much smaller than normal JS).
+     */
+    public function print_form_js() {
+        global $CFG, $PAGE;
+        $simple = get_user_preferences('forumng_simplemode', '');
+        if ($PAGE->devicetypeinuse == 'legacy' || $simple) {
+            return;
+        }
+        $module = array(
+            'name'      => 'mod_forumng_form',
+            'fullpath'  => '/mod/forumng/form.js',
+            'requires'  => array('base', 'node'),
+            'strings'   => array(array('edit_timeout', 'forumng'))
+        );
+        $PAGE->requires->js_init_call('M.mod_forumng_form.init',
+                array(), false, $module);
+    }
+
+    /**
      * Prints out (immediately; must be after header) script tags and JS code
      * for the forum's JavaScript library, and required YUI libraries.
      * @param int $cmid If specified, passes this through to JS
-     * @param bool $ajaxattachments If true, includes data needed to init file managers
      */
-    public function print_js($cmid=0, $ajaxattachments=false) {
+    public function print_js($cmid=0) {
         global $CFG, $PAGE;
         $simple = get_user_preferences('forumng_simplemode', '');
         if ($PAGE->devicetypeinuse == 'legacy' || $simple) {
             return;
         }
 
-        if (ajaxenabled()) {
-            // Prepare strings
-            $mainstrings = array(
-                'rate' => null,
-                'expand' => '#',
-                'jserr_load' => null,
-                'jserr_save' => null,
-                'jserr_alter' => null,
-                'jserr_attachments' => null,
-                'confirmdelete' => null,
-                'confirmundelete' => null,
-                'deleteemailpostbutton' => null,
-                'deletepostbutton' => null,
-                'undeletepostbutton' => null,
-                'js_nratings' => null,
-                'js_nratings1' => null,
-                'js_nopublicrating' => null,
-                'js_publicrating' => null,
-                'js_nouserrating' => null,
-                'js_userrating' => null,
-                'js_outof' => null,
-                'js_clicktosetrating' => null,
-                'js_clicktosetrating1' => null,
-                'js_clicktoclearrating' => null,
-                'edit_timeout' => null,
-                'selectlabel' => null,
-                'selectintro' => null,
-                'confirmselection' => null,
-                'selectedposts' => null,
-                'discussion' => null,
-                'selectorall' => null,
-                'flagon' => null,
-                'flagoff' => null,
-                'clearflag' => null,
-                'setflag' => null);
-            if ($this->has_post_quota()) {
-                $mainstrings['quotaleft_plural'] = (object)array(
-                    'posts'=>'#', 'period' => $this->get_max_posts_period(true, true));
-                $mainstrings['quotaleft_singular'] = (object)array(
-                    'posts'=>'#', 'period' => $this->get_max_posts_period(true, true));
-            }
-            $stringlist = array();
-            foreach ($mainstrings as $string => $value) {
-                $stringlist[] = array($string, 'forumng', $value);
-            }
-            foreach (array('cancel', 'delete', 'add', 'selectall', 'deselectall') as $string) {
-                $stringlist[] = array($string, 'moodle');
-            }
+        // Prepare strings
+        $mainstrings = array(
+            'rate' => null,
+            'expand' => '#',
+            'jserr_load' => null,
+            'jserr_save' => null,
+            'jserr_alter' => null,
+            'jserr_attachments' => null,
+            'confirmdelete' => null,
+            'confirmundelete' => null,
+            'deleteemailpostbutton' => null,
+            'deletepostbutton' => null,
+            'undeletepostbutton' => null,
+            'js_nratings' => null,
+            'js_nratings1' => null,
+            'js_nopublicrating' => null,
+            'js_publicrating' => null,
+            'js_nouserrating' => null,
+            'js_userrating' => null,
+            'js_outof' => null,
+            'js_clicktosetrating' => null,
+            'js_clicktosetrating1' => null,
+            'js_clicktoclearrating' => null,
+            'selectlabel' => null,
+            'selectintro' => null,
+            'confirmselection' => null,
+            'selectedposts' => null,
+            'discussion' => null,
+            'selectorall' => null,
+            'flagon' => null,
+            'flagoff' => null,
+            'clearflag' => null,
+            'setflag' => null);
+        if ($this->has_post_quota()) {
+            $mainstrings['quotaleft_plural'] = (object)array(
+                'posts'=>'#', 'period' => $this->get_max_posts_period(true, true));
+            $mainstrings['quotaleft_singular'] = (object)array(
+                'posts'=>'#', 'period' => $this->get_max_posts_period(true, true));
+        }
+        $stringlist = array();
+        foreach ($mainstrings as $string => $value) {
+            $stringlist[] = array($string, 'forumng', $value);
+        }
+        foreach (array('cancel', 'delete', 'add', 'selectall', 'deselectall') as $string) {
+            $stringlist[] = array($string, 'moodle');
+        }
 
-            // Use star ratings where the scale is between 2 and 5 (3 and 6 stars)
-            $out = mod_forumng_utils::get_renderer();
-            $scale = $this->get_rating_scale();
-            if ($scale > 1 && $scale < 6) {
-                $ratingstars = $scale;
-            } else {
-                $ratingstars = 0;
-            }
-            $starurls = array();
-            foreach (array('circle', 'star') as $base) {
-                foreach (array('y', 'n') as $user) {
-                    foreach (array('y', 'n') as $public) {
-                        $key = "$base-$user-$public";
-                        $starurls[$key] = $out->pix_url($key, 'forumng')->out(false);
-                    }
+        // Use star ratings where the scale is between 2 and 5 (3 and 6 stars)
+        $out = mod_forumng_utils::get_renderer();
+        $scale = $this->get_rating_scale();
+        if ($scale > 1 && $scale < 6) {
+            $ratingstars = $scale;
+        } else {
+            $ratingstars = 0;
+        }
+        $starurls = array();
+        foreach (array('circle', 'star') as $base) {
+            foreach (array('y', 'n') as $user) {
+                foreach (array('y', 'n') as $public) {
+                    $key = "$base-$user-$public";
+                    $starurls[$key] = $out->pix_url($key, 'forumng')->out(false);
                 }
             }
-
-            if ($ajaxattachments) {
-                // Work out filemanager options. These are the same options that I observed when
-                // calling the below function from the standard 'start discussion' form.
-                $options = (object)array(
-                    'mainfile' => null,
-                    'maxbytes' => $this->get_max_bytes(),
-                    'maxfiles' => -1,
-                    'client_id' => 666666, // For replace - random unique id
-                    'itemid' => 999999, // For replace - draft file area id, attachments field
-                    'subdirs' => false,
-                    'accepted_types' => array('*'),
-                    'return_types' => 2,
-                    'context' => $this->get_context(true) // Real context used for files
-                );
-
-                // Include filemanager JS. This is a very, very, very nasty hack to stop it
-                // actually trying to initialise a filemanager that doesn't exist, while
-                // avoiding code duplication.
-                new mod_forumng_filemanager_evilhack();
-                require_once($CFG->dirroot . '/lib/form/filemanager.php');
-                $filemanagertemplate = form_filemanager_render($options);
-                // To make it bit shorter, let's remove the noscript part as it will never be used.
-                $filemanagertemplate = preg_replace('~<noscript>.*?</noscript>~', '',
-                        $filemanagertemplate);
-
-                $filemanageroptions = reset($PAGE->extraarguments);
-                $PAGE->return_to_goodness();
-            } else {
-                $filemanagertemplate = null;
-                $filemanageroptions = null;
-            }
-
-            // For HTML editor template, create form element with replaceable names
-            require_once($CFG->dirroot . '/lib/form/editor.php');
-            $editor = new MoodleQuickForm_editor('QQeditorQQ', 'QQlabelQQ',
-                    array('id' => 'QQidQQ'),
-                    array('maxbytes' => $this->get_max_bytes(),
-                        'maxfiles' => $this->can_create_attachments() ? EDITOR_UNLIMITED_FILES : 0,
-                        'context' => $this->get_context(true)));
-            $editor->setValue(array('itemid' => 99942));
-
-            // Render using same evil hack and extract form template, options
-            new mod_forumng_filemanager_evilhack();
-            $editortemplate = $editor->toHtml();
-            $editoroptions = $PAGE->extraarguments;
-            $editorfileoptions = $PAGE->extraarguments2;
-            $PAGE->return_to_goodness();
-
-            $module = array(
-                'name'      => 'mod_forumng',
-                'fullpath'  => '/mod/forumng/module.js',
-                'requires'  => array('base', 'node', 'node-event-simulate', 'dom', 'event', 'io',
-                    'anim', 'json-parse'),
-                'strings'   => $stringlist
-            );
-            $PAGE->requires->js_init_call('M.mod_forumng.init',
-                    array($cmid ? $cmid : 0,
-                        $this->is_shared() ? $this->get_course_module_id() : 0,
-                        $ratingstars, $this->get_remaining_post_quota(),
-                        $out->pix_url('i/ajaxloader')->out(false), $starurls,
-                        $filemanagertemplate, $filemanageroptions,
-                        $editortemplate, $editoroptions, $editorfileoptions),
-                    false, $module);
         }
+
+        $module = array(
+            'name'      => 'mod_forumng',
+            'fullpath'  => '/mod/forumng/module.js',
+            'requires'  => array('base', 'node', 'node-event-simulate', 'dom', 'event', 'io',
+                'anim', 'json-parse'),
+            'strings'   => $stringlist
+        );
+        $PAGE->requires->js_init_call('M.mod_forumng.init',
+                array($cmid ? $cmid : 0,
+                    $this->is_shared() ? $this->get_course_module_id() : 0,
+                    $ratingstars, $this->get_remaining_post_quota(),
+                    $out->pix_url('i/ajaxloader')->out(false), $starurls),
+                false, $module);
     }
 
     // Feeds
@@ -5025,7 +5019,7 @@ abstract class mod_forumng_context_access extends context {
      * @param object $record DB record
      * @return context Context object
      */
-    public function create_instance_from_record_public($record) {
+    public static function create_instance_from_record_public($record) {
         return self::create_instance_from_record($record);
     }
 }
