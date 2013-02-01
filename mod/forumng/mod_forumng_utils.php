@@ -139,9 +139,10 @@ class mod_forumng_utils {
         $info .= '|' . $e->getMessage();
 
         // Cut off (using textlib in case message contains UTF-8)
-        if (textlib::strlen($info) > 255) {
+        $tl = textlib_get_instance();
+        if ($tl->strlen($info) > 255) {
             // Use first part + ellipsis
-            $info = textlib::substr($info, 0, 254) . html_entity_decode('&#x2026;', ENT_QUOTES, 'UTF-8');
+            $info = $tl->substr($info, 0, 254) . html_entity_decode('&#x2026;', ENT_QUOTES, 'UTF-8');
         }
 
         // Add entry to Moodle log (using root file in action)

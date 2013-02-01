@@ -23,7 +23,7 @@
  */
 
 $module->version  = 2012081301;
-$module->requires = 2011120500;
+$module->requires = 2011120100;
 $module->cron     = 60;
 
 // Note: This should be replaced with standard ->maturity and other options.
