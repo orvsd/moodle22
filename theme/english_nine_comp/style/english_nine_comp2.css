@@ -1,0 +1,251 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+div #region-main #Header {
+	height:85px;
+}
+div #region-main #HeaderLeft {
+	background-image: url([[pix:theme|Title]]);
+	
+	width: 357px;
+	height:85px;
+}
+div #region-main #HeaderStretch {	
+	background-color: #304E75;
+	background-image: url([[pix:theme|HeaderStretch]]);
+	height: 85px;
+	background-repeat: no-repeat;
+}
+
+#TOC li.TOCHeader {
+	font-weight: bold;
+}
+
+h1 {
+	color: #996633;
+
+}
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #CC9933;
+
+}
+h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #006699;
+}
+h4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	
+	font-weight: bold;
+	color: #996633;
+	font-size:14px;
+}
+h5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #996633;
+	font-size:14px;
+	font-style: italic;
+}
+
+
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*font-size: 18px;
+	line-height: 34px;
+	font-weight: normal;*/
+
+
+}
+.AnswerPopUp {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: bold;
+	color: #003399;
+	padding: 10px;
+	position: absolute;
+	visibility: hidden;
+	background-color: #FFCC66;
+	overflow: visible;
+	width: auto;
+	border-top: 2px ridge #996633;
+	border-right: 4px ridge #CC9933;
+	border-bottom: 4px ridge #CC9933;
+	border-left: 2px ridge #996633;
+	z-index: 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+.FingerCursor {
+	cursor: hand;
+	color: #6633FF;
+	text-decoration: underline;
+}
+.Highlight {
+	background-color: #99FFFF;
+}
+.Numbering {
+	line-height: 36px;
+	list-style-type: decimal;
+	list-style-position: outside;
+
+
+}
+.BannerBG {
+	background-repeat: no-repeat;
+	border-top: 5px ridge #996633;
+	border-right: 10px ridge #CC9933;
+	border-bottom: 10px none #CC9933;
+	border-left: 5px ridge #996633;
+
+
+
+}
+.BannerBottom {
+	border-right-width: 10px;
+	border-bottom-width: 10px;
+	border-left-width: 5px;
+	border-top-style: none;
+	border-right-style: ridge;
+	border-bottom-style: ridge;
+	border-left-style: ridge;
+	border-right-color: #CC9933;
+	border-bottom-color: #CC9933;
+	border-left-color: #996633;
+}
+.TableMatchAnswerPopUp {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: bold;
+	color: #330099;
+	visibility: visible;
+	background-color: #FFCC66;
+	overflow: visible;
+	width: auto;
+	border-top: 2px ridge #996633;
+	border-right: 4px ridge #CC9933;
+	border-bottom: 4px ridge #CC9933;
+	border-left: 2px ridge #996633;
+	background-position: center;
+	padding: 3px;
+
+
+
+}
+.OdysseusPNumbering {
+	font-style: italic;
+	color: #000080;
+}
+.WrapImage {
+	clear: both;
+
+}
+.Footnote {
+	color: #CC9933;
+	vertical-align: super;
+}
+.ContrastText {
+	color: #CC9933;
+	font-weight: bold;
+
+}
+.CloseWindow {
+	font-size: x-small;
+	color: #6633FF;
+	text-decoration: underline;
+	text-align: right;
+	cursor: hand;
+}
+.ContrastText2 {
+	color: #CC6633;
+	font-weight: bold;
+
+}
+
+a.ChangeColor:hover {
+	color: #cc6633;
+}
+.ContrastTextLayer {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #CC6633;
+	text-decoration: blink;
+}
+.BlankLayer {
+	position: relative;
+	visibility: hidden;
+	height: 22px;
+	left: -7px;
+	top: -5px;
+
+}
+.Continued {
+	font-weight: bold;
+	text-align: right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #006699;
+
+}
+.VocabTable {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000;
+	padding: 10px;
+	border-top: 2px ridge #996633;
+	border-right: 4px ridge #CC9933;
+	border-bottom: 4px ridge #CC9933;
+	border-left: 2px ridge #996633;
+	text-align: center;
+}
+.VocabTable .VocabWord {
+	font-size: 18px;
+	font-weight: bold;
+	color: #C63;
+	text-align: left;
+}
+
+.BlackBG {
+	background-color: #000000;
+}
+body {
+	background-color: #DDD;
+}
+.TableHeader {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #330099;
+	vertical-align: bottom;
+}
+.Assessment {
+	background-color: #CCCCCC;
+	font-weight: bold;
+}
+.UnitHead {
+	font-size: 18px;
+	background-color: #005980;
+	padding: 10px;
+	color: #FFF;
+}
+#MainContent {
+	background-color: #E8F8FF;
+}

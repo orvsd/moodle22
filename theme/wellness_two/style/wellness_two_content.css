@@ -1,0 +1,285 @@
+div #region-main #Header {
+	height: auto;
+}
+div #region-main #HeaderStretch {
+	background-image:url([[pix:theme|BannerLeft150x80]]);
+	background-position: 0px bottom;	
+	background-repeat: no-repeat;
+	background-color: #000000;
+	
+}
+div #region-main #HeaderRight {
+	background-image:url([[pix:theme|BannerRight291x80]]);
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 291px;
+}
+
+
+div #region-main h1 {
+	color: #FFF;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	padding-top: 0px;
+	margin-top: 0px;
+	font-size: 1.75em;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+	background-color: #000;
+	background-image: url(http://skol-dev.orvsd.org/pluginfile.php/17383/mod_label/intro/Banner.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-top-color: #000;
+}
+div #region-main h2 {
+	color: #FFF;
+	background-color: #4747A4;
+	background-repeat: no-repeat;
+	background-position: left;
+	text-indent: 22px;
+	font-family: Tahoma, Geneva, sans-serif;
+	border-top-width: 4px;
+	border-bottom-width: 2px;
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	border-top-color: #650199;
+	border-right-color: #650199;
+	border-bottom-color: #650199;
+	border-left-color: #650199;
+	font-weight: bold;
+	font-size: 1.5em;
+	clear: both;
+}
+
+div #region-main h1+h2 {
+	font-size: 18px;
+	color: #4B0072;
+	background-color: transparent;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-left: 0px;
+	text-indent: 0;
+	clear: none;
+}
+
+div #region-main h3 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #4747A4;
+	margin-bottom: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div #region-main h3.LessonAssignmentLabel {
+	margin-bottom: 12px;
+}
+div #region-main h4 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #6E46A4;
+
+}
+div #region-main h5 {
+	font-weight: bold;
+	color: #000000;
+	font-size: 14px;
+}
+div #region-main td {
+	margin: 10px;
+	padding-top: 5px;
+	padding-right: 7px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+div #region-main a {
+	color: #660066;
+}
+
+div #region-main h2.headingblock, h2#pageheading.main {
+	color: #333;
+	background-color: transparent;
+	border:none;
+}
+div #region-main div.TabbedPanels h2 {
+	background-color: transparent;
+	color:#4747A4;
+	border:none;
+	text-indent:0;
+}
+.OSInstructions {
+	font-weight: bold;
+	margin-bottom: .1em;
+}
+
+#h2Float {
+	background-image: url(../../../../../courses/pe-health/HZ208217000New/images/TrebleClef60pt.gif);
+	float: left;
+	height: 60px;
+	width: 22px;
+	position: relative;
+	top: -13px;
+	left: 7px;
+}
+
+#Highlight {
+	background-color: #9999FF;
+	padding: 15px;
+	margin-right: 200px;
+	margin-left: 25px;
+	border: 3px ridge;
+	margin-bottom: 20px;
+}
+.Assessment {
+	background-image: url(../../../../../courses/pe-health/HZ209217000/images/Banner.jpg);
+	background-repeat: no-repeat;
+	color: #FFF;
+	font-size: 24px;
+	background-color: #000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 1.3em;
+	font-weight: 700;
+	border-top-width: 4px;
+	border-bottom-width: 2px;
+	border-top-style: ridge;
+	border-top-color: #4C264C;
+	border-right-color: #4C264C;
+	border-bottom-color: #4C264C;
+	border-left-color: #4C264C;
+	background-position: right top;
+	filter: Alpha(Opacity=60%, FinishOpacity=60%, StartX=0, StartY=0, FinishX=0, FinishY=0);
+	height: auto;
+	border-bottom-style: ridge;
+	padding-top: 5px;
+}
+
+
+
+.Exercise {
+	color: #650199;
+	background-color: #D6ABD6;
+	background-repeat: no-repeat;
+	background-position: left;
+	text-indent: 22px;
+	margin-right: 175px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border-top-width: 2px;
+	border-bottom-width: 3px;
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	border-top-color: #650199;
+	border-right-color: #650199;
+	border-bottom-color: #650199;
+	border-left-color: #650199;
+}
+#RiskWellnessChoice {
+	padding: 7px;
+	height: auto;
+	border: 2px ridge #CC0099;
+	clear: left;
+	width: auto;
+}
+#RiskWellnessChoice h4, #RiskWellnessChoice p {
+
+}
+#Story {
+	padding-left: 150px;
+	margin-right: 170px;
+}
+
+#Coin {
+	width: 125px;
+	position: fixed;
+	float: left;
+	overflow: hidden;
+	border-left-width: 140px;
+	border-left-style: solid;
+	border-left-color: #F7EFFA;
+	left: -108px;
+	z-index: 100;
+}
+.Credit {
+	text-align: right;
+	font-size: 80%;
+}
+/*For Non-IE Only. IE handled with conditional comment.*/
+#CoinPositioning {
+	overflow: hidden;
+	z-index: 99;
+	left: -180px;
+	top: 0px;
+	position: relative;
+	
+}
+/*For Opera Only*/
+@media all and (min-width: 0px){
+   #CoinPositioning {
+   left: 0;
+   margin-left: -180px;
+   }
+}
+.UnitHead {
+	color: #6D023A;
+	text-align: center;
+	text-transform: uppercase;
+}
+.CenterDiv {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+.Mental {
+	font-weight: bold;
+	color: #06A38B;
+}
+.Physical {
+	font-weight: bold;
+	color: #F50;
+}
+.Social {
+	font-weight: bold;
+	color: #C09;
+}
+
+#RequiredReading {
+	background-color: #6E46A4;
+	padding: 10px;
+	width: 70%;
+	margin-right: 15%;
+	margin-left: 15%;
+	border-top-color: #362251;
+	border-right-color: #362251;
+	border-bottom-color: #362251;
+	border-left-color: #362251;
+}
+#RequiredReading p, #RequiredReading ul li, #RequiredReading a {
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFF;
+}
+#RequiredReading a {
+	color: #FFF;
+	text-decoration:underline;
+}
+#RequiredReading a:visited {
+	color: #CCC;
+}
+#RequiredReading h3 {
+	padding: 4px;
+	margin-top: -2px;
+	color: #FFF;
+	background-color: #362251;
+}
+#pagecontainer #MainContent #webstunning_video_player {
+	border: medium solid #09C;
+}
+
+span.instancename {
+	font-weight:bold;
+}

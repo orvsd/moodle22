@@ -1,0 +1,163 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1 {
+	color: #212B40;
+}
+
+h2 {
+	color: #547B97;
+}
+#Highlight {
+	background-color: #BADCDD;
+	border: 2px ridge #478F92;
+	padding: 15px;
+	width: auto;
+	margin-right: 60px;
+	margin-left: 60px;
+	
+}
+#Highlight h2 {
+	background-color:#C2E078;
+	color: #FFF;
+}
+#RequiredReading {
+	background-color:#CFFF9E;
+}
+#RequiredReading h3 {
+	background-color:transparent;
+	color: inherit;
+}
+div #region-main #HeaderLeft {
+	width:342px;
+	background-image:url([[pix:theme|BannerLeft]]);
+}
+div #region-main #HeaderStretch {
+	background-image:url([[pix:theme|BannerStretch]]);
+	background-position: 0px bottom;
+	background-repeat: repeat-x;
+}
+div #region-main #HeaderRight {
+	background-image:url([[pix:theme|BannerRight]]);
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 10px;
+}
+
+#BegBalCalculation {
+	/*width: 270px;*/
+	position: absolute;
+	margin-left: auto;
+	margin-right:auto;
+	visibility: hidden;
+	max-height: 98%;
+	right: 20px;
+	top: 2px;
+	background-color: #FFF;
+	padding: 10px;
+	border: 1px solid #5E7190;
+	float: left;
+	color: #212B40;
+}
+
+#Container {
+	/*width: 90%;
+	position: relative;*/
+
+	
+	/*float: left;*/
+}
+
+/*
+#Register {
+	width:400px;
+	max-width:95%;
+	/*max-width: 600px;*/
+	/*float:left;
+	display:inline;
+
+}*/
+table.CheckRegister {
+	font-size:.85em;
+	
+	width: 95%;
+	float: left;
+	display: inline;
+	max-width: 95%;
+}
+table.CheckRegister thead, table.CheckRegister tbody {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #666;
+	border-right-color: #666;
+	border-bottom-color: #666;
+	border-left-color: #666;
+	/*overflow:auto;*/
+}
+table.CheckRegister td {
+	border: 1px solid #CCC;
+}
+table.CheckRegister tbody tr {
+	background-color: #F1F1F1;
+}
+table.CheckRegister tbody tr.Odd    {
+	background-color: #FFF;
+}
+table.CheckRegister tbody td.Balance {
+	background-color: #EAEAEA;
+}
+table.CheckRegister tr.Footer td {
+	height: 150%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	margin:0px;
+	padding:0px;
+	border:none;
+	background-color:#FFF;
+	
+}
+
+.Close {
+	font-size: smaller;
+	text-align: right;
+	margin: 0px;
+	background-color: #EAEAEA;
+}
+thead {
+	background-color: #5E7190;
+	color: #FFF;
+	font-weight: bold;
+}
+table.CheckRegister tfoot td {
+	height: 150%;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	margin:0px;
+	padding:0px;
+	border:none;
+	background-color:#FFF;
+}
+table.CheckRegister tfoot img {
+	width:100%;
+	height:50%;
+	position:relative;
+	top:-20;
+	left:0;
+	margin:0px;
+	
+}
+.Debit {
+	color: red;
+}
+.DecAlign {
+	text-align:right;
+}
+
+
+

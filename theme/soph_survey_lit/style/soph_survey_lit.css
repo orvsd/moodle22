@@ -1,0 +1,269 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+div #region-main #Highlight {
+	background-color: #BADCDD;
+
+}
+#region-main div.Highlight {
+	background-color: #C8E0C8;
+	margin-left:10%;
+	margin-right:10%;
+	width:auto;
+	padding: 10px;
+	border: 2px outset #E6F0E7;
+}
+div #region-main #Highlight h2 {
+	background-color:#C2E078;
+	color: #FFF;
+}
+
+div #region-main #HeaderLeft {
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 452px;
+	background-image: url([[pix:theme|BannerLeft]]);
+}
+
+div #region-main #HeaderStretch {
+	background-repeat: repeat-x;
+	background-position: right top;
+	background-image: url([[pix:theme|BannerStretch]]);
+	
+}
+
+div #region-main #HeaderLeft h1 {
+	padding: 10px;
+	font-size: 200%;
+	font-weight: bold;
+	color: #FBF0DC;	
+
+}
+
+
+div #region-main a {
+	color: #007100;
+	text-decoration: none;
+	border-bottom:dotted;
+	border-width:1px;
+}
+div #region-main a:hover {
+	border-bottom:solid;
+	border-width:1px;
+
+}
+div #region-main a:visited {
+	color:#8D4000;
+}
+div#region-main span.commands a {
+	border:none;
+}
+
+#page-course-view-topics .sectionname {
+	display:none;
+}
+div #region-main #sectionatag-1, div #region-main #sectionatag-2, div #region-main #sectionatag-3, div #region-main #sectionatag-4, div #region-main #sectionatag-5 {
+	background-color:#EFD;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #E3E3E3;
+	border-bottom-color: #E3E3E3;
+	border-top-color: #E3E3E3;
+	border-left-color: #E3E3E3;
+}
+div #region-main #sectionhead-1 td.cps_centre, div #region-main #sectionhead-2 td.cps_centre, div #region-main #sectionhead-3 td.cps_centre, div #region-main #sectionhead-4 td.cps_centre, div #region-main #sectionhead-5 td.cps_centre  {
+	color: #000;
+	background-color: #DFB;
+}
+
+/* -- Set the clickable element of the Toggle -- */
+div #region-main #sectionhead-1 tr.cps td a {
+	background-image: url([[pix:theme|arrow_down]]); 
+
+}
+
+#region-main {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+div #region-main tr#section-0 div.no-overflow #Header {
+	margin-right:0px;
+	margin-bottom: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #999;
+	border-right-color: #999;
+	border-left-color: #CCC;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-bottom-style:none;
+	width: auto;
+}
+div #region-main tr#section-0 div.no-overflow {
+	margin-bottom:-1px;
+	
+}
+div #region-main  tr#section-0 div.no-overflow div #Announcements {
+	background-image: url([[pix:theme|AnnouncementsBG]]);
+	background-repeat:repeat-x;
+	border-top-color: #C2DDC2;
+	border-top-style: none;
+	margin-top:0;
+	margin-bottom: 5px;
+
+}
+#page-course-view-topics #region-main #Announcements h1 {
+	background-image: none;
+	padding-left: 0px;
+	line-height: inherit;
+}
+div #region-main h1 {
+	color: #007100;
+	font-family: Verdana, Geneva, sans-serif;	
+}
+
+div #region-main h2, .book_chapter_title {
+	color: #8D0000;
+	font-family: Verdana, Geneva, sans-serif;
+}
+div #region-main h3 {
+	color: #8D4000;
+	
+}
+div #region-main dt {
+	font-weight:bold;
+}
+div #region-main td.content ul.section ul li{
+	margin-left:20px;
+	list-style:none;
+	background-image: url([[pix:theme|Bullet-Green-15px]]);
+	
+	padding-left:20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	*background-position: left 4px; /*For IE 7*/
+	_background-position: left 4px; /*For IE 6*/
+	overflow: hidden;
+}
+
+div #region-main td.content ul.section ul li.TabbedPanelsTab, div #region-main ul li.TabbedPanelsTab {
+	margin-left:0px;
+	background-image: none;
+	overflow:auto;
+
+}
+div #region-main td.content ul.section ul ul li {
+	margin-left:20px;
+	list-style:none;
+	background-image: url([[pix:theme|Bullet-Black-12px]]);
+	padding-left:20px;
+	background-repeat:no-repeat;
+	background-position: left center;
+}
+
+div #region-main div #region-main .book_content {
+	font-weight:normal;
+}
+
+.Reader {
+	color:#F60;
+	font-weight:bold;
+}
+.Mood {
+	color:#F04E00;
+	font-weight:bold;
+}
+.Writer {
+	color:#1717FF;
+	font-weight:bold;
+}
+.Tone {
+	color:#009;
+	font-weight:bold;
+}
+.Syllables {
+	font-weight:bold;
+}
+.SyllableStressMarks {
+	font-weight:bold;
+	color:#060;
+	visibility: visible;	
+}
+.SyllableStressMarksTable {
+	border:none;
+	padding:0;
+	margin:0;
+}
+.RhymeScheme {
+	font-weight:bold;
+	color:#900;
+	padding-right: 7px;
+	padding-left: 7px;
+	text-align: center;
+}
+.PoetryTitle {
+	font-size:115%;
+	font-weight:bold;
+	margin-bottom: .25em;
+}
+.PoetryAuthor {
+	font-size:105%;
+	font-weight: bold;
+	margin-top: .25em;
+}
+.Poem {
+	margin-left: 30px;
+	width: auto;
+	background-color: #FFC;
+	padding: 10px;
+	display: inline-block;
+}
+.Read {
+	background-image:url([[pix:theme|Book]]);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 35px;
+	font-size:150%;
+	font-weight:bold;
+}
+.pullquote {
+	float: right;
+	width: 180px;
+	margin-top: 2px;
+	border-style: solid;
+	border-color: #016D00;
+	border-width: 7px 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	margin-left: 10px;
+	color: #018201;
+	font-weight: bold;
+	font-size: 1em;
+	text-align: left;
+} 
+
+
+#gauge div.box{
+	border:none;
+		
+}
+#gauge p, #gauge li {
+	font-weight:normal;
+}
+#gauge div#region-main {
+	
+	
+}
+#gauge div#region-main h2#pageheading{
+	display:none;
+}

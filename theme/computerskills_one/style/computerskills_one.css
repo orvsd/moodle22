@@ -1,0 +1,434 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+div #region-main #HeaderRight {
+	/*background-image: url([[pix:theme|HeaderRight]]);
+	background-repeat: repeat-x;
+	background-position: top left;
+	width: 100%;
+	visibility: visible;
+	z-index:5;
+	height:85px;
+	*/
+}
+
+div #region-main #HeaderLeft {
+	background-image: url([[pix:theme|HeaderNeonLeft]]);
+	width: 390px;
+	/*height: 55px;*/
+	height:85px;	
+	border-radius: 6px;
+	-webkit-top-left-border-radius: 6px; 
+	-webkit-bottom-right-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+}
+div #region-main #HeaderStretch {
+	background-image: url([[pix:theme|HeaderNeonRight]]);
+	background-position:top left;
+	height: 85px;
+	background-repeat:repeat-x;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-radius: 6px;
+	-webkit-top-left-border-radius: 6px; 
+	-webkit-bottom-right-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	/* For IE 8 */ 
+   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+
+   /* For IE 5.5 - 7 */ 
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); 
+	width:auto;
+	height:85px;
+}
+div #region-main #Header {
+	height:97px;
+	
+}
+
+div #region-main h1 {
+	color: #29629A;
+	background-color: #D66401;
+	background-image: url([[pix:theme|HeaderNeonLeft]]);
+	background-repeat: no-repeat;
+	padding: 5px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	/*Rounded Corners*/
+	border-radius: 4px;
+	-webkit-top-left-border-radius: 4px;
+	-webkit-bottom-right-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	text-shadow: -1px -1px 1px rgba(255,255,255, .4);
+	/*Shadow box*/
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	/* For IE 8 */ 
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+
+   /* For IE 5.5 - 7 */ 
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); 
+	
+	
+}
+iframe {
+	background-color: #EEE;
+	width: 99%;
+	float:right;
+}
+div #region-main h1 a.autolink {
+	color:#009;
+}
+div #region-main h2 {
+	color: #E55B2B;
+}
+div #region-main h2.headingblock {
+	color:#000000;
+}
+
+
+div #region-main h2.headingblock {
+	color:#000000;
+}
+
+div #region-main h3 {
+	color: #009;
+}
+a.glossary {
+	color:#F60;
+}
+.OdysseusPNumbering {
+	font-style: italic;
+}
+
+.ImageRightBorderless {
+	float: right;
+	margin: 10px;
+}
+
+.ContrastText {
+	color: #CC9933;
+	font-weight: bold;
+
+}
+.ContrastText2 {
+	color: #CC6633;
+	font-weight: bold;
+
+}
+div#Highlight {
+	background-color: #B8E48B;
+	color:#231B67;
+	margin-bottom:24px;
+}
+
+#Highlight h2 {
+	color: #009;
+}
+#Advancing {
+	background-color: #006;
+	color:#FFF;
+	width: 80%;
+	margin-left:10%;
+	margin-right:10%;
+	padding: 10px;
+}
+
+#Sentences {
+	display:inline;
+	float:left;
+	margin-left: 15px;
+	width:270px;
+	line-height: 1.6;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	border: 2px outset #666;
+	padding: 10px;
+	background-color:#F2F2F2;
+	
+}
+#Thesis, #Sentence1, #Sentence2, #Sentence3, #Restatement {	
+	display: inline;
+	position: static;
+	margin:0;
+	padding:0;
+}
+#ThesisBtn button {
+	background-color: #00CE9C;
+}
+#ThesisBtn button:hover {
+	background-color: #006249;
+	color:#FFF;
+}
+#Thesis {
+	color: #006249;
+}
+#Sentence1Btn button {
+	background-color: #00CEFF;
+}
+#Sentence1Btn button:hover {
+	background-color: #007C9B;
+	color:#FFF;
+}
+#Sentence1 {
+	color: #007C9B;
+}
+#Sentence2Btn button {
+	background-color: #FF9CCE;
+}
+#Sentence2Btn button:hover {
+	background-color: #F4007A;
+	color:#FFF;
+}
+#Sentence2 {
+	color: #F4007A;
+}
+#Sentence3Btn button {
+	background-color: #FF9C00;
+}
+#Sentence3Btn button:hover {
+	background-color: #C47500;
+	color:#FFF;
+}
+#Sentence3 {
+	color: #C47500;
+}
+#Restatement button {
+	background-color: #FFF;
+}
+#RestatementBtn button:hover {
+	background-color: #000;
+	color:#FFF;
+}
+#Restatement {
+	color: #000;
+}
+.ZoomText {
+	
+}
+#Buttons {
+	display:inline;
+	float: left;
+	width: 100px;
+	margin:0;
+	padding:0;
+
+}
+#Buttons button {
+	padding:5px;
+	width: 100%;
+	text-align:left;
+	font-weight:bold;
+	margin-bottom: 5px;
+	/*-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;*/
+	/* For IE 8 */ 
+  /* -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+
+   /* For IE 5.5 - 7 */ 
+	/*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); 
+	background-image: url([[pix:theme|Gradient]]);
+	
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+	border-radius: 5px;*/
+    
+	text-decoration: none; border: 1px inset #aaa;
+     -webkit-border-radius: 8px; width: auto; -moz-border-radius: 8px;  -khtml-border-radius: 8px;  border-radius: 8px;
+     -moz-box-shadow: 1px 1px 1px #666;  -webkit-box-shadow: 1px 1px 1px #666;  box-shadow: 1px 1px 1px #666;
+     text-shadow: rgba(0,0,0, .5) 0px -1px 0px;
+      border-top: inset 1px #ccc; border-left: inset 1px #ccc; border-bottom: solid 1px solid #000; border-right: 1px solid #666;
+	  
+	
+	background-repeat:repeat-x;
+	background-position:left top;
+}
+.Larger {
+	font-size: 120%;
+	font-weight:bold;
+}
+/*font family for page. If you have another style sheet that sets font family, you can delete this rule*/
+div, td, p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/*Control DIV for expand all and collapse all links*/
+#p7TMctrl {
+	margin: 0 0 12px 0;
+	font-size: 12px;
+	display: block;
+	/*/*/display: block; /* hide from NN4*/
+}
+#p7TMctrl a:link {
+	color: #000;
+}
+#p7TMctrl a:visited {
+	color: #333333;
+}
+#p7TMctrl a:hover {
+	color: #66CC00;
+}
+
+
+/*Sets line-height of all menuitems*/
+#p7TMnav {
+	/*/*/line-height: 1.5; /* */
+}
+
+/*second level menuitem divs on - Cascades to lower levels*/
+/*Sets left margin to 16px establishing a cascading indent*/
+#p7TMnav div div {
+	margin: 0 0 0 16px;
+}
+
+/*The Link style for top-level menuitems*/
+
+#p7TMnav div {
+	/*border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: ridge;
+	border-top-color: #FDFBEA;
+	border-right-color: #FDFBEA;
+	border-bottom-color: #FDFBEA;
+	border-left-color: #FDFBEA;
+	color: #FDFBEA;*/
+}	
+
+div#p7TMnav {
+	background-color: #29629A;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 5px;
+	width: 390px;
+	max-width: 95%;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999;
+	border-right-color: #999;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+
+
+
+#p7TMnav div a:link {
+	
+	padding: 0;
+	font-size: 15px;
+	font-weight: bold;
+	color: #FDFBEA;
+	
+}
+
+#p7TMnav div a:visited {
+	color: #F8F0B1;
+}
+#p7TMnav div a:hover {
+	color: #D66401;
+}
+
+/*The Link style for second-level menuitems*/
+#p7TMnav div div a:link {
+	font-size: 13px;
+	
+}
+
+/*The Link style for third-level menuitems and lower*/
+/*To set a specific style for the fourth level, add a div to the selector*/
+/*Fourth-level example syntax: p7TMnav div div div div a {declaration}*/
+#p7TMnav div div div a:link {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+/*rules programatically assigned to parent links when image-based plus and minus option is selected*/
+/*do not remove*/
+.p7plusmark {
+	background-repeat: no-repeat;
+	background-image:   url([[pix:theme|p7t_plus]]);
+	background-position: 0 50%;
+	padding: 0 0 0 20px !important;
+}
+.p7minusmark {
+	background-repeat: no-repeat;
+	background-image:   url([[pix:theme|p7t_minus]]);
+	background-position: 0 50%;
+	padding: 0 0 0 20px !important;
+}
+/*rule programatically assigned to child links when image-based plus and minus option is selected*/
+.p7defmark {
+	background-image:  none;
+	padding: 0 0 0 20px !important;
+}
+
+/*rules programatically assigned to page link correesponding to current page (You are Here)*/
+.p7currentmark {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #666666 !important;
+}
+
+
+
+/*Collapsible panel*/
+div #region-main #sectionatag-1, div #region-main #sectionatag-2, div #region-main #sectionatag-3, div #region-main #sectionatag-4, div #region-main #sectionatag-5,div #region-main #sectionatag-6, div #region-main #sectionatag-7, div #region-main #sectionatag-8, div #region-main #sectionatag-9, div #region-main #sectionatag-10, div #region-main #sectionatag-11 {
+	background-color: #CEE0F2;
+	border: 1px outset #29629A;
+	color: #000;
+}
+div #region-main #sectionhead-1 td.cps_centre, div #region-main #sectionhead-2 td.cps_centre, div #region-main #sectionhead-3 td.cps_centre, div #region-main #sectionhead-4 td.cps_centre, div #region-main #sectionhead-5 td.cps_centre, div #region-main #sectionhead-6 td.cps_centre, div #region-main #sectionhead-7 td.cps_centre, div #region-main #sectionhead-8 td.cps_centre, div #region-main #sectionhead-9 td.cps_centre, div #region-main #sectionhead-10 td.cps_centre, div #region-main #sectionhead-11 td.cps_centre {
+	color: #000;
+	background-color: #B0CDEA;
+	border: none;
+}
+
+#Announcements {
+	background-color: transparent;
+	border-color: #29629A;
+	border-width: 3px;
+	color: #29629A;
+	border: none;
+}
+#Announcements h1 {
+	margin-top:0px;
+}

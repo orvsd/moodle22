@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+div #region-main #Highlight {
+	background-color: #BADCDD;
+}
+div #region-main #Highlight h2 {
+	background-color:#C2E078;
+	color: #FFF;
+}
+
+div #region-main #Header {
+	border-bottom-width: 4px;
+	border-bottom-color: #600;
+	border-bottom-style: ridge;
+}
+
+div #region-main #HeaderStretch {
+	background-image:url([[pix:theme|Header2]]);
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-color:#979695;
+}
+
+
+
+
+div #region-main a:link { color: #852832; text-decoration: none ; }
+div #region-main a:hover {
+color: #5A2B31; text-decoration: underline ;
+}
+
+#page-course-view-topics .sectionname {
+	display:none;
+}
+
+div #region-main h1 {
+	color: #852832;
+	font-family: "Courier New", Courier, monospace;
+	
+}
+#page-course-view-topics #region-main h1 {
+	background-image: url([[pix:theme|MagnifyingGlass63px]]);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 65px;
+	line-height: 40px;
+}
+#page-course-view-topics #region-main #Announcements h1 {
+	background-image: none;
+	padding-left: 0px;
+	line-height: inherit;
+}
+
+div #region-main h2 {
+	color: #5A2B31;
+	font-family: "Courier New", Courier, monospace;
+}
+div #region-main h3 {
+	color: #43282B;
+	
+}
+/*Topics format toggle customization*/
+#page-course-view-topics .sectionname {
+	display:none;
+}
+div #region-main #sectionatag-1, div #region-main #sectionatag-2, div #region-main #sectionatag-3, div #region-main #sectionatag-4, div #region-main #sectionatag-5, div #region-main #sectionatag-6, div #region-main #sectionatag-7, div #region-main #sectionatag-8, div #region-main #sectionatag-9, div #region-main #sectionatag-10 {
+	background-color:#DDD;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #E3E3E3;
+	border-bottom-color: #E3E3E3;
+	border-top-color: #E3E3E3;
+	border-left-color: #E3E3E3;
+}
+div #region-main #sectionhead-1 td.cps_centre, div #region-main #sectionhead-2 td.cps_centre, div #region-main #sectionhead-3 td.cps_centre, div #region-main #sectionhead-4 td.cps_centre, div #region-main #sectionhead-5 td.cps_centre, div #region-main #sectionhead-6 td.cps_centre, div #region-main #sectionhead-7 td.cps_centre, div #region-main #sectionhead-8 td.cps_centre, div #region-main #sectionhead-9 td.cps_centre, div #region-main #sectionhead-10 td.cps_centre {
+	color: #852832;
+	background-color: #DDD;
+}
+
+/* -- Set the clickable element of the Toggle -- */
+div #region-main #sectionhead-1 tr.cps td a {
+	background-image: url([[pix:theme|arrow_down]]); 
+
+}

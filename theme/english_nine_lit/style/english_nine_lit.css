@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+div #region-main #Header {
+	height:85px;
+}
+div #region-main #HeaderLeft {
+	background-image: url([[pix:theme|Title]]);
+	
+	width: 357px;
+	height:85px;
+}
+div #region-main #HeaderStretch {	
+	background-color: #304E75;
+	background-image: url([[pix:theme|HeaderStretch]]);
+	height: 85px;
+	background-repeat: no-repeat;
+}
+
+#TOC li.TOCHeader {
+	font-weight: bold;
+}
+
+div #region-main #Intro, #page-mod-page-view #region-main div.generalbox {
+	background-image: url([[pix:theme|PageBG]]);
+	background-color: #E4E9EF;
+	background-repeat: repeat-x;
+	max-width: 600px;
+	margin-top: 16px;
+	margin-bottom: 0%;
+	/*width: 100%;*/
+	margin-left:auto;
+	margin-right: auto;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	padding: 25px;
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	/* For IE 8 */ 
+   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+
+   /* For IE 5.5 - 7 */ 
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); 
+	background-color: #E4E9EF;
+}
+
+div #region-main #RequiredReading, div #region-main #Highlight, div.Highlight {
+	background-image: none;
+	background-color: #304E75;
+	color: #FFF;
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	/* For IE 8 */ 
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+
+   /* For IE 5.5 - 7 */ 
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border: 1px solid #000;
+}
+#RequiredReading h1, #RequiredReading h2, #RequiredReading h3, #RequiredReading h4 {
+	background-color: transparent;
+	color: #E39164;
+	padding: 0px;
+	margin-bottom: .25em;
+}
+#RequiredReading p, #RequiredReading a, #Highlight p, #Highlight a {
+	color:#FFF;
+}
+#page-mod-page-view #region-main div.generalbox h1 {
+	color: #E4E9EF;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	padding-bottom: 0px;
+	border-top-width: 8px;
+	border-top-style: solid;
+	border-top-color: #304E75;
+	padding-top: 3px;
+	margin-top: 5px;
+	margin-bottom: -3px;
+}
+h1+h2 {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+#page-mod-page-view #region-main div.generalbox h2 {
+	color: #D76426;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin-bottom: -0.65em;
+	border-top-width: 8px;
+	border-right-width: 8px;
+	border-bottom-width: 8px;
+	border-left-width: 8px;
+	border-top-style: solid;
+	border-top-color: #304E75;
+	border-right-color: #304E75;
+	border-bottom-color: #304E75;
+	border-left-color: #304E75;
+	font-style: italic;
+}
+#page-mod-page-view #region-main div.generalbox h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #D76426;
+	background-color: #304E75;
+	z-index: 11;
+	border-bottom-style: double;
+	border-bottom-color: #D7DEE6;
+	border-bottom-width: 6px;
+	margin-right: 0px;
+	padding: 7px;
+}
+#page-mod-lesson-view div#region-main div.box td.TableHead, #page-mod-lesson-edit div#region-main div.box td.TableHead {
+	background-color: #4976B1;
+	font-weight: bold;
+	color: #E4E9EF;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+#page-mod-lesson-view div#region-main div.box table, #page-mod-lesson-edit div#region-main div.box table {
+	padding: 5px;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: outset;
+	border-right-style: outset;
+	border-bottom-style: outset;
+	border-left-style: outset;
+	margin-right: auto;
+	margin-left: auto;
+}
+#page-mod-lesson-view div#region-main div.box td, #page-mod-lesson-edit div#region-main div.box td {
+	padding: 5px;
+	vertical-align:top;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: inset;
+	border-right-style: inset;
+	border-bottom-style: inset;
+	border-left-style: inset;
+}
+
+/*Collapsible panel*/
+div #region-main #sectionatag-1, div #region-main #sectionatag-2, div #region-main #sectionatag-3, div #region-main #sectionatag-4, div #region-main #sectionatag-5,div #region-main #sectionatag-6, div #region-main #sectionatag-7, div #region-main #sectionatag-8, div #region-main #sectionatag-9, div #region-main #sectionatag-10 {
+	background-color:#4976B1;
+	border: 1px outset #4976B1;
+	color:#fff;
+}
+div #region-main #sectionhead-1 td.cps_centre, div #region-main #sectionhead-2 td.cps_centre, div #region-main #sectionhead-3 td.cps_centre, div #region-main #sectionhead-4 td.cps_centre, div #region-main #sectionhead-5 td.cps_centre  {
+	color: #000;
+	background-color: #3C6091;
+	border: none;
+}
+#ShowHide {
+	display: none;
+}
+.Title {
+	font-size: larger;
+	font-weight: bold;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #304E75;
+}
+.Author {
+	font-style: italic;
+	color: #304E75;
+}

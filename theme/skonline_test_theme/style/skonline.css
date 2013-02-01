@@ -1,0 +1,1765 @@
+@charset "utf-8";
+/* CSS Document */
+body, div, p, li, input, option, textarea, h1, h2, h3, h4, h5 {
+	font-family: Verdana, Geneva, sans-serif;
+	
+}
+
+option {
+	width: 130px;
+	font-size: 8pt;	
+}
+/*LAYOUT*/
+/*Width of the left column*/
+#page-content #region-pre, #page-content #report-region-pre {
+	width:250px;
+}
+/*Must match #region-pre width*/
+.pagelayout-report #report-main-content .region-content {
+	margin-left:250px;
+}
+/*Must match #region-pre width*/
+.side-pre-only #page-content #region-main {
+	margin-left:250px;
+}
+/*Accommodates the wider left column*/
+#page-content #region-main {
+	margin-left: 450px;
+	/*border: 2px solid lightgreen;
+	background-color: darkgreen;*/
+}
+
+
+
+#page-site-index .course_category_tree {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#page-site-index .course_category_tree .category_label {
+	font-size:110%;
+	font-weight:bold;
+	margin-bottom: .5em;
+	margin-top: .5em;
+}
+
+#page-site-index .controls {
+	margin-top: 10px;
+	margin-right:10px;
+	font-weight:bold;
+}
+#page-site-index .controls .addtoall {
+	margin-right:10px;
+}
+
+#page-login-index span.error {
+	color:#F00;
+	font-weight:bold;
+}
+#page-my-index h3.main {
+	text-align: left;
+	font-size: 125%;
+	margin-bottom: .75em;
+}
+#page-my-index h3.main a {
+	color: #0019DE;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #0019DE;
+}
+#page-my-index h3.main a:visited {
+	color: #0019DE;
+}
+a:link {text-decoration:none;color: #116699;
+	
+}
+a:visited {text-decoration:none;color: #116699;}
+a:hover {text-decoration:underline;}
+/*a.dimmed:link {
+  color: #AAAAAA;
+}
+a.dimmed:visited {
+  color: #AAAAAA;
+}*/
+
+img.icon,
+img.iconhelp {vertical-align:middle;}
+
+html, body {background-color:#C8C9C7;}
+/*body, body.has_dock {
+	margin: 0px;
+	padding: 0px;
+}*/
+
+#page #page-content {
+	background-color: #FFF;
+	min-width: 900px;
+}
+#page #page-header {
+	min-width: 900px;
+}
+#page #page-footer {
+	min-width:900px;
+}
+
+
+table#thetopics {
+	padding-left:0px;
+	padding-right: 0px;
+	
+}
+table#thetopics td.content{
+	
+}
+#page-header {
+	color:#449900;
+	/*border-bottom:1px solid #5C0;*/
+	background-color:#FFF;
+	background-image:url([[pix:theme|NewSKOLogoTransp3000x60]]);
+	background-repeat: no-repeat;
+	height: 110px;
+}
+h1.headermain {
+	font-size: 12px;
+	margin-top: 6px;
+	color: #449900;
+}
+h2.headingblock {
+	margin-top: 0;
+}
+.hasnavbar #page-header {border-bottom-width:0px;}
+#page-footer {
+	background-color: #5C0;
+	color:#000;
+}
+/*.ReturnToCourse {
+	margin-left:auto;
+	margin-right:auto;
+}
+#page-course-view-topcoll p.ReturnToCourse {
+	display:none;
+}*/
+#page-header .headermain span {color:#C8C9C7;}
+
+#page-header .navbar {
+	background-color:#EFD;
+	width:100%;
+	top: 23px;
+	position: relative;
+	left: 0px;
+	border-bottom: 1px solid #5C0;
+	padding-top: 0px;	
+
+}
+#page-header .navbar {color:#000;}
+#page-header .navbar a:link,
+#page-header .navbar a:visited {
+	color:#116699;
+}
+#page-header .navbar .breadcrumb,
+#page-header .navbar .navbutton {
+	margin-top: 3px;
+	margin-right: 1em;
+	margin-bottom: 4px;
+	margin-left: 1em;
+}
+#page-mod-lesson-view a.centerpadded {
+	padding-right: 7px;
+	margin-right: 7px;
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+#page-mod-assignment-view div #intro p {
+	font-weight:bold;
+}
+#page-mod-assignment-view div #intro div #region-main p {
+	font-weight: normal;
+}
+
+#page-grade-report-user-index div #report-main-content table.boxaligncenter td {
+	background-color: #EFD;
+}
+#page-grade-report-user-index div #report-main-content table.boxaligncenter td.oddd1 {
+	border-left: none;
+}
+
+#page-grade-report-user-index div #report-main-content table.boxaligncenter td.item {
+	background-color: #EBEBEB;
+}
+/** General **/
+.generalbox {border: 1px solid #DDDDDD;}
+.generaltable td {border-width:0;}
+.sitetopic {border-width:0;}
+.headingblock {margin-bottom:10px;border-bottom:1px solid #5C0;background-color:#E3E3E3;padding:4px 5px;}
+
+.coursebox {width:100%;margin:10px 0px;border-bottom:1px solid #E3E3E3;overflow:hidden;padding-bottom:10px;}
+.coursebox .info {width:35%;float:left;}
+.coursebox .summary {width:60%;float:right;}
+
+.course-content ul {margin:0;}
+.course-content .headingblock.outline {margin-top:0;}
+.course-content .section.main {border:1px solid #E3E3E3;margin-bottom:10px;}
+.course-content .section.main .left.side {float:left;width:20px;padding:5px;}
+.course-content .section.main .right.side {float:right;width:20px;padding:5px;}
+.course-content .section.main .content {margin:0 30px 10px 30px;background-color:#FFF;}
+.course-content .section.main .content .section_add_menus {text-align:right;}
+div.course-content div.availabilityinfo {
+	font-style:italic;
+	color:#666;
+}
+/*To show bulleted text in labels*/
+div #region-main div.no-overflow ul li {
+
+	margin-left: 25px;
+
+}
+/*Hides the "Topic Outline" heading*/
+#page-course-view-topics div.course-content  h2.headingblock, #page-course-view-topcoll div.course-content  h2.headingblock {
+display:none;
+}
+
+
+#course-user .section {border:1px solid #DDD;margin:0 5% 1.5em 5%;}
+
+#course-user .section h2,
+#course-user .section .content {margin:5px 1em;}
+#course-user .section table td {border:0;}
+
+.generaltable {border:1px solid #DDD;}
+.generaltable .cell {background-color:#FFF;border:1px solid #EEE;border-collapse: collapse;}
+.generaltable .header {background-color:#EEE;border:1px solid #EEE;font-weight:bold;}
+
+/** Login **/
+.loginbox {margin-top:15px;margin-bottom:15px;}
+.loginbox .loginform {margin-top:15px;}
+.loginbox .loginform .form-label {width:39%;float:left;text-align:right;}
+.loginbox .loginform .form-input {width:60%;float:right;text-align:left;}
+.loginbox .loginform .form-input input {width:6em;}
+
+.loginbox.twocolumns {border:1px solid #DDD;}
+.loginbox.twocolumns .loginpanel {float:left;width:49%;text-align:center;}
+.loginbox.twocolumns .signuppanel {float:left;width:50%;border-left:1px solid #DDD;}
+.loginbox.twocolumns .signuppanel h2 {text-align:center;}
+.loginbox.twocolumns .signuppanel div {margin:1em;}
+.loginbox.twocolumns .signuppanel div li {font-size:90%;}
+
+.loginbox .loginsub {margin-left:10%;margin-right:10%;padding:10px;margin-bottom:5px;}
+.loginbox .guestsub {margin-left:10%;margin-right:10%;padding:10px;margin-bottom:5px;border-top:1px solid #DDD;}
+
+#settingsform, #menucapability, #menucapability .select option {
+	width:100%;
+	overflow:auto;
+}
+#settingsform select option {
+	width: auto;
+
+}
+/*Hides assignments on My Moodle*/
+.path-my .coursebox .overview {
+	display: none;
+}
+
+/*Keeps Open Close All Toggles on one line*/
+#toggle-all td h4 {
+	white-space: pre;
+}
+
+/** Dock Style **/
+#dock {
+    background: #fff;
+    border: none;
+}
+
+#dock .firstdockitem {
+    margin-top: 15px;
+}
+
+#dock .dockeditem {
+	padding: 3px 0;
+	background-color: #E3E3E3;
+	border-top-width: 0;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 0;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #C5C6C4;
+	border-right-color: #C5C6C4;
+	border-bottom-color: #C5C6C4;
+	border-left-color: #C5C6C4;
+	-moz-border-radius-topleft: 7px;
+	-moz-border-radius-bottomleft: 7px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	
+	-moz-box-shadow: 0px -3px 3px #888;
+	-webkit-box-shadow: 0px -3px 3px #888;
+	box-shadow: 0px -3px 3px #888;
+	/* For IE 8 */ 
+   -ms-filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+
+   /* For IE 5.5 - 7 */ 
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); 
+	
+	
+		
+}
+
+#dock .dockeditem .dockedtitle {
+    border: none;
+}
+
+#dock .dockeditem .dockedtitle h2 {
+    margin: 12px 0 12px 7px;
+    color: #333;
+	
+}
+
+
+#dockeditempanel .dockeditempanel_content {
+    border-color: #C5C6C4;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 3px 3px 3px #888;
+	box-shadow: 3px 3px 3px #888;
+	background-color:#E3E3E3;
+	width: 250px;
+	
+}
+#dockeditempanel .dockeditempanel_bd {
+	padding:0px;
+	margin:0px;
+	width:100%;
+}
+#dockeditempanel .block_tree {
+	padding:0px;
+	margin:0px;
+}
+
+#dockeditempanel .dockeditempanel_hd {
+    border-bottom: none;
+    padding: 3px 5px;
+    background: transparent;
+    text-align: left;
+
+}
+
+#dockeditempanel .dockeditempanel_hd h2 {
+    color: #333;
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 0 2px;
+}
+
+#dockeditempanel .dockeditempanel_hd .commands {
+    float: right;
+}
+
+.has-custom-menu #dock .firstdockitem {
+    margin-top:30px;
+}
+
+
+
+/*Toggled Course Format*/
+/*Topics format toggle customization*/
+#page-course-view-topics .sectionname {
+	display:none;
+}
+div #region-main #sectionatag-1, div #region-main #sectionatag-2, div #region-main #sectionatag-3, div #region-main #sectionatag-4, div #region-main #sectionatag-5,div #region-main #sectionatag-6, div #region-main #sectionatag-7, div #region-main #sectionatag-8, div #region-main #sectionatag-9, div #region-main #sectionatag-10, div #region-main #sectionatag-11, div #region-main #sectionatag-12, div #region-main #sectionatag-13, div #region-main #sectionatag-14, div #region-main #sectionatag-15 {
+	background-color:#EFD;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #E3E3E3;
+	border-bottom-color: #E3E3E3;
+	border-top-color: #E3E3E3;
+	border-left-color: #E3E3E3;
+}
+div #region-main #sectionhead-1 td.cps_centre, div #region-main #sectionhead-2 td.cps_centre, div #region-main #sectionhead-3 td.cps_centre, div #region-main #sectionhead-4 td.cps_centre, div #region-main #sectionhead-5 td.cps_centre, div #region-main #sectionhead-6 td.cps_centre, div #region-main #sectionhead-7 td.cps_centre, div #region-main #sectionhead-8 td.cps_centre, div #region-main #sectionhead-9 td.cps_centre, div #region-main #sectionhead-10 td.cps_centre, div #region-main #sectionhead-11 td.cps_centre, div #region-main #sectionhead-12 td.cps_centre, div #region-main #sectionhead-13 td.cps_centre, div #region-main #sectionhead-14 td.cps_centre, div #region-main #sectionhead-15 td.cps_centre  {
+	color: #000;
+	background-color: #DFB;
+}
+#thetopics #toggle-all.section {
+	border:none; !important
+	margin-bottom: 0px;
+	padding-bottom:0px;
+	
+}
+
+#thetopics #toggle-all.section + tr.section.separator {
+	display: none;
+}
+#thetopics #toggle-all.section td.right.side {
+	display: none;
+}
+#thetopics #toggle-all.section h4 {
+	font-size: .8em;
+}
+/* -- Set the clickable element of the Toggle -- */
+div #region-main #sectionhead-1 tr.cps td a {
+	background-image: url([[pix:theme|arrow_down]]); 
+
+}
+/** Blocks **/
+.block {border:1px solid #C8C9C7;background-color: #E3E3E3;margin-bottom:10px;overflow:hidden;}
+.block h1,
+.block h2,
+.block h3,
+.block h4 {
+	margin:0px;
+	font-size: 95%;
+}
+.block a:visited {
+	color:#092F46;
+}
+.block .header {margin:10px 6px 3px 6px;}
+.block .content {
+	margin-top: 10px;
+	margin-right: 6px;
+	margin-bottom: 3px;
+	margin-left: 6px;
+}
+.block .corner-box .singlebutton input {
+	width: 140px;
+	white-space:normal;
+	font-size: 90%;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Provides all CSS styles for the AJAX Marking block
+*
+* @package    block
+* @subpackage ajax_marking
+* @copyright  2007 Matt Gibson
+* @author     Matt Gibson {@link http://moodle.org/user/view.php?id=81450}
+* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*/
+
+.icon-course, .icon-assignment, .icon-workshop, .icon-forum, .icon-quiz, .icon-quiz_question,
+.icon-journal, .icon-group {
+    padding-left: 0;
+    padding-bottom: 0;
+    background: transparent no-repeat;
+    cursor: pointer;
+    /* white-space: nowrap; */
+    margin-left: 0;
+    display: block;
+    float: left;
+}
+.amb-icon {
+    width: 20px;
+    padding-right: 3px;
+    margin-bottom: -5px;
+}
+.icon-course {
+    padding-left: 0;
+
+}
+
+
+/* the following 8 styles give different coloured borders to
+   submissions depending on when they were submitted. The
+   colours may not be the best for your theme so change them
+   below if needs be. The timings are in javascript.js at around line
+   340. If you have colour blind users, you may need to take contrast into account
+   and maybe vary the line style - dotted, dashed, solid.
+*/
+.nodecount .medium {
+	color: #00F;
+}
+.icon-user-one, .icon-user-two, .icon-user-three, .icon-user-four, .icon-user-five, .icon-user-six,
+.icon-user-seven, .icon-user-eight {
+    padding-left: 0;
+    padding-right: 2px;
+    cursor: pointer;
+    border: 2px none;
+    overflow: hidden;
+    width: 150px;
+    height: 40px;
+    margin: 0;
+}
+.icon-user-one {
+    background-color: #ccffcc;
+}
+.icon-user-two {
+    background-color: #ccffcc;
+}
+.icon-user-three {
+    background-color: #EEE5AA;
+}
+.icon-user-four {
+    background-color: #EEE5AA;
+}
+.icon-user-five {
+    background-color: #EECAB3;
+}
+.icon-user-six {
+    background-color: #EECAB3;
+}
+.icon-user-seven {
+    background-color: #ffb0bb;
+}
+.icon-user-eight {
+    background-color: #ffb0bb;
+}
+#loader {
+    position: relative;
+    top: 3px;
+    right: 0;
+    float: left;
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+}
+#hidden-icons {
+    display: none;
+}
+#totalmessage {
+    float: left;
+    padding-bottom: 2px;
+    margin-left: 3px;
+}
+.loaderimage {
+    background: url('/blocks/ajax_marking/images/ajax-loader.gif') 0 0 no-repeat;
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+#count {
+    font-weight: bold;
+}
+#status {
+	clear:both;
+}
+#treediv {
+    clear: both;
+    margin-bottom: 5px;
+    padding-bottom: 0;
+    float: left;
+    font: 10pt tahoma;
+    min-width: 150px;
+}
+#mainicon {
+    float: left;
+    margin-left: 8px;
+}
+.block_ajax_marking .ygtvcell .block_ajax_marking_node_undefined {
+	cursor: pointer;
+}
+
+.block_ajax_marking div.content {
+	margin-bottom: 12px; /*Prevents the block's rounded corner from being misplaced*/
+}
+#block_ajax_marking .yui3-tab-label {
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	-moz-border-radius-topleft: 7px;
+	-moz-border-radius-topright: 7px;
+	padding-left:5px; !important
+	padding-right:5px; !important
+	
+}
+
+/*
+ styles for the config screen pop up
+ */
+
+#block_ajax_marking_refresh_button {
+    padding-top:3px;
+	float: none;
+    width: 45%;
+    margin-left: 0px;	
+}
+
+#block_ajax_marking_configure_button {
+    float: right;
+    width: 45%;
+    margin-right: 3px;
+    text-align: right;
+}
+#conf-wrapper {
+    float: left;
+    clear: both;
+    background-color: transparent;
+}
+#close {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+#confname {
+    float: left;
+    font-weight: bold;
+    width: 50%;
+    padding-left: 4px;
+    line-height: 15px;
+}
+#dialog {
+    display: none;
+    z-index: 500;
+    background-color: transparent;
+    padding: 0;
+    font: 10pt tahoma;
+    border: 1px solid gray;
+    width: 420px;
+    position: absolute;
+}
+.dialogheader {
+    line-height: 0;
+    height: 25px;
+    border: 0 solid #000;
+    border-bottom-width: 1px;
+    width: 100%;
+    margin: 0;
+}
+/*#configtree {
+  float: left;
+  width: 220px;
+  height: 480px;
+  max-width: 200px;
+  padding-top: 4px;
+  overflow-y: scroll;
+  font:10pt tahoma;
+  background-color: transparent;
+}*/
+#configSettings {
+    float: left;
+    width: 190px;
+    padding-left: 10px;
+    font: 10pt tahoma;
+}
+#configgroupsdiv {
+    float: right;
+    width: 190px;
+    background-color: transparent;
+}
+#configicon {
+    position: relative;
+    line-height: 0pt;
+    width: 35px;
+}
+#block_ajax_marking_hidden {
+    display: none;
+}
+div.block_ajax_marking div.footer {
+    border-style: none;
+    padding-bottom: 0;
+
+    height: 30px;
+}
+#configInstructions {
+    font: 10pt tahoma;
+    float: left;
+    width: 100%;
+}
+
+/* Stuff to make the lists display right with AJAX turned off */
+
+ul.AMB_html li {
+    list-style-type: none;
+}
+ul.AMB_html {
+    padding-left: 5px;
+    list-style-type: none;
+    margin: 0;
+}
+li.AMB_html, li.AMB_html_course {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    list-style-type: none;
+}
+li.AMB_html_course {
+    background-color: #ddd;
+    padding-left: 7px;
+}
+ul.AMB_html_items {
+    margin-top: 5px;
+
+    list-style-type: none;
+}
+span.AMB_count {
+    font-weight: bold;
+}
+span.ygtvlabel {
+    background-color: transparent;
+}
+
+/* change loading icon. Standard one has white background */
+.ygtvloading {
+    width: 18px;
+    height: 22px;
+    background: url('/blocks/ajax_marking/images/ajax-loader.gif') 0 0 no-repeat;
+}
+#block_ajax_marking_hidden {
+    display: none;
+}
+
+#page-blocks-ajax_marking-actions-grading_popup #page-content #region-main .region-content {
+    padding: 0 10px;
+}
+#treetabs {
+    clear: both;
+}
+#coursestreetab {
+    background: url([[pix:core|c/course]]) no-repeat 50%;
+    width: 35px;
+    height: 25px;
+    position: absolute;
+    float: left;
+    z-index: 100;
+}
+.block_ajax_marking img.nodeicon {
+	/*display:none;*/
+}
+.block_ajax_marking div.nodelabel {
+	font-size:80%;
+}
+#block_ajax_marking_error {
+    display: none;
+    color: #000000;
+    background-color: #ff6666;
+    overflow-x: scroll;
+    border: 1px solid #000;
+    padding: 3px;
+    width: 100%;
+}
+
+.block_ajax_marking div #treetabs.yui3-tabview-content div.yui3-tabview-panel  {
+	background-color:#EFD;
+	-moz-border-radius-bottomleft: 7px;
+	-moz-border-radius-bottomright: 7px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+/*YUI Tabs*/
+.yui-skin-sam .yui-navset .yui-content {
+	background-color:#EEE;!important
+}
+.yui-skin-sam .yui-navset .yui-nav, .yui-skin-sam .yui-navset .yui-navset-top .yui-nav {
+	
+	border-top-color: #666;
+	border-bottom-color: #666; !important
+	
+	border-top-width: 0pt;
+	border-right-width-value: 0pt;
+	border-bottom-width: 5px;
+	border-left-width-value: 0pt;
+	
+}
+ul.yui-nav {
+	border-bottom-color:#666;!important
+
+	color: #FFF;
+}
+ul.yui-nav li a em {
+	background-color:#CCC;
+}
+.yui-skin-sam .yui-navset .yui-nav .selected a, .yui-skin-sam .yui-navset .yui-nav .selected a:focus, .yui-skin-sam .yui-navset .yui-nav .selected a em {
+	background-color:#666; !important
+	border-bottom-color: #666; !important
+	font-weight:bold;
+	color:#FFF;
+	background-image:none; !important
+}
+
+/*YUI Carousel*/
+.yui-carousel {
+	min-width: 400px; !important
+	width:400px; !important
+	overflow: visible;!important
+
+}
+div#container {
+	position:relative;
+	left: 200px;
+}
+/*Hides Back to Main Page Link on nested page*/
+#region-main #region-main div.BackToMainPage {
+	display: none;
+}
+/*Quickmail*/
+.block_quickmail div.column {
+	*float:left; /*For IE 7*/
+	_float:left; /*For IE 6*/
+}
+/*Progress Bar*/
+
+/*.block_progress td.progressBarHeader {
+	width: 100px;
+	background-color:#F00;
+}
+.block_progress table {
+    margin: 0 auto;
+	max-width: 100px;
+	width:100px;
+}
+.block_progress .progressEventInfo {
+	white-space: pre-wrap;
+	height: 8em;
+}
+
+.block_progress table .progressBarProgressTable {
+	width:100px; !important
+	max-width: 100px; !important
+ 	white-space: pre-wrap;	
+}
+.block_progress h2 {
+	text-align:left;
+}
+*/	
+.block_progress .progressBarCell .smallicon {
+    width: 85%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/*Grade Me Block*/
+.block_grade_me .content {
+    font-size: 0.9em; !important
+}
+.block_grade_me ol.tree {
+	margin-left:0;
+
+}
+
+.block_grade_me ol.tree li {
+	list-style:none;
+	margin-left: 0px;
+
+	
+}
+.block_grade_me .module {
+	margin-left: 10px;
+	padding-right: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+}
+
+.block_grade_me ol.tree dd.module ul {
+	margin-left: 10px;	
+}
+.block_grade_me div#cmid15873 {
+	margin-left:0px;
+}
+
+/*Collapsible Menu icons*/
+.block_navigation .block_tree .tree_item.branch {background-image: url([[pix:t/expanded]]);background-position: left center;background-repeat: no-repeat;}
+.jsenabled .block_navigation .block_tree .tree_item.emptybranch {background-image: url([[pix:t/collapsed_empty]]);background-position: 3px center;background-repeat: no-repeat;}
+.jsenabled .block_navigation .block_tree .collapsed .tree_item.branch {background-image: url([[pix:t/collapsed]]);}
+.jsenabled .block_navigation .block_tree .tree_item.branch.loadingbranch {background-image:url([[pix:i/loading_small]]);}
+.jsenabled.dir-rtl .block_navigation .block_tree .tree_item.emptybranch {background-image: url([[pix:t/collapsed_empty_rtl]]);background-position: center right;}
+.jsenabled.dir-rtl .block_navigation .block_tree .collapsed .tree_item.branch {background-image: url([[pix:t/collapsed_rtl]]);}
+
+li .contains_branch, li .root_node {color: #116699;}
+li .current_branch {color: #000;}
+.block_navigation .block_tree li.depth_2 ul {padding-left:8px;margin:0;}
+
+/** Admin **/
+.box.adminwarning {text-align:center;border:1px solid #C8C9C7;background-color:#E3E3E3;margin-bottom:1em;padding:10px 10%;}
+.box.copyright {text-align:center;font-size:90%;padding:10px 10%;}
+#adminsettings fieldset {border:1px solid #C8C9C7;background-color:#E3E3E3;}
+#adminsettings fieldset .generalbox {margin:1em 0.5em;border-color:#C8C9C7;}
+#adminsettings .form-buttons {margin-left:13em;}
+
+.form-item {width:100%;margin:1em 1em 2em 1em ;}
+.form-item .form-label {width:12.5em;text-align:right;float:left;margin-right:0.5em;}
+.form-item .form-label .form-shortname {display:block;color:#666;font-size:75%;}
+.form-item .form-setting {margin-left:13em;}
+.form-item .form-setting .defaultsnext {display:inline;}
+.form-item .form-setting .form-defaultinfo {display:inline;margin-left:0.5em;font-size:90%;color:#666;}
+.form-item .form-description {margin:0.5em 1em 0.5em 13em;}
+.form-item .form-textarea textarea {width:495px;}
+
+#authmenu .informationbox {width:80%;margin-left:auto;margin-right:auto;margin-bottom:10px;border:1px solid #C8C9C7;padding:10px;}
+#authmenu table td {border-width:0px;}
+
+#categoryquestions {margin-left:auto;margin-right:auto;width:100%;}
+
+#categoryquestions th,
+.user th,
+.user th.header,
+.group th.header,
+.admin table tr th,
+.admin table tr th.header {
+	background-color:#EFD;
+	color:#000;
+	border-bottom-color:#333;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #333;
+	border-right-color: #999;
+	border-left-color: #333;
+}
+
+.user th a:link,
+#categoryquestions th a:link,
+.group  th a:link,
+.admin table tr th a:link {color:#116699;text-decoration:none;}
+
+.user th a:visited,
+#categoryquestions th a:visited,
+.group th a:visited,
+.admin table tr th a:visited {color:#116699;text-decoration:none;}
+
+.user tr td.cell,
+#categoryquestions tr td.cell,
+.group tr td.cell,
+.admin table tr td.cell {border:1px solid #C8C9C7;border-width:0px 1px;}
+
+.user .r1 .cell,
+#categoryquestions .r1 .cell,
+.group .r1 .cell,
+.admin table .r1 .cell {background-color:#EEE;}
+
+.admin .plugincompattable .r1 .cell {background-color:#FFF;}
+
+.singlebutton,
+.buttons {
+	text-align:center;
+	margin:20px;
+}
+.buttons form {display:inline;}
+.buttons div {display:inline;}
+.buttons .singlebutton {display:inline;padding:5px;margin:0px;}
+.admin .generalbox {background-color:#EEE;border-color:#C8C9C7;}
+
+#admin-mnet-index table td,
+#files-index .column-content table td {border-width:0px;}
+
+#page-blocks-configurable_reports-editreport select {
+	width: 50%;
+}
+
+/**Messages**/
+#newmessageoverlay {
+	background-color: #9EFF4F;	
+}
+/** Mforms **/
+.mform fieldset {border-color:#C8C9C7;}
+
+/** Tags **/
+.tag-management-form {text-align:center;}
+#tag-management-list {margin-top:1em;}
+
+/** User **/
+.userinfobox td {border-width:0px;vertical-align:top;}
+.userinfobox .side {width:120px;text-align:center;}
+.userinfobox .list .label {font-weight:bold;text-align:right;}
+
+/** Forum **/
+.forumheaderlist,
+.forumpost {margin-top:15px;border:1px solid #DDD;border-collapse:separate;}
+.forumpost td {border-width:0px;}
+.forumpost .topic {background-color:#C8C9C7;}
+.forumpost .topic .subject {font-weight:bold;}
+.forumpost .topic .author {font-size:0.8em;}
+.forumpost .left {background-color:#EEE;padding:4px;text-align:center;vertical-align:top;width:35px;}
+.forumpost .content .commands {font-size:0.9em;clear:both;padding-top:0.5em;text-align:right;}
+.forumpost .content .link {font-size:0.9em;}
+.forumpost .content .footer {font-size:0.9em;padding-top:0.5em;text-align:right;}
+
+/** Calendar **/
+.block.block_calendar_month td,
+.block.block_calendar_month th {border-width:0px;font-size:10px;padding:1px;width:14%;line-height:18px;}
+#calendar abbr,
+.block.block_calendar_month abbr {border-bottom-width:0px;}
+#calendar .weekend,
+.block.block_calendar_month .weekend {color:#A00;}
+#calendar .maincalendar .calendarmonth td.today,
+.block.block_calendar_month .today {border:1px solid #444;}
+#calendar .eventnone a,
+.block.block_calendar_month .eventnone a {color:#444;}
+
+#calendar {width:99%;margin:0px 1%;border-spacing:5px;border-collapse: separate;}
+#calendar td,
+#calendar th {border-width:0px;font-size:10px;padding:1px;width:14%;line-height:18px;vertical-align:top;}
+#calendar .maincalendar {width:auto;border:1px solid #DDD;}
+#calendar .maincalendar .heightcontainer {height:100%;position:relative;margin:1em;}
+#calendar .maincalendar .header {padding:5px;font-weight:bold;}
+#calendar .maincalendar .header .buttons {float:right;}
+#calendar .maincalendar table {width:100%;}
+#calendar .maincalendar .calendar-controls {width:100%;overflow:hidden;font-size:1.1em;}
+#calendar .maincalendar .calendar-controls .previous {display:block;float:left;width:20%;}
+#calendar .maincalendar .calendar-controls .current {display:block;float:left;width:60%;text-align:center;margin-top:0px;}
+#calendar .maincalendar .calendar-controls .next {display:block;float:left;width:20%;text-align:right;}
+#calendar .sidecalendar {width:200px;}
+#calendar .sidecalendar h2,
+#calendar .sidecalendar h3 {margin:5px;font-size:95%;}
+#calendar .sidecalendar .block {border:1px solid #DDD;margin-bottom:10px;text-align:center;}
+#calendar .sidecalendar .block table {margin:0px auto 5px auto;}
+#calendar .sidecalendar .block .filters table {width:95%;margin:0px auto 1em auto;}
+#calendar .sidecalendar .block .minicalendarblock {border-top:1px solid #DDD;}
+#calendar .filters table {padding:2px;background-color: #EEE;border:1px solid #DDD;border-spacing:2px;border-collapse: separate;}
+#calendar .filters table td {font-size:100%;width:auto;}
+#calendar .filters .eventskey {border:1px solid #444;overflow:hidden;}
+#calendar .calendar_event_global {background-color: #EFD;}
+#calendar .calendar_event_course {background-color: #FFD3BD;}
+#calendar .calendar_event_group {background-color: #FEE7AE;}
+#calendar .calendar_event_user {background-color: #DCE7EC;}
+#calendar .maincalendar .calendarmonth {border-collapse: separate;}
+#calendar .maincalendar .calendarmonth th {font-size:0.9em;border-bottom:2px solid #444;}
+#calendar .maincalendar .calendarmonth td {border:1px solid #EEE;border-bottom-color:#CCC;border-right-color:#CCC;height:6em;}
+#calendar .maincalendar .calendarmonth td div {margin:4px;font-size:0.9em;}
+#calendar .maincalendar .calendarmonth td .day {font-weight:bold;}
+#calendar .maincalendar .calendarmonth tr td:first-child {border-left-color:#CCC;}
+#calendar .maincalendar .event {border-spacing: 0px;border:1px solid #DDD;background-color:#EEE;}
+#calendar .maincalendar .event .picture {width:32px;text-align:center;}
+#calendar .maincalendar .event .topic {width:auto;padding:5px;}
+#calendar .maincalendar .event .side {width:32px;}
+#calendar .maincalendar .event .description {width:auto;border-top:1px solid #DDD;border-left:1px solid #DDD;padding:5px;}
+#calendar .maincalendar .bottom {text-align:center;}
+#calendar .calendarmonth ul {margin:0px;padding:0px;}
+#calendar .calendarmonth ul li {list-style: none;margin:0px;padding:2px;}
+.calendartable th, .calendartable td {border-width:0px;}
+.block .minicalendar th, .block .minicalendar td {padding:0px;font-size:0.7em;}
+
+/** User **/
+.user .rolesform,
+.user .searchform,
+.user #showall,
+.user #participantsform {text-align:center;}
+.user #participantsform table {margin-top:1em;}
+.user #participantsform td {text-align:left;}
+.user table.controls {margin:5px auto;border:1px solid #DDD;background-color:#EEE;border-collapse: collapse;}
+.user table.controls td {border-width:0px;}
+
+
+/** Overide for RTL layout **/
+.dir-rtl #page-header .navbar .breadcrumb {float:right;}
+.dir-rtl #page-header .navbar .navbutton {float:left;}
+
+/*SpryTabbedPanels*/
+
+
+/* SpryTabbedPanels.css - Revision: Spry Preview Release 1.4 */
+
+/* Copyright (c) 2006. Adobe Systems Incorporated. All rights reserved. */
+
+/* Horizontal Tabbed Panels
+ *
+ * The default style for a TabbedPanels widget places all tab buttons
+ * (left aligned) above the content panel.
+ */
+
+/* This is the selector for the main TabbedPanels container. For our
+ * default style, this container does not contribute anything visually,
+ * but it is floated left to make sure that any floating or clearing done
+ * with any of its child elements are contained completely within the
+ * TabbedPanels container, to minimize any impact or undesireable
+ * interaction with other floated elements on the page that may be used
+ * for layout.
+ *
+ * If you want to constrain the width of the TabbedPanels widget, set a
+ * width on the TabbedPanels container. By default, the TabbedPanels widget
+ * expands horizontally to fill up available space.
+ *
+ * The name of the class ("TabbedPanels") used in this selector is not
+ * necessary to make the widget function. You can use any class name you
+ * want to style the TabbedPanels container.
+ */
+.TabbedPanels {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	clear: none;
+	width: 100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+}
+
+/* This is the selector for the TabGroup. The TabGroup container houses
+ * all of the tab buttons for each   panel in the widget. This container
+ * does not contribute anything visually to the look of the widget for our
+ * default style.
+ *
+ * The name of the class ("TabbedPanelsTabGroup") used in this selector is not
+ * necessary to make the widget function. You can use any class name you
+ * want to style the TabGroup container.
+ */
+.TabbedPanelsTabGroup {
+	margin: 0px; !important 
+	padding: 0px;
+}
+
+/* This is the selector for the TabbedPanelsTab. This container houses
+ * the title for the panel. This is also the tab "button" that the user clicks
+ * on to activate the corresponding content panel so that it appears on top
+ * of the other   panels contained in the widget.
+ *
+ * For our default style, each tab is positioned relatively 1 pixel down from
+ * where it wold normally render. This allows each tab to overlap the content
+ * panel that renders below it. Each tab is rendered with a 1 pixel bottom
+ * border that has a color that matches the top border of the current content
+ * panel. This gives the appearance that the tab is being drawn behind the
+ * content panel.
+ *
+ * The name of the class ("TabbedPanelsTab") used in this selector is not
+ * necessary to make the widget function. You can use any class name you want
+ * to style this tab container.
+ */
+div #region-main td.content ul.section ul li.TabbedPanelsTab, div #region-main div#TabbedPanels1 ul li.TabbedPanelsTab {
+	position: relative;
+	top: 1px;
+	float: left;
+	font: bold 0.7em sans-serif;
+	background-color: #DDD;
+	list-style: none;!important
+	border-left: solid 1px #000;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
+	text-indent: 0px;
+	margin-top: 0px;
+	margin-right: 1px;
+	margin-bottom: 0px;
+	padding-top: 4px;
+	padding-right: 10px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	margin-left: 0px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999;
+	border-right-color: #999;
+	border-bottom-color: #999;
+	border-left-color: #CCC;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 0px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 0px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 0px;
+	/*This is necessary to override the allowances made for bulleted text in div #region-main div.no-overflow ul li*/left: 0px;
+}
+
+
+/* This selector is an example of how to change the appearnce of a tab button
+ * container as the mouse enters it. The class "TabbedPanelsTabHover" is
+ * programatically added and removed from the tab element as the mouse enters
+ * and exits the container.
+ */
+div #region-main div.no-overflow ul li.TabbedPanelsTabHover, div #region-main div#TabbedPanels1 ul li.TabbedPanelsTabHover {
+	background-color: #CCC;
+	outline:none;
+}
+
+/* This selector is an example of how to change the appearance of a tab button
+ * container after the user has clicked on it to activate a content panel.
+ * The class "TabbedPanelsTabSelected" is programatically added and removed
+ * from the tab element as the user clicks on the tab button containers in
+ * the widget.
+ *
+ * As mentioned above, for our default style, tab buttons are positioned
+ * 1 pixel down from where it would normally render. When the tab button is
+ * selected, we change its bottom border to match the background color of the
+ * content panel so that it looks like the tab is part of the content panel.
+ */
+div #region-main div.no-overflow ul li.TabbedPanelsTabSelected, div #region-main div#TabbedPanels1 ul li.TabbedPanelsTabSelected, div #region-main div.no-overflow ul li.TabbedPanelsTabFocused, div #region-main div#TabbedPanels1 ul li.TabbedPanelsTabFocused {
+	background-color: #EEE;
+	border-bottom-style: solid;
+	border-bottom-color: #EEE;
+	border-bottom-width: 1px;
+	outline:none;
+}
+
+/* This selector is an example of how to make a link inside of a tab button
+ * look like normal text. Users may want to use links inside of a tab button
+ * so that when it gets focus, the text *inside* the tab button gets a focus
+ * ring around it, instead of the focus ring around the entire tab.
+ */
+div #region-main div.no-overflow ul li.TabbedPanelsTab a, div #region-main div#TabbedPanels1 ul li.TabbedPanelsTab a {
+	color: black;
+	text-decoration: none;
+	outline:none;
+}
+
+/* This is the selector for the ContentGroup. The ContentGroup container houses
+ * all of the content panels for each   panel in the widget. For our
+ * default style, this container provides the background color and borders that
+ * surround the content.
+ *
+ * The name of the class ("TabbedPanelsContentGroup") used in this selector is
+ * not necessary to make the widget function. You can use any class name you
+ * want to style the ContentGroup container.
+ */
+div #region-main div.no-overflow .TabbedPanelsContentGroup {
+	clear: both;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	background-color: #EEE;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+/* This is the selector for the Content panel. The Content panel holds the
+ * content for a single   panel. For our default style, this container
+ * provides some padding, so that the content is not pushed up against the
+ * widget borders.
+ *
+ * The name of the class ("TabbedPanelsContent") used in this selector is
+ * not necessary to make the widget function. You can use any class name you
+ * want to style the Content container.
+ */
+div #region-main div.no-overflow .TabbedPanelsContent {
+	padding: 4px;
+}
+div #region-main div.no-overflow .TabbedPanelsContent div#Highlight {
+	margin-top: 1em;
+	/*margin-left: 15%;
+	margin-right: 15%;
+	border:1;*/
+	background-color:#CCC;
+}
+div #region-main div.no-overflow .TabbedPanelsContent .Bulleted {
+	list-style-position: outside;
+	list-style-type: disc;
+	margin-left:1.5em;
+	
+}
+div #region-main div.no-overflow .TabbedPanelsContent li {
+	margin-bottom: 1em;
+}
+/* This selector is an example of how to change the appearnce of the currently
+ * active container panel. The class "TabbedPanelsContentVisible" is
+ * programatically added and removed from the content element as the panel
+ * is activated/deactivated.
+ */
+.TabbedPanelsContentVisible {
+}
+
+/* Vertical Tabbed Panels
+ *
+ * The following rules override some of the default rules above so that the
+ * TabbedPanels widget renders with its tab buttons along the left side of
+ * the currently active content panel.
+ *
+ * With the rules defined below, the only change that will have to be made
+ * to switch a horizontal   panels widget to a vertical   panels
+ * widget, is to use the "VTabbedPanels" class on the top-level widget
+ * container element, instead of "TabbedPanels".
+ */
+
+/* This selector floats the TabGroup so that the tab buttons it contains
+ * render to the left of the active content panel. A border is drawn around
+ * the group container to make it look like a list container.
+ */
+div #region-main div.no-overflow ul li.VTabbedPanels .TabbedPanelsTabGroup {
+	float: left;
+	width: 10em;
+	height: 20em;
+	background-color: #EEE;
+	position: relative;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+}
+
+/* This selector disables the float property that is placed on each tab button
+ * by the default TabbedPanelsTab selector rule above. It also draws a bottom
+ * border for the tab. The tab button will get its left and right border from
+ * the TabGroup, and its top border from the TabGroup or tab button above it.
+ */
+div #region-main div.no-overflow ul li.VTabbedPanels .TabbedPanelsTab {
+	float: none;
+	margin: 0px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+/* This selector disables the float property that is placed on each tab button
+ * by the default TabbedPanelsTab selector rule above. It also draws a bottom
+ * border for the tab. The tab button will get its left and right border from
+ * the TabGroup, and its top border from the TabGroup or tab button above it.
+ */
+div #region-main div.no-overflow ul li.VTabbedPanels .TabbedPanelsTabSelected {
+	background-color: #EEE;
+	border-bottom: solid 1px #999;
+}
+
+/* This selector floats the content panels for the widget so that they
+ * render to the right of the   buttons.
+ */
+div #region-main div.no-overflow .VTabbedPanels .TabbedPanelsContentGroup {
+	clear: none;
+	float: left;
+	padding: 0px;
+	width: 30em;
+	height: 20em;
+}
+
+/*SpryCollapsiblePanel*/
+/* SpryCollapsiblePanel.css - version 0.5 - Spry Pre-Release 1.6.1 */
+
+/* Copyright (c) 2006. Adobe Systems Incorporated. All rights reserved. */
+
+/* This is the selector for the main CollapsiblePanel container. For our
+ * default style, the CollapsiblePanel is responsible for drawing the borders
+ * around the widget.
+ *
+ * If you want to constrain the width of the CollapsiblePanel widget, set a width on
+ * the CollapsiblePanel container. By default, our CollapsiblePanel expands horizontally to fill
+ * up available space.
+ *
+ * The name of the class ("CollapsiblePanel") used in this selector is not necessary
+ * to make the widget function. You can use any class name you want to style the
+ * CollapsiblePanel container.
+ */
+.CollapsiblePanel {
+	margin: 0px;
+	padding: 0px;
+	border-left: solid 1px #CCC;
+	border-right: solid 1px #999;
+	border-top: solid 1px #999;
+	border-bottom: solid 1px #CCC;
+}
+
+/* This is the selector for the CollapsiblePanelTab. This container houses
+ * the title for the panel. This is also the container that the user clicks
+ * on to open or close the panel.
+ *
+ * The name of the class ("CollapsiblePanelTab") used in this selector is not necessary
+ * to make the widget function. You can use any class name you want to style an
+ * CollapsiblePanel panel tab container.
+ */
+.CollapsiblePanelTab {
+	font: bold 0.7em sans-serif;
+	background-color: #DDD;
+	border-bottom: solid 1px #CCC;
+	margin: 0px;
+	padding: 2px;
+	cursor: pointer;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+}
+
+/* This is the selector for a CollapsiblePanel's Content area. It's important to note that
+ * you should never put any padding on the content area element if you plan to
+ * use the CollapsiblePanel's open/close animations. Placing a non-zero padding on the content
+ * element can cause the CollapsiblePanel to abruptly grow in height while the panels animate.
+ *
+ * The name of the class ("CollapsiblePanelContent") used in this selector is not necessary
+ * to make the widget function. You can use any class name you want to style a
+ * CollapsiblePanel content container.
+ */
+.CollapsiblePanelContent {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* An anchor tag can be used inside of a CollapsiblePanelTab so that the
+ * keyboard focus ring appears *inside* the tab instead of around the tab.
+ * This is an example of how to make the text within the anchor tag look
+ * like non-anchor (normal) text.
+ */
+.CollapsiblePanelTab a {
+	color: black;
+	text-decoration: none;
+}
+
+/* This is an example of how to change the appearance of the panel tab that is
+ * currently open. The class "CollapsiblePanelOpen" is programatically added and removed
+ * from panels as the user clicks on the tabs within the CollapsiblePanel.
+ */
+.CollapsiblePanelOpen .CollapsiblePanelTab {
+	background-color: #EEE;
+}
+
+/* This is an example of how to change the appearance of the panel tab when the
+ * CollapsiblePanel is closed. The "CollapsiblePanelClosed" class is programatically added and removed
+ * whenever the CollapsiblePanel is closed.
+ */
+
+.CollapsiblePanelClosed .CollapsiblePanelTab {
+ /* background-color: #EFEFEF */
+}
+
+/* This is an example of how to change the appearance of the panel tab as the
+ * mouse hovers over it. The class "CollapsiblePanelTabHover" is programatically added
+ * and removed from panel tab containers as the mouse enters and exits the tab container.
+ */
+.CollapsiblePanelTabHover,  .CollapsiblePanelOpen .CollapsiblePanelTabHover {
+	background-color: #CCC;
+}
+
+/* This is an example of how to change the appearance of all the panel tabs when the
+ * CollapsiblePanel has focus. The "CollapsiblePanelFocused" class is programatically added and removed
+ * whenever the CollapsiblePanel gains or loses keyboard focus.
+ */
+.CollapsiblePanelFocused .CollapsiblePanelTab {
+	background-color: #3399FF;
+}
+
+/* 
+  -----------------------------------
+  Tree Menu Magic 2
+  by Project Seven Development
+  www.projectseven.com
+  Style Theme: 01 - Basic
+  -----------------------------------
+*/
+
+.p7TMM01 {
+	font-size: inherit;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	zoom: 1;
+}
+.p7TMM01 ul {
+	margin: 0;
+	padding: 0;
+}
+.p7TMM01 ul ul {
+	font-size: .9em;
+}
+.p7TMM01 ul ul ul {
+	font-size: 1em;
+}
+.p7TMM01 li {
+	list-style-type: none;
+	margin: 0;
+}
+.p7TMM01 ul ul li {
+	padding-left: 1em;
+}
+.p7TMM01 ul a:link, .p7TMM01 ul a:visited {
+	/*color: #000;*/
+	display: block;
+	padding: 3px 8px 3px 18px;
+	text-decoration: none;
+	zoom: 1;
+	/*font-variant: small-caps;*/
+	outline: 0;
+}
+.p7TMM01 ul a:hover, .p7TMM01 ul a:focus, .p7TMM01 ul a:active {
+	/*color: #C30;
+	text-decoration: underline;*/
+}
+.p7TMM01 ul ul a {
+	font-variant: normal;
+}
+.p7TMM01 a.p7tmm_page {
+	background-image: url(../pix/p7tmm/tmm_page.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.p7TMM01 a.trig_closed {
+	background-image: url(../pix/p7tmm/tmm_east_black.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.p7TMM01 a.trig_open {
+	background-image: url(../pix/p7tmm/tmm_south_black.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	font-weight: bold;
+}
+.p7TMM01 ul ul a.trig_closed, .p7TMM01 ul ul a.trig_open {
+	/*font-variant: small-caps;*/
+	letter-spacing: 0.1em;
+	font-size: 1.1em;
+}
+.p7TMM01 ul ul a.trig_open {
+	/*color: #000;*/
+}
+.p7TMM01 a.current_mark {
+	font-weight:bold;
+	color:#C30;
+}
+.p7TMM01 ul ul a.current_mark {
+	color:#C30;
+}
+.p7TMMtoggle {
+	display:none;
+}
+.p7TMM01_toggle_all {
+	margin: 0 0 12px 0;
+}
+.p7TMM01_toggle_all a:link, .p7TMM01_toggle_all a:visited {
+	color: #000;
+	/*font-variant: small-caps;*/
+	outline: 0;
+}
+.p7TMM01_toggle_all a:hover, .p7TMM01_toggle_all a:focus, .p7TMM01_toggle_all a:active {
+	color: #C30;
+	text-decoration: underline;
+}
+
+
+
+/*These are specific to SK Online*/
+#page-mod-lesson-view div#region-main div.box a[href^="http"] {
+	background-image:url([[pix:theme|ExternalLinkIcon]]);
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 13px;
+	background-color: transparent;
+}
+#page-mod-lesson-view div#region-main div.box a[href^="http"].NoLinkIcon {
+	background-image:none;
+	padding-right: 0px;
+}
+#page-mod-lesson-view .mform .fitem {
+	width:100%;
+}
+#page-mod-lesson-view .mform p {
+	font-weight:bold;
+}
+#page-mod-lesson-view .mform .fitem .fitemtitle {
+	/*Adjusts the left side with of a matching question*/
+	width: auto;
+	text-align:left;
+	padding-right: 10px;
+}
+
+
+#page-mod-lesson-view .mform .fitem select  {
+	/*Adjust the width to make the drop-down wider*/
+	width:25%;
+	margin-bottom:.75em;
+}
+
+#page-mod-lesson-view .mform fieldset {
+	background-color: transparent;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: outset;
+	border-right-style: outset;
+	border-bottom-style: outset;
+	border-left-style: outset;
+	border-top-color: #CCC;
+	border-right-color: #999;
+	border-bottom-color: #999;
+	border-left-color: #CCC;
+	width: 100%;
+}
+#page-mod-lesson-view .mform fieldset.hidden {
+	border-top-width: 0;
+	border-right-width: 0;
+	border-bottom-width: 0;
+	border-left-width: 0;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+#page-mod-label-mod .mform .fitem {
+	overflow: auto;
+}
+
+#page-mod-forum-discuss #page-header {
+	height: auto;
+	}
+#page-mod-forum-discuss #page-header div.navbar {
+	height: 75px;
+}
+
+
+
+div #region-main td.content ul.section ul ul {
+	margin-left:20px;
+	list-style-type: square;
+}
+div #region-main td.content ul.section ul li{
+	overflow: hidden;
+}
+div #region-main td.content ul.section ul li{
+	overflow: hidden;
+}
+div #region-main li {
+	margin-bottom: 1em;
+}
+ul.ShowBullets {
+	margin-left: 30px;
+}
+li.ShowBullets {
+	list-style-type:disc;
+}
+ol.ShowNumbers {
+	margin-left: 30px;
+}
+li.ShowNumbers {
+	list-style-type:decimal;
+}
+div #region-main h1, div #region-main h2, div #region-main h3, div #region-main h4, div #region-main h5 {
+	line-height:1.4em;
+}
+.mform .fitem select option, form select option {
+	width: 100%;
+}
+#page-course-view-topics div.no-overflow li.Link {
+	list-style-type: none; 
+	background-image: url([[pix:theme|world_link]]);
+	text-indent:20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-right: 0px;
+}
+#page-mod-page-view h2 a.autolink {
+	color:#000;
+}
+div #region-main #RequiredReading, div #region-main #Highlight, div.Highlight {
+	background-image:none;
+	background-color:#DBDBDB;
+	color: #000;
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;	
+   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";/* Box Shadow For IE 8 */   
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');  /* Box Shadow For IE 5.5 - 7 */ 	
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 85%;
+	margin-bottom: 1em;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	border-top-style: inset;
+	border-right-style: inset;
+	border-bottom-style: inset;
+	border-left-style: inset;
+	clear:both;
+}
+.Close {
+	font-size: smaller;
+	text-align: right;
+	margin: 0px;
+}
+
+.GradeA {
+	color:#060;
+	font-weight:bold;
+}
+
+.GradeB {
+	color:#006;
+	font-weight:bold;
+}
+
+.GradeC {
+	color:#306;
+	font-weight:bold;
+}
+
+.GradeD {
+	color:#F60;
+	font-weight:bold;
+}
+
+.GradeF {
+	color:#900;
+	font-weight:bold;
+}
+
+/*Image Styles*/
+.ImageLeft {
+	float: left;
+	position: static;
+	margin-right: 15px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	border: 2px outset #000000;
+	clear: left;
+}
+
+
+.ImageRight {
+	float: right;
+	position: static;
+	margin-right: 0px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+	margin-left: 30px;
+	border: 2px outset #000000;
+}
+
+.ImageLeftBorderless {
+	float: left;
+	position: static;
+	margin-right: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	border: none;
+}
+
+.ImageRightBorderless {
+	float: right;
+	position: static;
+	margin-right: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+	border: none;
+
+}
+
+
+.Caption {
+	font-size: 90%;
+	font-style:italic;
+}
+
+#ColumnsWrapper {
+	width: inherit;
+	margin: 0px auto;
+	padding: 0px;
+	background-color: #EFD;
+	
+}
+#LeftColumn {
+	float: left;
+	width: 46%;
+	padding-left: 15px;
+	padding-right: 0px;
+}
+#RightColumn {
+	width: 46%;
+	margin-left: 50%;
+	padding-right: 15px;
+	padding-left: 0px;
+}

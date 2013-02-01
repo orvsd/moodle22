@@ -1,0 +1,167 @@
+
+/* 
+Docking Module 
+-----------------------*/
+
+/* 
+This allows you to shrink the main body of your page to accomodate the docking module
+-------------------------------------------------------------------------------------*/
+
+body.has_dock_top_horizontal { width: auto; margin-top: 30px} 
+body.has_dock_left_vertical { width: 97%; margin-left: 3%;}
+body.has_dock_right_vertical { width: 97%; margin-right: 3%}                                            
+
+.has_dock_left_vertical #dock {
+        width:3%;
+        position:fixed;
+        top:0px;
+        left:0px;
+        height:100%;
+        background: #333 url([[pix:theme|dock/dockbg]]) repeat-y center top;
+        font-family: sans-serif;
+        z-index:11000;
+}
+.has_dock_left_vertical #dock.nothingdocked {
+        visibility: hidden;
+        display:none;
+}
+.has_dock_left_vertical #dock .dockeditem .firstdockitem {
+        margin-top:1em;
+}
+.has_dock_left_vertical #dock .dockedtitle {
+        background: url([[pix:theme|dock/dockdiv]]) no-repeat left top;
+
+}
+.has_dock_left_vertical #dock .dockedtitle h2 {
+    margin: 0 0 0 5px;
+    padding: 15px 0;
+        color: #fff;
+        font-family: sans-serif;
+        cursor:pointer;
+}
+.has_dock_left_vertical #dock .dockedtitle .filterrotate {
+}
+.has_dock_left_vertical #dock .controls {
+        position:absolute;
+        bottom:1em;
+        text-align:center;
+        width:100%;
+}
+.has_dock_left_vertical #dock .controls img {cursor:pointer;}
+
+/* 
+Docked Item Panel
+-----------------------*/
+
+.has_dock_left_vertical #dockeditempanel {
+        width: 150px;
+        position:relative;
+        z-index:12000;
+        left:100%;
+}
+.has_dock_left_vertical #dockeditempanel.dockitempanel_hidden {
+        display:none;
+}
+.has_dock_left_vertical #dockeditempanel .dockeditempanel_content {
+        color: #616161;
+        border:6px solid #000066;
+        -webkit-border-bottom-right-radius:12px;
+        -moz-border-radius-bottomright: 12px;
+        border-bottom-right-radius: 12px;
+        background-color: #fff;
+        z-index:12050;
+}
+.has_dock_left_vertical #dockeditempanel .dockeditempanel_bd {
+        overflow:auto;
+        width:auto;
+    }
+.has_dock_left_vertical #dockeditempanel .dockeditempanel_bd .block_docked {
+        margin:10px;
+}
+.has_dock_left_vertical #dockeditempanel .block_calendar_month.block_docked {
+        text-align: center;
+}
+.has_dock_left_vertical #dockeditempanel .dockeditempanel_hd {
+        border-bottom:1px solid #000;
+        text-align:right;
+        background-color:#adadff;
+}
+.has_dock_left_vertical #dockeditempanel .dockeditempanel_hd h2 {
+        display:inline;
+        margin:0;
+        padding-right:1em;
+}
+.has_dock_left_vertical #dockeditempanel .dockeditempanel_hd .commands {
+        display:inline;
+}
+
+.has_dock_left_vertical #dockeditempanel .dockeditempanel_hd .commands img {
+        margin-right:3px;
+        vertical-align:middle;
+}
+
+/* 
+From DOCKMOD.CSS by Sam Hemelryk 2011
+--------------------------------*/
+
+/* 
+We only need one line of CSS to support the dock on the right of the screen
+-----------------------*/
+
+.has_dock_right_vertical #dock {
+        right:0px;
+        left:auto;
+}
+
+/* 
+This is the CSS to display the block on the top of the screen 
+--------------------------------------------------------------*/
+
+.has_dock_top_horizontal #dock {
+        width:100%;
+        height:30px;
+        background: #333 url([[pix:theme|dock/hdockbg]]) repeat-x center top;
+        position: fixed;
+}
+.has_dock_top_horizontal #dock .dockeditem_container {
+        margin-top:0;
+}
+.has_dock_top_horizontal #dock .dockeditem {
+        display:inline-block;
+}
+.has_dock_top_horizontal #dock .dockeditem .dockedtitle {
+        border-right: 1px solid #3d3d3d; 
+        border-left: 1px solid #5b5b5b;
+}
+.has_dock_top_horizontal #dock .dockeditem .dockedtitle h2 {
+        margin:5px 10px 0;
+        padding: 0 10px;
+        cursor:pointer;
+        font:13px "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+.has_dock_top_horizontal #dock .dockeditem.firstdockitem { }
+
+.has_dock_top_horizontal #dock .dockeditem.firstdockitem .dockedtitle {
+}
+
+.has_dock_top_horizontal #dock .controls {
+        bottom:auto;
+        right:10px;
+        top:0;
+        width:auto;
+}
+.has_dock_top_horizontal #dock #dockeditempanel {
+        position:absolute;
+}
+
+/* 
+CSS to position the new move dock button we created
+-----------------------*/
+
+.has_dock_left_vertical #dock .movedockbutton,
+.has_dock_right_vertical #dock .movedockbutton {
+        margin:3px 10px;
+}
+.has_dock_top_horizontal #dock .movedockbutton {
+        margin:0 3px;
+}

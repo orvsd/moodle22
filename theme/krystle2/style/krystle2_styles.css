@@ -1,0 +1,519 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+	background: #006 url([[pix:theme|core/overlay]]) center top repeat-x fixed;
+}
+
+body {
+	color:#4b4b4b;
+}
+
+#page { 
+	font-size: 100%;
+	font-family: 'Trebuchet MS', serif;
+	padding: 0;
+}
+
+a:link,
+a:visited {
+        color:#036;
+	text-decoration: none;
+}
+a:hover, a:active {
+        color: #000066;
+	text-decoration: none;
+
+}
+a.dimmed:link,
+a.dimmed:visited {
+	color:#aaa;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+ color: #000066;
+}
+
+h1 { font-size: 175%;}
+h2 { font-size: 125%;}
+h3 { font-size: 105%;}
+h4 { font-size: 90%;}
+h5 { font-size: 85%;}
+h6 { font-size: 80%;}
+
+
+hr {
+	border-bottom:1px dotted gray;
+	border-top:0px;
+}
+
+/* 
+Modules: Forum
+-----------------------*/
+
+
+.forumpost .row.maincontent {
+	background: #fff url([[pix:theme|forum/leftpost]]) no-repeat left top;
+}
+.forumpost .row.header {
+	background: #eee url([[pix:theme|forum/forumheader]]) repeat left top;
+	border:0px;
+}
+
+.forumpost .content .posting {
+	margin-top: 15px;
+	max-width:100%;
+	overflow: crop;
+}
+.forumpost .topic a:link,
+.forumpost .topic a:visited { 
+	color: #036;
+}
+
+.forumpost .topic a:hover,
+.forumpost .topic a:active { 
+	color: #000066;
+}
+
+
+.mod-indent { } /* resourses & activities container */
+
+/* 
+General Box
+-----------------------*/
+
+.generalbox {
+border:0 none;
+}
+
+#notice.generalbox { 
+  margin: 0 auto;
+}
+
+#notice.generalbox p { 
+  text-align: left;
+}
+
+
+.errorbox {
+    background-color: #000066;
+    color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    width: 75%;
+    
+  
+}
+
+/* 
+Login (Front Page)
+-----------------------*/
+.block_login 
+{
+	margin: 0;
+	padding: 0;
+}
+
+.block_login .footer
+{
+	text-align: right;
+	clear: both
+}
+
+
+.block_login .loginform .c1 {
+    margin: 0.3em 15px;
+    text-align: left;
+
+}
+
+/* 
+Miscellaneous
+-----------------------*/
+#page-site-index .headingblock {
+margin-bottom:9px;
+margin-left: 3px;
+}
+
+/* 
+Profileblock
+-----------------------*/
+
+#profileblock {
+	float: right;
+	text-align: right;
+	width: 450px;
+	height: 100px;
+	margin: 0;
+	padding: 0;
+
+}
+
+.headermenu {
+	float:right;
+	font-size:1em;
+	margin:0px;
+	text-align:right;
+}
+
+.user-pic img.userpicture {
+	float: right;
+	clear: right;
+	margin: 8px 8px 8px 0;
+	padding: 0;
+	width: 80px;
+	height: 80px;
+}
+
+#post-log { 
+margin-right: 5px;
+}
+
+#pro-opt {
+    float: right;
+    margin: 5px 10px 0 0;
+    padding: 0;
+    position: relative;
+    width: 150px;
+}
+
+#pro-opt p.pro-log a,
+#pro-opt p.pro-log a:link {
+	color: #036;
+}
+
+#pro-opt p.pro-log a:hover {
+	color: #c06;
+}
+
+#pro-opt h3 {
+  color: #fff;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+/* 
+Course - Topic
+-----------------------*/
+.course-content ul.topics li.section,
+.course-content ul.weeks li.section {
+    border: 1px solid #ddd;
+    list-style: none outside none;
+}
+
+/* 
+navbar and breadcrumb
+-----------------------*/
+
+.navbar {
+	width: 100%; 
+	margin: 0; 
+	padding: 0;
+	clear:both; 
+	height: 30px; 
+	background: url([[pix:theme|menu/shineybg]]) repeat-x center top;
+	margin:0;
+	text-shadow: 0 1px 0 #000;
+}
+.breadcrumb {
+	float:left;
+	color: #ffffff;
+}
+.navbutton {
+	text-align:right; 
+	float: right; 
+	margin-top: 5px;
+	margin-right: 5px;
+}
+.navbutton .singlebutton input {
+        background:#fff url([[pix:theme|navbar]]) repeat-y 50% 0;     
+	border-width:1px;
+	border-style:outset;
+	border-color:#787878;
+	font-size: 85%;
+	cursor: pointer;
+}
+
+.breadcrumb ul { 
+	margin-top: 5px;
+	margin-left: 10px;
+	text-indent:0;
+	list-style:none;
+}
+.breadcrumb li,
+.navbutton div,
+.navbutton form {
+	display:inline;
+}
+
+.logininfo
+.breadcrumb {font-size: 1.5em;}
+
+.breadcrumb a, 
+.breadcrumb a:link,
+.breadcrumb a:visited {
+        color: #00ccff;
+	text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:active { color: #990000;}
+
+.forumpost {
+	border-collapse:separate;
+	border-style:solid;
+	border-width:0;
+	margin-top:10px;
+	width: 100%;
+}
+
+.jsenabled .course_category_tree .controls {
+visibility:visible;
+float: right;
+}
+
+.category_label {padding-left: 20px;}
+
+/* 
+Collapse All - Expand All
+-------------------------*/
+
+div.controls .expandall,
+div.controls .collapseall {
+	font-size: .8em;
+	color: #036;
+	margin: 2px;
+	padding: 0;
+	float: right;
+	clear: both;
+	text-transform: capitalize;
+	font-variant; small-caps;
+	border-bottom: 1px solid #036;
+}
+
+
+/* 
+Redirect Message
+-----------------------*/
+.redirectmessage,
+.continuebutton { 
+	text-align: center;
+	font-size: 12pt;
+	color: #444;
+	padding-bottom: 10px;
+}
+
+/* 
+YUI CSS
+-----------------------*/
+.yui-skin-sam .yui-panel-container {
+    z-index: 9999999!important;
+}
+
+.user-enroller-panel {
+    z-index: 9999999!important;
+}
+
+/* 
+Misc course page styling
+-------------------------*/
+.path-course-view .weeks .current, 
+.path-course-view .topics .current,
+.path-course-view .current td.side {
+    background-color: #000066;
+    color: #fff;
+}
+.path-course-view .weeks .current p, 
+.path-course-view .topics .current p,
+.path-course-view .current td.side p{
+    color: #000;
+}
+
+.course-content ul.topics li.section .left,
+.course-content ul.topics li.section .right {
+    padding-top: 10px;
+}
+
+.path-grade-report-grader #page-header {width: 100%; height: 100px;}
+
+.path-grade-report-grader .navbar { width: 98%;}
+
+/**
+ * Tabs
+ */
+.tabtree ul {text-align:center;}
+.tabtree .tabrow0 {width:100%;margin:1em 0px;}
+.tabtree .tabrow0 li {margin-right:-4px;}
+.tabtree .tabrow0 li.here {font-weight: bold;}
+.tabtree .tabrow0 li.here a {position:relative;z-index:102;}
+.tabtree .tabrow0 li a {background-image:url([[pix:theme|tab/left]]);padding-left:14px;padding-top:10px;background-repeat:no-repeat;padding-bottom:3px;margin-bottom:-1px;}
+.tabtree .tabrow0 li a:hover {background-image:url([[pix:theme|tab/left_hover]]);}
+.tabtree .tabrow0 li a span { background-image:url([[pix:theme|tab/right]]);background-repeat:no-repeat;background-position:100% 0%;padding-right:14px;padding-top:10px;padding-bottom:3px;}
+.tabtree .tabrow0 li a:hover span {background-image:url([[pix:theme|tab/right_hover]]);}
+.tabtree .tabrow0 ul,
+.tabtree .tabrow0 div {font-weight: normal;background-image:url([[pix:theme|tab/tabrow1]]);background-position:0% 50%;border-top:1px solid #aaa;padding:0.25em 0px;margin:0px;}
+.tabtree .tabrow0 li.here .empty {display:block;height:1px;overflow:hidden;padding:0px;position:absolute;width:100%;bottom:-4px;}
+.tabtree .tabrow1 li a,
+.tabtree .tabrow1 li a:hover,
+.tabtree .tabrow1 li a span,
+.tabtree .tabrow1 li a:hover span {background-image:none !important;}
+
+.tabtree a.nolink,
+.tabtree .here ul a.nolink,
+.tabtree a.nolink:hover,
+.tabtree .here ul a.nolink:hover {color: #888;text-decoration: none;}
+.tabtree .here a.nolink,
+.tabtree .here ul .here a.nolink,
+.tabtree .here a.nolink:hover,
+.tabtree .here ul .here a.nolink:hover {color: black;text-decoration: none;}
+
+.ie7 .tabtree .tabrow0 li {margin-left: 0;}
+.ie7 .tabtree .tabrow0 li.first {margin-right: -4px;}
+.ie7 .tabtree .tabrow0 li.onerow {margin-right: 0;}
+.ie7 .tabtree .tabrow0 a {display: inline-block;padding: 8px 0 0.35em 13px;line-height: 1.5em;}
+.ie7 .tabtree .tabrow0 a span {padding: 10px 1em 10px 0;}
+.ie7 .tabtree .tabrow0 div {top: 2.6em;padding: 0.2em 0;}
+.ie7 .tabtree .tabrow0 div.empty {margin-right: 0;}
+.ie7.mod-quiz div.tabtree a span img.iconsmall {margin: 0;vertical-align: baseline;position: relative;top: 2px;}
+
+.ie6 .tabtree {height: 100%;}
+.ie6 .tabtree .tabrow0 {padding-top: 10px;}
+.ie6 .tabtree .tabrow0 li {margin-left: 0;}
+.ie6 .tabtree .tabrow0 li.first {margin-left: -4px;margin-right: -4px;}
+.ie6 .tabtree .tabrow0 li.last a {margin-right: 0;}
+.ie6 .tabtree .tabrow0 li.onerow {margin-right: 0;}
+.ie6 .tabtree .tabrow0 a {padding: 0 0 0 13px;}
+.ie6 .tabtree .tabrow0 a span {padding: 12px 1em 4px 0;}
+.ie6 .tabtree .tabrow0 div {top: 3.5em;padding: 0.2em 0;}
+
+
+
+/***
+ ***	Core: ProfileBlock 1.9
+
+
+#profileblock {
+	float: right;
+	text-align: right;
+	max-width: 500px;
+	right: 0px;
+
+
+}
+
+#profilepic {
+	text-align:right;
+	float: right;
+	margin: 8px;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #ffffff;
+}
+
+#profilelogin {
+	text-align:right;
+	width: 390px;
+	margin-right: 0px;
+	margin-top:6px;
+	margin-bottom:0px;
+	float: right;
+}
+
+#profilelogin ul li { 
+	padding-left: 10px;
+	padding-right: 0px;
+	display: inline; 
+	margin-right:0px;
+}
+
+.profilelogin .loginform { 
+	width: 8em;
+	margin-left:4px;
+	display: inline; 
+}
+
+.profilelogin, .profilelogin a {
+	color:#ffffff;
+	text-decoration: none;
+}
+
+.profilelogin, .profilelogin a:hover {
+	text-decoration:none;
+}
+
+#profilename {
+	text-align:left;
+	width: 390px;
+	margin-right: 0px;
+	margin-top:-50px;
+	margin-bottom:0px;
+	float: right;
+}
+
+#profilename ul li { 
+	padding-left: 10px;
+	padding-right: 0px;
+	display: inline; 
+	margin-right:0px;
+}
+
+.profilename .loginform { 
+width: 5em;
+margin-left:4px;
+display: inline; 
+    font-size:0.8em;
+
+}
+
+.profilename, .profilename a {
+	color:#ffffff;
+    font-size:1.4em;
+	letter-spacing: -2px;
+	text-decoration: none;
+	font-weight:bold;
+	margin-right:2px;
+}
+
+.profilename, .profilename a:hover {
+	text-decoration:none;
+}
+
+#profileoptions {
+	text-align:left;
+	width: 390px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+
+#profileoptions ul li { 
+	padding-left: 10px;
+	padding-right: 0px;
+	display: inline; 
+	margin-right:0px;
+}
+
+.profileoptions {
+	background-color: transparent;
+	color:#ffffff;
+	text-decoration: none;
+	letter-spacing: 0px;
+}
+
+.profileoptions, .profileoptions a {
+	background-color: transparent;
+	color:#ffffff;
+}
+
+.profileoptions a:hover {
+	background-color: transparent;
+	text-decoration:underline;
+}
+
+**/
+

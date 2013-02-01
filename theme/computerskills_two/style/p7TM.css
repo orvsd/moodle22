@@ -1,0 +1,27 @@
+
+#p7TMnav {
+	background-color: #29629A;
+	border: 2px ridge #FDFBEA;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+
+#p7TMnav div a {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FDFBEA;
+}
+
+#p7TMnav div {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: ridge;
+	border-top-color: #FDFBEA;
+	border-right-color: #FDFBEA;
+	border-bottom-color: #FDFBEA;
+	border-left-color: #FDFBEA;
+}

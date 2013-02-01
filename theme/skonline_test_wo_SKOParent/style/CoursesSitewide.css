@@ -1,0 +1,465 @@
+/*Formerly CourseCSSAutomated*/
+
+/*Tags*/
+
+/*div #region-main h1 {
+	font-size: 16px;
+}
+div #region-main h2 {
+	font-size: 14px;
+}
+div #region-main h3 {
+	font-size: 16px;
+	font-weight: bold;
+}
+div #region-main h4 {
+	margin-bottom: -1em;
+}
+div #region-main p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 1.4em;
+}*/
+/*div #region-main ol, ul {
+	zoom: 1; /*for proper layout next to floats in IE<=6*/
+	/*overflow: auto; /*for proper layout next to floats in other browsers*/
+
+/*}*/
+/*div #region-main li {
+	margin-bottom: 0.5em;
+	line-height: 1.4em;
+	margin-left: 3em;
+}
+div #region-main ol li{
+	list-style-position: outside;
+	list-style-type: decimal;
+}
+div #region-main ul li{
+	list-style-position: outside;
+	list-style-type:disc;
+	text-indent: 0px;
+}
+div #region-main ol li ul {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	list-style-type: disc;
+}
+div #region-main ol li ul li {
+	list-style: disc;
+}
+*/
+
+/*div #region-main dl {
+	margin-left: 30px;
+}
+div #region-main dd {
+	margin-bottom: 10px;
+}
+div #region-main dt {
+	font-weight: bold;
+}
+
+div #region-main td {
+	line-height: 1.4em;
+}
+*/
+
+div #region-main a[href^="http"] .ExternalLink {
+	background-image: url([[pix:theme|ExternalLinkIcon]]);
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 16px;
+	background-color: transparent;
+}
+/*div *region-main a[href^="http"] .ExternalLink:visited {
+	background-image:url([[pix:theme|ExternalLinkIconVisited]]);
+}*/
+/*Header Rules*/
+
+div #region-main #Header {
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width:100%;
+	z-index: 2;
+	display:block;
+	float: none;
+	height: auto;
+	visibility: visible;
+	border: 0px;
+
+	
+}
+
+div #region-main #HeaderLeft {
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin: 0px;
+	padding: 0px;
+	height: 80px;
+	width: auto;
+	position: absolute;
+	left: 0px;
+	z-index: 10;
+	top: 0px;
+	float: left;
+	width: auto;
+	
+}
+div #region-main #HeaderStretch {
+	background-repeat: repeat-x;
+	background-position: left top;
+	height: 80px;
+	width: 100%;
+	z-index: 3;
+	margin: 0px;
+	left: 0px;
+	position: relative;
+	padding: 0px;
+	
+}
+div #region-main #HeaderRight {
+	background-repeat: no-repeat;
+	background-position: right top;
+	height: 80px;
+	width: auto;
+	z-index: 4;
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 0;
+	right: 0px;
+	
+
+}
+
+
+
+/*Main Content Rules*/
+
+/*STYLES FOR #REGION-MAIN AJAX INCLUDES*/
+/*Prevents blocks from showing in main region via AJAX include*/
+div #region-main .block-region, div #region-main #page-header, div #region-main #page-footer {
+	display:none;
+}
+div #region-main #region-main {
+	margin-right: 0px;
+	margin-left: 200px;
+	padding-left:0px;
+	padding-right:0px;
+
+}
+div #region-main #region-main div.modified {
+	display:none;
+}
+/*#page-mod-assignment-view div #region-main-wrap #region-main {
+	background-color: #EEE;
+}*/
+
+div #region-main-wrap div #region-main-wrap #region-main {
+	background-color:#EEE;
+}
+
+#region-post-box #region-post-box {
+	background-color: #EEE;
+}
+/*To keep HTTP requests in their static position in Quizzes*/
+.DisplayBlock {
+	display:block;
+	clear:both;
+	margin-top: -1em;
+}
+
+/*END OF AJAX INCLUDES CSS----->*/
+
+
+#Announcements {
+	background-color:#CFFF9E;
+	padding:1em;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999;
+	border-right-color: #999;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	/*-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;*/
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+span#completionprogressid {
+	display: none;
+}
+#page-mod-lesson-view div#region-main div.box td {
+	vertical-align: top;
+}
+#page-mod-lesson-view div#region-main div.box td.TableHead {
+	background-color:#CCC;
+	font-weight:bold;
+	text-align: center;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: groove;
+	border-right-style: groove;
+	border-bottom-style: groove;
+	border-left-style: groove;
+	
+}
+#page-mod-lesson-view div#region-main h2.main {
+	text-align:left;
+}
+
+/*Hides Section Names*/
+#page-course-view-topics .sectionname {
+	display:none;
+}
+
+/*Prevents space between resource description and availability info*/
+div.contentafterlinkdimmed_text + div.availabilityinfo {
+	margin-top: -1em;
+}
+div.availabilityinfo {
+	margin-bottom: .5em;
+}
+
+/*Background color for quizzes*/
+.que .formulation {
+	background-color:#EEE;
+}
+/*Image Styles*/
+.ImageLeft {
+	float: left;
+	position: static;
+	margin-right: 15px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	border: 2px solid #000000;
+	clear: left;
+}
+
+
+.ImageRight {
+	float: right;
+	position: static;
+	margin-right: 0px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+	margin-left: 30px;
+	border: 2px outset #000000;
+}
+
+.ImageLeftBorderless {
+	float: left;
+	position: static;
+	margin-right: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	border: none;
+}
+
+.ImageRightBorderless {
+	float: right;
+	position: static;
+	margin-right: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+	border: none;
+}
+/*#ImageWCaption {
+	float: left;
+	padding: 0.5em;
+	text-align: center;
+	margin-top: 0.5em;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em;
+}
+#ImageWCaption p {
+	text-align: center;
+	font-style: italic;
+	font-size: smaller;
+	text-indent: 0;
+}*/
+#ImageWCaption, #CaptionedImage {
+	float: left;
+	width: auto;
+	border: 1px outset #000000;
+	padding: 5px;
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#ImageWCaption p, #CaptionedImage p {
+	font-size: smaller;
+	clear: left;
+	margin-top: 0.25em;
+}
+.ImageScaled {
+	width: 100%;
+}
+
+.TopOfPage {
+	font-size: 10px;
+	text-align: center;
+}
+
+
+.BoldBlack {
+	font-weight: bold;
+	color: #000000;
+}
+
+.ComprehensionCheck {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	background-color: #CCCCCC;
+	line-height: 20px;
+	padding: 5px;
+	width: auto;
+	border-top-width: 1px;
+	border-bottom-width: 3px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #333;
+	border-right-color: #333;
+	border-bottom-color: #333;
+	border-left-color: #333;
+	margin-top: 1em;
+}
+.TotalPts {
+	font-weight: bold;
+	background-color: #CCCCCC;
+}
+
+
+#CourseDescription {
+	padding: 20px;
+	float: right;
+	width: 30%;
+	margin-right: 0px;
+	margin-left: 30px;
+	border: 2px outset #000000;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	position: absolute;
+	top: 126px;
+	right: 32px;
+	height: auto;
+	visibility: visible;
+}
+#CourseDescription p {
+	font-size: 12px;
+}
+
+.Centered {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+.EndofUnit {
+	font-size: 12px;
+	font-weight: bold;
+	text-align: right;
+	border: 2px none #34689A;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	height: 22px;
+	padding-right: 10px;
+	padding-left: 30px;
+}
+
+.PopUpLayer {
+	background-color: #CCCCCC;
+	padding: 5px;
+	visibility: hidden;
+	height: auto;
+	width: 34%;
+	border: 2px outset #254A70;
+	z-index: 20;
+	display: inline;
+	float: left;
+	left: 33%;
+	text-align: left;
+	position: absolute;
+	color: #FFFFFF;
+}
+.Notes {
+	font-size: smaller;
+	overflow: scroll;
+}
+.Points {
+
+	font-size: smaller;
+	padding-left: 20px;
+	white-space: nowrap;
+	font-weight: normal;
+}
+
+
+
+.Hidden {
+	z-index: 100;
+	position: absolute;
+	visibility: hidden;
+	height: auto;
+	width: auto;
+	display: inline;
+}
+/*#RequiredReading {
+	background-color: #CCC;
+	padding: 10px;
+	width: 70%;
+	margin-right: 15%;
+	margin-left: 15%;
+	margin-bottom: 12px;
+	border-top-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	border-top-style: inset;
+	border-right-style: inset;
+	border-bottom-style: inset;
+	border-left-style: inset;
+	clear:both;
+}*/
+#RequiredReading p, #RequiredReading ul li, #RequiredReading a  {
+	color: #000;
+}
+#RequiredReading a:link {
+	border-bottom-style:dotted;
+	border-bottom-width:1px;
+}
+
+#RequiredReading h3 {
+	background-color:#000;
+	padding: 4px;
+	margin-top: -2px;
+	color:#CCC;
+}
+#TOCHide {
+	display: inline;
+}
+#TOCShow {
+	display: inline;
+}

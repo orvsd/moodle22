@@ -1,0 +1,393 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* gradients - second red border, first red border, top white space, blue lines */
+   
+
+
+div #region-main  tr#section-0 div.no-overflow div #Announcements {
+	/*For IE*/
+	background-color: #FEF6AD;
+	margin-top: 0;
+	margin-bottom: 5px;
+	
+	
+	/*For Everyone else*/
+	background-image: -webkit-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -webkit-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -webkit-linear-gradient(top, #FEF6AD 0px, #FEF6AD 69px, rgba(255,255,255,0) 70px), -webkit-repeating-linear-gradient(#FEF6AD 0px, #FEF6AD 18px, #A6FFED 19px, #FEF6AD 20px);
+	background-image: -moz-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -moz-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -moz-linear-gradient(top, #FEF6AD 0px, #FEF6AD 69px, rgba(255,255,255,0) 70px), -moz-repeating-linear-gradient(#FEF6AD 0px, #FEF6AD 18px, #A6FFED 19px, #FEF6AD 20px);
+	background-image: -ms-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -ms-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -ms-linear-gradient(top, #FEF6AD 0px, #FEF6AD 69px, rgba(255,255,255,0) 70px), -ms-repeating-linear-gradient(#FEF6AD 0px, #FEF6AD 18px, #A6FFED 19px, #FEF6AD 20px);
+	background-image: -o-linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), -o-linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), -o-linear-gradient(top, #FEF6AD 0px, #FEF6AD 69px, rgba(255,255,255,0) 70px), -o-repeating-linear-gradient(#FEF6AD 0px, #FEF6AD 18px, #A6FFED 19px, #FEF6AD 20px);
+	background-image: linear-gradient(left, rgba(255,85,91, .2), rgba(255,85,91, .2)), linear-gradient(left, rgba(255,85,91, .8), rgba(255,85,91, .8)), linear-gradient(top, #FEF6AD 0px, #FEF6AD 69px, rgba(255,255,255,0) 70px), repeating-linear-gradient(#FEF6AD 0px, #FEF6AD 18px, #A6FFED 19px, #FEF6AD 20px);
+	background-size: 1px, 1px, auto, auto 25px;
+	background-repeat: repeat-y, repeat-y, no-repeat, repeat;
+	background-position: 90% 0px, 10% 0px, 0px 0px, 0px 0px;
+	font-family: Shadows Into Light Two, sans-serif;  
+	
+	padding-top: 100px;
+    padding-left: 10.5%;
+    padding-right: 10.5%;
+	
+}
+
+
+div#region-main #Announcements p, div#region-main #Announcements li {
+	margin: 0;
+	display: block;
+	font-size: 14pt;
+	font-family: Shadows Into Light Two, sans-serif;
+	line-height: 25px;
+	letter-spacing: 2px;
+	vertical-align: text-bottom;
+}
+div#region-main #Announcements p + p {
+	margin-top: 25px;
+}
+div#region-main #Announcements ul, div#region-main #Announcements ol {
+	margin-top:25px;
+	margin-bottom: 25px;
+}
+div#region-main #Announcements ol + h1, div#region-main #Announcements ol + h2, div#region-main #Announcements ol + h3, div#region-main #Announcements ol + h4, div#region-main #Announcements ol + h5, div#region-main #Announcements ul + h1, div#region-main #Announcements ul + h2, div#region-main #Announcements ul + h3, div#region-main #Announcements ul + h4, div#region-main #Announcements ul + h5 {
+	margin-top:-17px;
+}
+div #region-main #Announcements ul li {
+	list-style-type:disc;
+}
+div #region-main #Announcements ol li {
+	list-style-type:decimal;
+}
+
+div#region-main #Announcements h1, div#region-main #Announcements h2, div#region-main #Announcements h3,
+div#region-main #Announcements h4, div#region-main #Announcements h5 {
+    font-family: Shadows Into Light Two, sans-serif;	
+    line-height: 50px;
+    /*vertical-align: baseline;*/
+	vertical-align: text-bottom;
+	margin:0;
+	margin-top:8px;
+	margin-bottom:-8px;
+}
+div#region-main #Announcements h1 {
+	font-size: 24pt;
+}
+div#region-main #Announcements h1:first-child {
+	margin-top:-52px;
+	margin-bottom: 0px;
+	color: maroon;
+}
+/* Creates a page punch hole  div#region-main #Announcements p:after {    
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 10px;
+    position: absolute;
+    background: rgba(255,255,255,1);
+    top: 40px;
+    left: 2%;
+    z-index: 10;
+    -webkit-box-shadow: 
+        inset 2px 2px 5px rgba(125,125,125,1),  
+        2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
+        2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
+        2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
+    -moz-box-shadow: 
+        inset 2px 2px 5px rgba(125,125,125,1),  
+        2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
+        2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
+        2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
+    box-shadow: 
+        inset 2px 2px 5px rgba(125,125,125,1),  
+        2px 50.1em 5px rgba(255,255,255,1), 0px 50em rgba(125,125,125,.75),  
+        2px 90.1em 5px rgba(255,255,255,1), 0px 90em rgba(125,125,125,.5),
+        2px 130.1em 5px rgba(255,255,255,1), 0px 130em rgba(125,125,125,.25);
+}*/
+
+#Announcements p:focus {
+    outline: none;
+}
+
+div #region-main #Header {
+	height: 85px;
+	border-radius: 6px;
+	-webkit-top-left-border-radius: 6px;
+	-webkit-bottom-right-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	
+	overflow: hidden;
+}
+div #region-main #HeaderLeft {
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 423px;
+	height: 85px;
+	background-image: url([[pix:theme|Banner]]);
+}
+
+div #region-main #HeaderStretch {
+	background-repeat: repeat;
+	background-position: right top;
+	background-image: url([[pix:theme|BG]]);
+	height: 85px;
+	
+}
+
+
+
+div #region-main a {
+	color: #2C6A7E;
+	text-decoration: none;
+	
+}
+div #region-main a:hover {
+	border-bottom:dotted;
+	border-width:1px;
+
+}
+div #region-main a:visited {
+	color:#A68C8E;
+}
+div#region-main span.commands a {
+	border:none;
+}
+
+#page-course-view-topics .sectionname {
+	display:none;
+}
+div #region-main #sectionatag-1, div #region-main #sectionatag-2, div #region-main #sectionatag-3, div #region-main #sectionatag-4, div #region-main #sectionatag-5, div #region-main #sectionatag-6, div #region-main #sectionatag-7, div #region-main #sectionatag-8, div #region-main #sectionatag-9, div #region-main #sectionatag-10, div #region-main #sectionatag-11, div #region-main #sectionatag-12, div #region-main #sectionatag-13, div #region-main #sectionatag-14, div #region-main #sectionatag-15 {
+	background-color: #C2E1EB;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #E3E3E3;
+	border-bottom-color: #E3E3E3;
+	border-top-color: #E3E3E3;
+	border-left-color: #E3E3E3;
+}
+div #region-main #sectionhead-1 td.cps_centre, div #region-main #sectionhead-2 td.cps_centre, div #region-main #sectionhead-3 td.cps_centre, div #region-main #sectionhead-4 td.cps_centre, div #region-main #sectionhead-5 td.cps_centre, div #region-main #sectionhead-6 td.cps_centre, div #region-main #sectionhead-7 td.cps_centre, div #region-main #sectionhead-8 td.cps_centre, div #region-main #sectionhead-9 td.cps_centre, div #region-main #sectionhead-10 td.cps_centre, div #region-main #sectionhead-11 td.cps_centre, div #region-main #sectionhead-12 td.cps_centre, div #region-main #sectionhead-13 td.cps_centre, div #region-main #sectionhead-14 td.cps_centre, div #region-main #sectionhead-15 td.cps_centre   {
+	color: #000;
+	background-color: #C2E1EB;
+}
+
+/* -- Set the clickable element of the Toggle -- */
+div #region-main #sectionhead-1 tr.cps td a {
+	background-image: url([[pix:theme|arrow_down]]); 
+
+}
+
+#region-main {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+div #region-main tr#section-0 div.no-overflow #Header {
+	margin-right:0px;
+	margin-bottom: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #999;
+	border-right-color: #999;
+	border-left-color: #CCC;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-bottom-style:none;
+	width: auto;
+}
+div #region-main tr#section-0 div.no-overflow {
+	margin-bottom:-1px;
+	
+}
+
+div #region-main h1 {
+	color: #4A423F;
+	font-family: Shadows Into Light Two, sans-serif;
+	letter-spacing:2px;
+}
+
+div #region-main h2, .book_chapter_title {
+	color: #4A423F;
+	font-family: Shadows Into Light Two, sans-serif;
+	letter-spacing:2px;
+}
+div #region-main h3 {
+	color: #A68C8E;
+	font-family: Shadows Into Light Two, sans-serif;
+	letter-spacing:2px;
+	
+}
+div #region-main dt {
+	font-weight:bold;
+}
+div #region-main td.content ul.section ul li{
+	margin-left:20px;
+	list-style:none;
+	background-image: url([[pix:theme|Bullet-Green-15px]]);
+	
+	padding-left:20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	*background-position: left 4px; /*For IE 7*/
+	_background-position: left 4px; /*For IE 6*/
+	overflow: hidden;
+}
+
+div #region-main td.content ul.section ul li.TabbedPanelsTab, div #region-main ul li.TabbedPanelsTab {
+	margin-left:0px;
+	background-image: none;
+	overflow:auto;
+
+}
+div #region-main td.content ul.section ul ul li {
+	margin-left:20px;
+	list-style:none;
+	background-image: url([[pix:theme|Bullet-Black-12px]]);
+	padding-left:20px;
+	background-repeat:no-repeat;
+	background-position: left center;
+}
+div.ImageScaleContainer {
+	max-width: 620px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	padding: 0px;
+}
+
+	
+img.ImageScale {
+	max-width: 100%;
+	height: auto;
+ 	width: auto/9; /* ie8 */
+}
+img.ImageScaleContainer a:hover {
+	border: none;
+}
+	
+div #region-main div #region-main .book_content {
+	font-weight:normal;
+}
+div.InfoToKnow {
+	margin: 10px 30px 10px 0px;
+	padding: 10px;
+	border-top-width: 3px;
+	border-bottom-width: 5px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #A68C8E;
+	border-right-color: #A68C8E;
+	border-bottom-color: #A68C8E;
+	border-left-color: #A68C8E;
+	background-color: #4A423F;
+	color: #FFF7F8;
+	float: left;
+	display: block;
+	width: 50%;
+}
+
+div.InfoToKnow p {
+	font-size: 13px;
+	line-height: 1.5em;
+	font-weight: normal;
+	color: #FFF7F8;
+}
+
+div.InfoToKnow a {
+	color: #9BBCDD;
+	font-weight: bold;
+}
+div.InfoToKnow h2 {
+	color: #9BBCDD;
+	font-size: 18px;
+}
+
+.Read {
+	background-image:url([[pix:theme|Book]]);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 35px;
+	font-size:150%;
+	font-weight:bold;
+}
+.pullquote {
+	float: right;
+	width: 180px;
+	margin-top: 2px;
+	border-style: solid;
+	border-color: #016D00;
+	border-width: 7px 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	margin-left: 10px;
+	color: #018201;
+	font-weight: bold;
+	font-size: 1em;
+	text-align: left;
+} 
+div.Highlight {
+	background-color: #C9E4ED;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: auto;
+	padding: 10px;
+	border: 2px outset #76BBD1;
+}
+div.Highlight h2, div.Highlight h3, div#TextRotatorWrapper.Highlight h3 {
+	color: #4A423F;
+}
+span.Highlight {
+	background-color: #C9E4ED;
+	padding: 2px;
+
+}
+div.RequiredReading {
+	background-color: #C9E4ED;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 7px;
+	border: 1px solid #2C6A7E;
+	border-radius: 6px;
+	-webkit-top-left-border-radius: 6px; 
+	-webkit-bottom-right-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	/* For IE 8 */ 
+   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+
+   /* For IE 5.5 - 7 */ 
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); 
+}
+div.RequiredReading p, div #RequiredReading ul li, div #RequiredReading a {	
+	color: #000;
+}
+div.RequiredReading a:hover {
+	text-decoration:underline;
+}
+div.RequiredReading a:visited {
+	color: #333;
+}
+div.RequiredReading h3 {
+	color: #362251;
+	background-color:transparent;
+}
+.BoldColor {
+	font-weight: bold;
+	color: #CC6600;
+}

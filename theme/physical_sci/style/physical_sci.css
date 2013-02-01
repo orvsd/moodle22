@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* CSS Document */
+
+#HeaderStretch.S2 {
+	background-image: url([[pix:theme|BannerS2]]);
+	background-repeat: no-repeat;
+	background-color:#000;
+}
+
+#HeaderStretch.S1 {
+	background-image: url([[pix:theme|BannerS1]]);
+}
+
+div.course-content h1 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #EF7505;
+	margin-bottom: 0.5em;
+}
+div.course-content h2 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #FA8925;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+div.course-content h3 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #006600;
+	margin-bottom: .5em;
+}
+div.course-content h4 {
+	color: #000;
+	font-size: 14px;
+}
+
+
+div.course-content strong {
+	font-weight: bold;
+	color: #266CD5;
+}
+
+#Highlight {
+	background-color: #FDF9D5;
+	padding: 10px;
+	border-top-width: thick;
+	border-bottom-width: medium;
+	border-top-style: ridge;
+	border-bottom-style: solid;
+	border-top-color: #FF5500;
+	border-right-color: #FF5500;
+	border-bottom-color: #FF5500;
+	border-left-color: #FF5500;
+	margin-right: 50px;
+	margin-left: 20px;
+	z-index: 12;
+	display: block;
+	clear: left;
+	margin-bottom: 10px;
+	float: left;
+}
+
+#page-mod-lesson-view div#region-main {
+	background-color:#BFDFFF;
+}
+.Example {
+	color: #990000;
+}
+
+.Assessment {
+	background-color: #F6E656;
+	border-top-width: 2px;
+	border-bottom-width: 4px;
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	border-top-color: #FF5500;
+	border-bottom-color: #FF5500;
+}
+.Preview {
+	background-color: #F6E656;
+	border-top-width: 1px;
+	border-bottom-width: 2px;
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	border-top-color: #FF5500;
+	border-bottom-color: #FF5500;
+	clear: left;
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-decoration: none;
+}
+
+.ImageRight {
+	float: right;
+
+}
+div.course-content table {
+	padding: 4px;
+	border: 1px solid;
+}
+div.course-content td {
+	padding: 4px;
+	border: 1px solid #000000;
+}
+
+.SubScript {
+	vertical-align: sub;
+	font-size: 75%;
+}
+
+.NoBorder {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+
+#SideBySideComparison {
+	text-align: center;
+	display: inline;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	float: left;
+	margin: 10px;
+}
+#SideBySideComparisonContainer {
+	display: block;
+	width: 425px;
+	text-align: center;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+.Formula {
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	background-color: #EF7505;
+	padding: 5px;
+	width: 50%;
+	margin-right: 25%;
+	margin-left: 25%;
+	border: medium ridge #AD5403;
+}
+
+div.course-content hr {
+	width: 70%;
+	margin-right: 15%;
+	margin-left: 15%;
+}
+#ImageWCaption p {
+	font-size: 12px;
+	font-style: normal;
+	text-align: left;
+}
+
+

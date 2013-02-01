@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+div #region-main #HeaderStretch {
+		background-image: url([[pix:theme|BannerBR]]);
+	background-color: #382514;
+	height: 55px;
+	background-repeat:no-repeat;
+}
+
+
+div #region-main h1 {
+	color: #836541;
+}
+
+div #region-main h2 {
+  	font-weight: bold;
+	color: #1C5E30;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div #region-main h2.headingblock {
+	color:#000000;
+}
+
+div #region-main h3 {
+	color: #006699;
+}

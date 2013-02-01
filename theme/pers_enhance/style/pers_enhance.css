@@ -1,0 +1,274 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+div #region-main #Header {
+	height: 85px;
+}
+div #region-main #HeaderStretch {
+	background-image:url([[pix:theme|BannerLeft]]);
+	background-position: 0px bottom;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	height:85px;
+}
+div #region-main #HeaderRight {
+	background-image:url([[pix:theme|BannerRight]]);
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 107px;
+	height:85px;
+	background-color: transparent;
+	z-index:10;
+}
+div #region-main img.HeaderText {
+	position: relative;
+	left: 30px;
+	top: 10px;
+}
+
+div #region-main h1, #page-mod-lesson-view span#maincontent+h2.main {
+	color: #0000CE;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	padding-top: 3px;
+	padding-bottom:3px;
+	margin-top: 0px;
+	font-size: 1.75em;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-top-color: #000;
+} 
+
+#page-mod-lesson-view p {
+	font-weight:normal;
+}
+div #region-main h2 {
+	color: #C00;
+	text-indent: 22px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	font-size: 1.5em;
+	clear: both;
+	margin-top: 0;
+}
+#page-mod-page-view h2 a.autolink {
+    color: #FFF;
+}
+div #region-main h2.main {
+	text-align:left;
+}
+
+div #region-main h1+h2 {
+	font-size: 18px;
+	color: #B90000;
+	background-color: transparent;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-left: 0px;
+	text-indent: 0;
+	clear: none;
+}
+
+div #region-main h3 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #33F;
+	margin-bottom: 0;
+	margin-top: 6px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div #region-main h3.LessonAssignmentLabel {
+	margin-bottom: 12px;
+	margin-top: 6px;
+}
+
+div #region-main h4 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF4848;
+}
+div #region-main h5 {
+	font-weight: bold;
+	color: #000000;
+	font-size: 14px;
+}
+/*div #region-main td {
+	margin: 10px;
+	padding-top: 5px;
+	padding-right: 7px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}*/
+
+div #region-main a.glossary {
+	text-decoration:none;
+	border-bottom:dotted;
+	border-bottom-color: #00F;
+	border-bottom-width: 1px;
+}
+img a {
+	border-bottom:none;
+}
+
+div #region-main h2.headingblock, h2#pageheading.main, #page-mod-glossary-view h2.main {
+	color: #333;
+	background-color: transparent;
+	border:none;
+	text-indent: 0;
+}
+ 
+#page-course-view-topics h3.sectionname {
+	display:none;
+}
+
+div #region-main div.TabbedPanels h2 {
+	background-color: transparent;
+	color:#4747A4;
+	border:none;
+	text-indent:0;
+}
+#page-mod-dataform-view td.cell.c0, #dataform td.cell.c1 {
+	width:50%;
+}
+
+
+
+table.Comments {
+	background-color:#EFEFEF;
+	border: 1px;
+}
+	
+.OSInstructions {
+	font-weight: bold;
+	margin-bottom: .1em;
+}
+
+#h2Float {
+	background-image: url(file:///C|/Documents%20and%20Settings/Warden_Kimber/My%20Documents/My%20Webs/SKOMoodle/courses/pe-health/HZ208217000New/images/TrebleClef60pt.gif);
+	float: left;
+	height: 60px;
+	width: 22px;
+	position: relative;
+	top: -13px;
+	left: 7px;
+}
+
+#Highlight {
+	background-color: #9999FF;
+	padding: 15px;
+	margin-right: 200px;
+	margin-left: 25px;
+	border: 3px ridge;
+	margin-bottom: 20px;
+}
+.TabbedPanelsContent div#Highlight {
+	background-color:#9999FF;
+}
+#Announcements {
+	background-color:#F5DB00;
+}
+	
+.Assessment {
+	background-image: url(file:///C|/Documents%20and%20Settings/Warden_Kimber/My%20Documents/My%20Webs/SKOMoodle/courses/pe-health/HZ209217000/images/Banner.jpg);
+	background-repeat: no-repeat;
+	color: #FFF;
+	font-size: 24px;
+	background-color: #000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 1.3em;
+	font-weight: 700;
+	border-top-width: 4px;
+	border-bottom-width: 2px;
+	border-top-style: ridge;
+	border-top-color: #4C264C;
+	border-right-color: #4C264C;
+	border-bottom-color: #4C264C;
+	border-left-color: #4C264C;
+	background-position: right top;
+	filter: Alpha(Opacity=60%, FinishOpacity=60%, StartX=0, StartY=0, FinishX=0, FinishY=0);
+	height: auto;
+	border-bottom-style: ridge;
+	padding-top: 5px;
+}
+
+
+
+
+.Credit {
+	text-align: right;
+	font-size: 80%;
+}
+/*For Non-IE Only. IE handled with conditional comment.*/
+#CoinPositioning {
+	overflow: hidden;
+	z-index: 99;
+	left: -180px;
+	top: 0px;
+	position: relative;
+	
+}
+/*For Opera Only*/
+@media all and (min-width: 0px){
+   #CoinPositioning {
+   left: 0;
+   margin-left: -180px;
+   }
+}
+.UnitHead {
+	color: #6D023A;
+	text-align: center;
+	text-transform: uppercase;
+}
+.CenterDiv {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+
+div #RequiredReading {
+	background-color: #D9D9FD;
+	border-top-color: #362251;
+	border-right-color: #362251;
+	border-bottom-color: #362251;
+	border-left-color: #362251;
+}
+div #RequiredReading p, div #RequiredReading ul li, div #RequiredReading a {	
+	color: #000;
+}
+div #RequiredReading a:hover {
+	text-decoration:underline;
+}
+div #RequiredReading a:visited {
+	color: #333;
+}
+div #RequiredReading h3 {
+	color: #362251;
+	background-color:transparent;
+}
+#webstunning_video_player {
+	border: medium solid #09C;
+}
+
+span.instancename {
+	font-weight:bold;
+}
+span.cardiovascular {
+	font-weight:bold;
+	color:#09F;
+}
+span.flexibility {
+	font-weight:bold;
+	color:#090;
+}
+span.strength {
+	font-weight:bold;
+	color:#900;
+}

@@ -1,0 +1,13 @@
+@media print {
+
+/* CSS Document */
+
+div#region-pre, div#region-post, div#page-header, div#page-footer {
+	display:none;
+}
+div#region-main {
+	width:100%;
+	position:relative;
+	left: -250px;
+	
+}
