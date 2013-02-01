@@ -214,9 +214,13 @@ class mod_forumng_renderer extends plugin_renderer_base {
 
         // Author
         $poster = $discussion->get_poster();
+        $picture = $this->user_picture($poster, array('courseid' => $courseid));
+        if ($discussion->get_forum()->is_shared()) {
+            // Strip course id if shared forum.
+            $picture = str_replace('&amp;course=' . $courseid, '', $picture);
+        }
         $result .= "<td class='forumng-startedby cell c1'>" .
-            $this->user_picture($poster, array('courseid' => $courseid)) .
-            $discussion->get_forum()->display_user_link($poster) . "</td>";
+            $picture . $discussion->get_forum()->display_user_link($poster) . "</td>";
 
         $num = 2;
 
@@ -262,10 +266,7 @@ class mod_forumng_renderer extends plugin_renderer_base {
 
         $result .= '<td class="cell c' . $num .' lastcol forumng-lastpost">' .
             mod_forumng_utils::display_date($discussion->get_time_modified()) . "<br/>" .
-            "<a href='{$CFG->wwwroot}/user/view.php?id={$last->id}&amp;" .
-            "course=$courseid'>" . fullname($last, has_capability(
-                'moodle/site:viewfullnames',
-                $discussion->get_forum()->get_context())) . "</a></td>";
+            $discussion->get_forum()->display_user_link($last) . "</td>";
 
         $result .= "</tr>";
         return $result;
@@ -664,7 +665,7 @@ class mod_forumng_renderer extends plugin_renderer_base {
             $submit = 'submitunsubscribe';
             $button = get_string('unsubscribediscussion', 'forumng');
         }
-        return '<div class="forumng-subscribe-options" id="forumng-subscribe-options">' .
+        return '<div class="clearfix"></div><div class="forumng-subscribe-options" id="forumng-subscribe-options">' .
             '<h3>' . get_string('subscription', 'forumng') . '</h3>' .
             '<p>' . $status .
             '</p>' . '&nbsp;<form action="subscribe.php" method="post"><div>' .
@@ -1083,7 +1084,7 @@ class mod_forumng_renderer extends plugin_renderer_base {
             }
 
             if ($html) {
-                $out .= $lf . '<div class="forumng-postfooter">';
+                $out .= $lf . '<div class="clear forumng-postfooter">';
             }
 
             // Ratings
