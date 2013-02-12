@@ -45,22 +45,39 @@ function orvsd_update($event_data) {
     $ws_config = $DB->get_record('config', array('name'=>'enablewebservices'));
     $protocols_config = $DB->get_record('config', array('name'=>'webserviceprotocols'));
 
-    $ws_config->value = 1;
-    $DB->update_record('config', $ws_config);
+    if ($ws_config->value == 0) {
+        echo "Web Services is off, turning it on now... ";
+        $ws_config->value = 1;
+        $success = $DB->update_record('config', $ws_config);
+        if ($success) {
+            echo "Success!<br>";
+        } else {
+            echo "Failed!<br>";
+        }
+    }
 
-    if(!strpos($protocols_config->value, "rest") === false) {
-      $protocols_config->value .= ',rest';
-      $DB->update_record('config', $protocols_config);
+    if(strpos($protocols_config->value, "rest") === false) {
+        echo "Web Services REST protocol is not enabled, enabling now... ";
+        $protocols_config->value .= ',rest';
+        $success = $DB->update_record('config', $protocols_config);
+
+        if ($success) {
+            echo "Success!<br>";
+        } else {
+            echo "Failed!<br>";
+        }
     }
 
     $service_id = $DB->get_field('external_services', 
       'id', array('component'=>'local_orvsd'), IGNORE_MISSING);
 
     if($service_id) {
-      $token_id = $DB->get_field('external_tokens', 
-          'id', array('externalserviceid'=>$service_id), IGNORE_MISSING);
+        echo "Create Course web service is already installed, updating... <br>";
+        $token_id = $DB->get_field('external_tokens', 
+            'id', array('externalserviceid'=>$service_id), IGNORE_MISSING);
     } else {
-      $token_id = false ;
+        echo "Create Course web service is not already installed, installing... <br>";
+        $token_id = false ;
     }
 
     $external_token = new stdClass();
@@ -76,9 +93,7 @@ function orvsd_update($event_data) {
 
     if($service_id) { 
       if($token_id) {
-        print_r("no service_id and token_id!\n");
-        print_r("service_id: " . $service_id . " - token_id: " . $token_id . "\n");
-
+        echo "Updating Create Course token for user Admin... <br>";
         $external_token->externalserviceid = $service_id;
         $external_token->id = $token_id;
 
@@ -89,6 +104,7 @@ function orvsd_update($event_data) {
             return false;
         }
       } else {
+        echo "Installing Create Course token for user Admin... <br>";
         $external_token->externalserviceid = $service_id;
         try {
             $DB->insert_record('external_tokens', $external_token);
@@ -100,8 +116,9 @@ function orvsd_update($event_data) {
     } else {
       $tmp = $DB->get_records_sql('SHOW TABLE STATUS WHERE name = "mdl_external_services"',null);
 
-      $service_id = $tmp['mdl_external_services']->auto_increment + 1;
+      $service_id = $tmp['mdl_external_services']->auto_increment;
       $external_token->externalserviceid = $service_id;
+      echo "Installing Create Course token for user Admin... <br>";
 
       try {
           $DB->insert_record('external_tokens', $external_token);
