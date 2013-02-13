@@ -56,15 +56,30 @@ function orvsd_update($event_data) {
         }
     }
 
-    if(strpos($protocols_config->value, "rest") === false) {
+    if (!$protocols_config) {
+        $protocols_config = new stdClass();
+        $protocols_config->name = 'webserviceprotocols';   
+        $protocols_config->value = 'rest';
         echo "Web Services REST protocol is not enabled, enabling now... ";
-        $protocols_config->value .= ',rest';
-        $success = $DB->update_record('config', $protocols_config);
-
+        $success = $DB->insert_record('config', $protocols_config);
         if ($success) {
             echo "Success!<br>";
         } else {
             echo "Failed!<br>";
+        }
+
+    } else {
+        if(strpos($protocols_config->value, "rest") === false) {
+
+            echo "Web Services REST protocol is not enabled, enabling now... ";
+            $protocols_config->value .= ',rest';
+            $success = $DB->update_record('config', $protocols_config);
+
+            if ($success) {
+                echo "Success!<br>";
+            } else {
+                echo "Failed!<br>";
+            }
         }
     }
 
@@ -100,7 +115,7 @@ function orvsd_update($event_data) {
         try {
             $DB->update_record('external_tokens', $external_token);
         } catch (Exception $e) {
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
+            echo 'Caught exception: ',  $e->getMessage(), "<br>";
             return false;
         }
       } else {
