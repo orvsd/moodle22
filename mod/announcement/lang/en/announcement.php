@@ -24,9 +24,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['announcementtext'] = 'announcement text';
-$string['modulename'] = 'announcement';
+$string['announcementtext'] = 'Announcement text';
+$string['modulename'] = 'Announcement';
 $string['modulename_help'] = 'A announcement enables text and images to be inserted among the activity links on the course page.';
-$string['modulenameplural'] = 'announcements';
-$string['pluginadministration'] = 'announcement administration';
-$string['pluginname'] = 'announcement';
+$string['modulenameplural'] = 'Announcements';
+$string['pluginadministration'] = 'Announcement administration';
+$string['pluginname'] = 'Announcement';

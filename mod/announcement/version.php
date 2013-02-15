@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * announcement module version info
+ * Announcement module version info
  *
  * @package    mod
  * @subpackage announcement

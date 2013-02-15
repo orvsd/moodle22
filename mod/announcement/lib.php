@@ -26,11 +26,11 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-/** announcement_MAX_NAME_LENGTH = 50 */
-define("announcement_MAX_NAME_LENGTH", 50);
+/** LABEL_MAX_NAME_LENGTH = 50 */
+define("LABEL_MAX_NAME_LENGTH", 50);
 
 /**
- * @uses announcement_MAX_NAME_LENGTH
+ * @uses LABEL_MAX_NAME_LENGTH
  * @param object $announcement
  * @return string
  */
@@ -38,8 +38,8 @@ function get_announcement_name($announcement) {
     $textlib = textlib_get_instance();
 
     $name = strip_tags(format_string($announcement->intro,true));
-    if ($textlib->strlen($name) > announcement_MAX_NAME_LENGTH) {
-        $name = $textlib->substr($name, 0, announcement_MAX_NAME_LENGTH)."...";
+    if ($textlib->strlen($name) > LABEL_MAX_NAME_LENGTH) {
+        $name = $textlib->substr($name, 0, LABEL_MAX_NAME_LENGTH)."...";
     }
 
     if (empty($name)) {
