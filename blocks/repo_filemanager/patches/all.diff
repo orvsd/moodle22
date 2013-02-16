@@ -1,0 +1,105 @@
+diff -bur moodle/lib/form/filemanager.js html/lib/form/filemanager.js
+--- moodle/lib/form/filemanager.js	2011-05-05 01:03:51.000000000 +0100
++++ html/lib/form/filemanager.js	2011-05-16 14:09:27.000000000 +0100
+@@ -173,6 +173,25 @@
+             var button_download = Y.one("#btndwn-"+this.client_id);
+             var button_create   = Y.one("#btncrt-"+this.client_id);
+             var button_addfile  = Y.one("#btnadd-"+this.client_id);
++            var button_refresh  = Y.one("#btnrfh-"+this.client_id);
++            var button_repoman  = Y.one("#btnrpm-"+this.client_id);
++
++            button_refresh.on('click', function(e) {
++                this.refresh(this.currentpath);
++            }, this);
++
++            button_repoman.on('click', function(e) {
++                var url=M.cfg.wwwroot+"/blocks/repo_filemanager/index.php?"+
++                    "id="+courseid+"&"+
++                    "ctx_id="+this.filepicker_options.context.id+"&"+
++                    "itemid="+this.options.itemid+"&"+
++                    "choose=mdl2&"+
++                    "listonly=2&"+
++                    "client_id="+this.client_id+"&"+
++                    "savepath="+this.currentpath+"&"+
++                    "draftpath="+this.currentpath;
++                window.open(url, 'repofilemanager', 'width=900,height=500,status=yes,toolbar=no,menubar=no,scrollbars=yes,resizable=1');
++            }, this);
+ 
+             // setup 'add file' button
+             // if maxfiles == -1, the no limit
+diff -bur moodle/lib/form/filemanager.php html/lib/form/filemanager.php
+--- moodle/lib/form/filemanager.php	2011-04-14 01:03:36.000000000 +0100
++++ html/lib/form/filemanager.php	2011-05-16 14:09:27.000000000 +0100
+@@ -238,7 +238,7 @@
+  * @return string HTML fragment
+  */
+ function form_filemanager_render($options) {
+-    global $CFG, $OUTPUT, $PAGE;
++    global $CFG, $OUTPUT, $PAGE, $COURSE;
+ 
+     $fm = new form_filemanaer_x($options); //TODO: this is unnecessary here, the nested options are getting too complex
+ 
+@@ -250,6 +250,8 @@
+     $strmakedir  = get_string('makeafolder', 'moodle');
+     $strdownload = get_string('downloadfolder', 'repository');
+     $strloading  = get_string('loading', 'repository');
++    $strrefresh = get_string("refreshlist", "block_repo_filemanager");
++    $struserepoman = get_string("userepoman", "block_repo_filemanager");
+ 
+     $icon_progress = $OUTPUT->pix_icon('i/loading_small', $strloading).'';
+ 
+@@ -283,6 +285,9 @@
+         <input type="button" class="fm-btn-add" id="btnadd-{$client_id}" onclick="return false" value="{$straddfile}" />
+         <input type="button" class="fm-btn-mkdir" id="btncrt-{$client_id}" onclick="return false" value="{$strmakedir}" />
+         <input type="button" class="fm-btn-download" id="btndwn-{$client_id}" onclick="return false" {$extra} value="{$strdownload}" />
++        <input type="button" class="fm-btn-refresh" id="btnrfh-{$client_id}" onclick="return false"  value=" $strrefresh" />
++        <input type="button" class="fm-btn-add" id="btnrpm-{$client_id}" onclick="return false;"  value=" $struserepoman" />
++        <br />
+         <span> $maxsize </span>
+     </div>
+     <div class="filemanager-container" id="filemanager-{$client_id}">
+@@ -335,6 +340,25 @@
+     $html .= "<div><object type='text/html' data='$filemanagerurl' height='160' width='600' style='border:1px solid #000'></object></div>";
+     $html .= '</noscript>';
+ 
++    /**
++    * This method exists because I can't find a way to directly trigger the refresh function within the file manager
++    * furthermore, document.getElementByID persistently fails to find the button object, so we have to search all
++    * of the button objects on the page for the correct one and then trigger it
++    **/
++
++    $html .= "<script type=\"text/javascript\">\n".
++             " var courseid=".$PAGE->course->id.";\n".
++             " function refresh_".$client_id."()\n".
++             " {\n".
++             "  var x=document.getElementsByTagName(\"input\");\n".
++             "  for (var i=0; i<x.length; i++)\n".
++             "   if (x[i].id==\"btnrfh-".$client_id."\")\n".
++             "   {\n".
++             "    x[i].click();\n".
++             "    break;\n".
++             "   }\n".
++             " }\n".
++             "</script>\n";
+ 
+     return $html;
+ }
+diff -bur moodle/repository/draftfiles_manager.php html/repository/draftfiles_manager.php
+--- moodle/repository/draftfiles_manager.php	2010-09-21 18:32:21.000000000 +0100
++++ html/repository/draftfiles_manager.php	2011-05-16 14:09:27.000000000 +0100
+@@ -295,6 +295,15 @@
+         $home_url->param('action', 'downloaddir');
+         echo html_writer::link($home_url, get_string('downloadfolder', 'repository'), array('target'=>'_blank'));
+     }
++
++    $home_url->param('action', 'browse');
++    echo html_writer::link($home_url, get_string('refreshlist', 'block_repo_filemanager'));
++
++    $repo_params=array('id'=>$courseid, 'choose'=>'mdl2', 'listonly'=>2, 'ctx_id'=>$PAGE->context->id,
++        'itemid'=>$itemid, 'savepath'=>$draftpath, 'draftpath'=>$draftpath);
++    $repo_manager_url = new moodle_url($CFG->httpswwwroot."/blocks/repo_filemanager/index.php", $repo_params);
++    echo html_writer::link($repo_manager_url, get_string("userepoman", "block_repo_filemanager"), array('target'=>'_blank'));
++
+     echo '</div>';
+ 
+     if (!empty($files->list)) {
