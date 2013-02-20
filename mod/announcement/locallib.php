@@ -15,12 +15,11 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 /**
- * Defines the version of announcement
+ * Internal library of functions for module announcement
  *
- * This code fragment is called by moodle_needs_upgrading() and
- * /admin/index.php
+ * All the announcement specific functions, needed to implement the module
+ * logic, should go here. Never include this file from your lib.php!
  *
  * @package    mod
  * @subpackage announcement
@@ -30,8 +29,12 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$module->version   = 2013021900;               // If version == 0 then module will not be installed
-//$module->version   = 2010032200;      // The current module version (Date: YYYYMMDDXX)
-$module->requires  = 2010031900;      // Requires this Moodle version
-$module->cron      = 0;               // Period for cron to check this module (secs)
-$module->component = 'mod_announcement'; // To check on upgrade, that module sits in correct place
+/**
+ * Does something really useful with the passed things
+ *
+ * @param array $things
+ * @return object
+ */
+//function announcement_do_something_useful(array $things) {
+//    return new stdClass();
+//}

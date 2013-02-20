@@ -15,18 +15,27 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+
 /**
- * Strings for component 'announcement', language 'en', branch 'MOODLE_20_STABLE'
+ * English strings for announcement
+ *
+ * You can have a rather longer description of the file as well,
+ * if you like, and it can span multiple lines.
  *
  * @package    mod
  * @subpackage announcement
- * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @copyright  2011 Your Name
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['announcementtext'] = 'Announcement text';
-$string['modulename'] = 'Announcement';
-$string['modulename_help'] = 'A announcement enables text and images to be inserted among the activity links on the course page.';
-$string['modulenameplural'] = 'Announcements';
-$string['pluginadministration'] = 'Announcement administration';
-$string['pluginname'] = 'Announcement';
+defined('MOODLE_INTERNAL') || die();
+
+$string['modulename'] = 'announcement';
+$string['modulenameplural'] = 'announcements';
+$string['modulename_help'] = 'Use the announcement module for... | The announcement module allows...';
+$string['announcementfieldset'] = 'Custom example fieldset';
+$string['announcementname'] = 'announcement name';
+$string['announcementname_help'] = 'This is the content of the help tooltip associated with the announcementname field. Markdown syntax is supported.';
+$string['announcement'] = 'announcement';
+$string['pluginadministration'] = 'announcement administration';
+$string['pluginname'] = 'announcement';

@@ -15,23 +15,22 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 /**
- * Defines the version of announcement
- *
- * This code fragment is called by moodle_needs_upgrading() and
- * /admin/index.php
+ * Library of functions and constants for module announcement
  *
  * @package    mod
  * @subpackage announcement
- * @copyright  2011 Your Name
+ * @copyright  2003 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+require_once("../../config.php");
+require_once("lib.php");
 
-$module->version   = 2013021900;               // If version == 0 then module will not be installed
-//$module->version   = 2010032200;      // The current module version (Date: YYYYMMDDXX)
-$module->requires  = 2010031900;      // Requires this Moodle version
-$module->cron      = 0;               // Period for cron to check this module (secs)
-$module->component = 'mod_announcement'; // To check on upgrade, that module sits in correct place
+$id = required_param('id',PARAM_INT);   // course
+
+$PAGE->set_url('/mod/announcement/index.php', array('id'=>$id));
+
+redirect("$CFG->wwwroot/course/view.php?id=$id");
+
+
