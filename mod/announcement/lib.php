@@ -64,6 +64,12 @@ function announcement_add_instance($announcement) {
 
     $announcement->name = get_announcement_name($announcement);
     $announcement->timemodified = time();
+<<<<<<< HEAD
+=======
+
+
+ 
+>>>>>>> parent of bd5cf17... Revert "Updating announcement"
 
     return $DB->insert_record("announcement", $announcement);
 }
@@ -80,7 +86,11 @@ function announcement_add_instance($announcement) {
 function announcement_update_instance($announcement) {
     global $DB;
 
+<<<<<<< HEAD
     $announcement->name = get_announcement_name($announcement);
+=======
+	$announcement->name = get_announcement_name($announcement);
+>>>>>>> parent of bd5cf17... Revert "Updating announcement"
     $announcement->timemodified = time();
     $announcement->id = $announcement->instance;
 
@@ -103,6 +113,7 @@ function announcement_delete_instance($id) {
         return false;
     }
 
+<<<<<<< HEAD
     $result = true;
 
     if (! $DB->delete_records("announcement", array("id"=>$announcement->id))) {
@@ -125,6 +136,21 @@ function announcement_get_participants($announcementid) {
     return false;
 }
 
+=======
+    # Delete any dependent records here #
+
+    $result = true;
+
+    if (! $DB->delete_records("label", array("id"=>$label->id))) {
+        $result = false;
+    }
+
+    return $result;
+}
+
+
+
+>>>>>>> parent of bd5cf17... Revert "Updating announcement"
 /**
  * Given a course_module object, this function returns any
  * "extra" information that may be needed when printing

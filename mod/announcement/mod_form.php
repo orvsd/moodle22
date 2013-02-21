@@ -34,7 +34,11 @@ class mod_announcement_mod_form extends moodleform_mod {
 
         $mform = $this->_form;
 
+<<<<<<< HEAD
         $this->add_intro_editor(true, get_string('announcementtext', 'announcement'));
+=======
+        $this->add_intro_editor(true, get_string('labeltext', 'label'));
+>>>>>>> parent of bd5cf17... Revert "Updating announcement"
 
         $this->standard_coursemodule_elements();
 
@@ -44,4 +48,8 @@ class mod_announcement_mod_form extends moodleform_mod {
 
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> parent of bd5cf17... Revert "Updating announcement"
