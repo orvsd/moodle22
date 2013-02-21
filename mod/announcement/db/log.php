@@ -18,23 +18,15 @@
 /**
  * Definition of log events
  *
- * NOTE: this is an example how to insert log event during installation/update.
- * It is not really essential to know about it, but these logs were created as example
- * in the previous 1.9 NEWMODULE.
- *
  * @package    mod
  * @subpackage announcement
- * @copyright  2011 Your Name <your@email.adress>
+ * @copyright  2010 Petr Skoda (http://skodak.org)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-global $DB;
-
 $logs = array(
     array('module'=>'announcement', 'action'=>'add', 'mtable'=>'announcement', 'field'=>'name'),
     array('module'=>'announcement', 'action'=>'update', 'mtable'=>'announcement', 'field'=>'name'),
-    array('module'=>'announcement', 'action'=>'view', 'mtable'=>'announcement', 'field'=>'name'),
-    array('module'=>'announcement', 'action'=>'view all', 'mtable'=>'announcement', 'field'=>'name')
 );
