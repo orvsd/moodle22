@@ -87,24 +87,29 @@ class local_orvsd_external extends external_api {
       return "Course creation failed.";
     }
 
-    //if the user does not exist, create them
-    $user = $DB->get_record('user', array('username'=>$username));
-    if(!$user) {
-      $user = local_orvsd_external::create_user($param_array);
-    }
+    // if username is "none" we aren't creating/enrolling a user, so
+    // skip all that stuff
 
-    $user_fullname = $user->firstname . " " . $user->lastname;
+    if($username != "none") {
+        //if the user does not exist, create them
+        $user = $DB->get_record('user', array('username'=>$username));
+        if(!$user) {
+          $user = local_orvsd_external::create_user($param_array);
+        }
 
-    if(!$user) {
-      return "Failed to create user " . $user_fullname;
-    }
+        $user_fullname = $user->firstname . " " . $user->lastname;
 
-    //assign the user to the course
-    $roleid = 3; // "Teacher" role
-    $status = local_orvsd_external::assign_user($courseid, $user, $roleid);
+        if(!$user) {
+          return "Failed to create user " . $user_fullname;
+        }
 
-    if(!$status) {
-      return "Failed to enrol user " . $user_fullname . " in course " . $coursename;
+        //assign the user to the course
+        $roleid = 3; // "Teacher" role
+        $status = local_orvsd_external::assign_user($courseid, $user, $roleid);
+
+        if(!$status) {
+          return "Failed to enrol user " . $user_fullname . " in course " . $coursename;
+        }
     }
 
     return "Course " . $coursename . " created for " . $user_fullname;

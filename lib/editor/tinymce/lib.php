@@ -183,6 +183,10 @@ class tinymce_texteditor extends texteditor {
         if (!empty($options['required'])) {
             $params['init_instance_callback'] = 'M.editor_tinymce.onblur_event';
         }
+        if (isset($options['maxfiles']) and $options['maxfiles'] != 0) {
+            $params['plugins'] .= ',nanogong';
+            $params['theme_advanced_buttons3'] .=',nanogong';
+        }
         return $params;
     }
 }

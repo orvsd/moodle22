@@ -1,0 +1,85 @@
+#section-0 h3.sectionname {
+    	font-size: 30px;
+    	line-height: 32px;
+    	margin-bottom: 20px;
+	font-weight: normal;
+}
+
+#section-0 .summary {
+	font-size: 14px;
+	line-height: 20px;
+	color: #666;
+}
+
+.course-content  ul.topics li.section#section-0 .left {
+	display: none;
+}
+
+.course-content  ul.topics li.section#section-0 .content {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+h3.sectionname {
+    	font-size: 24px;
+    	line-height: 28px;
+    	margin-bottom: 20px;
+	font-weight: normal;
+}
+
+/*Summaries*/
+
+.summary img {
+	vertical-align:middle;
+}
+
+summary p {
+	line-height: 18px;
+}
+
+/*Course Sections*/
+
+.course-content ul.topics li.section {
+	position: relative;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #DDDDDD;
+}
+
+.course-content ul.topics li.section .left {
+    background: #0899CC;
+    border:;
+    font-size: 24px;
+    left: -37px;
+    line-height: 1;
+    padding: 11px 10px 8px;
+    position: absolute;
+    text-align: center;
+    width: 40px;
+	color: #fff;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.course-content ul.topics li.section .content {
+    margin: 0 40px 0 30px;
+}
+
+.course-content .current {
+   	background: #dff6fe;
+	border-radius: 5px;
+	padding-top: 15px !important;
+	border-bottom: 0 none;
+}
+
+/*Activity Lists*/
+
+.section.img-text .activity.label {
+	margin: 10px 0 5px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.section.img-text .activity.resource, .section.img-text .activity.assignment, .section.img-text .activity.quiz, .section.img-text .activity.forum, .section.img-text .activity.imscp, .section.img-text .activity.url {
+	padding-left: 10px;
+	margin-bottom: 3px;
+}

@@ -1,0 +1,658 @@
+/*All activity/block headings*/
+/*Inputs
+--------------------*/
+input[type="text"], input[type="password"], textarea {
+	border: 1px solid #999;
+	border-radius: 3px;
+	font-size: 12px;
+	margin-right: 2px;
+	padding: 6px 5px;
+}
+
+select {
+	margin: 0 5px;
+}
+
+.buttons .singlebutton input {
+    margin: 0 5px 0 0;
+}
+
+/*buttons*/
+/*blue*/
+
+input[type="submit"], button {
+	cursor: pointer;
+}
+
+input[type="submit"], input[type="button"], .path-admin-roles .backlink a, .addbloglink a {
+	font-size: 12px;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background: #0e9dce; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlOWRjZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDkyYzgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #0e9dce 0%, #0092c8 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0e9dce), color-stop(100%,#0092c8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #0e9dce 0%,#0092c8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #0e9dce 0%,#0092c8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #0e9dce 0%,#0092c8 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #0e9dce 0%,#0092c8 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e9dce', endColorstr='#0092c8',GradientType=0 ); /* IE6-8 */
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	border: 1px solid #0082b4;
+	border-bottom: 1px solid #00597b;
+	margin-right: 5px;
+}
+
+/*Grey*/
+.managelink a {
+	font-size: 12px;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 5px;
+	color: #333;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	border: 1px solid #ccc;
+	border-bottom: 1px solid #999;
+	background: #f2f2f2; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YyZjJmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZGRkZGQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #f2f2f2 0%, #dddddd 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f2f2), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f2f2f2 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f2f2f2 0%,#dddddd 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f2f2f2 0%,#dddddd 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f2f2f2 0%,#dddddd 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#dddddd',GradientType=0 ); /* IE6-8 */
+
+}
+ 
+/*Button Hovers - All*/
+
+input[type="submit"]:hover, .path-admin-roles .backlink a:hover, .managelink a:hover, .addbloglink a:hover  {
+	box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.7);
+	text-decoration: none;
+}
+
+
+ 
+
+h2.headingblock, .block .header h2 {
+	border-bottom: 1px solid #DDDDDD;
+	color: #999999;
+	font-size: 16px;
+	padding: 0 0 10px;
+	font-weight: normal;
+}
+
+/*Blocks*/
+
+.block {
+	border: 0 none;
+}
+
+.block_recent_activity .activitydate, .block_recent_activity .activityhead {
+    text-align: left;
+}
+
+.block .footer {
+	text-align: left;
+}
+
+.newevent {
+	display: inline-block;
+	padding: 2px 10px;
+	background: #dcf5fe;
+	border-radius: 3px;
+}
+
+.block_search_forums .searchform {
+    text-align: left;
+}
+
+
+.noticebox, .expired, .notopenyet, .notifysuccess, .notifyproblem, .errorbox, .continuebutton, .singlebutton, .buttons, .singleselect {
+    margin: 15px 0;
+    text-align: left;
+}
+
+/*Settings Block*/
+.block_settings {
+	background: #f2f2f2;
+	border-radius: 5px;
+	padding: 10px 10px 20px;
+	border: 1px solid #dddddd;
+	border-bottom: 2px solid #ccc;
+}
+
+.block_navigation {	
+	background: #0092c8; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwOTJjOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MWMxZTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #0092c8 0%, #41c1e1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0092c8), color-stop(100%,#41c1e1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #0092c8 0%,#41c1e1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #0092c8 0%,#41c1e1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #0092c8 0%,#41c1e1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #0092c8 0%,#41c1e1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0092c8', endColorstr='#41c1e1',GradientType=0 ); /* IE6-8 */
+	border-radius: 5px;
+	padding: 10px 10px 20px;
+
+	border-bottom: 2px solid #ccc;}
+
+.block_navigation .header h2 {
+	color: #fff;
+}
+
+.block_navigation a, .block_navigation a:link {
+	color: #fff;
+}
+
+/*notifications*/
+
+.notifysuccess {
+	background:#e6efc2;
+	color:#264409;
+	border: 2px solid #c6d880;
+	border-radius: 5px;
+	padding: 10px 20px;
+}
+
+.notifyproblem {
+	border: 2px solid #c6d880;
+	border-radius: 5px;
+	padding: 10px 20px;
+	background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;
+	}
+
+.reportlink, .path-mod-assignment .reportlink, .usersubmissions {
+    font-size: 12px;
+    text-align: center;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	padding: 10px 20px;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.allcoursegrades {
+    padding: 0;
+    text-align: center;
+    width: auto;
+}
+
+
+/*Forum*/
+
+.forumaddnew {
+	text-align: right;
+}
+
+#page-site-index .subscribelink {
+    position: absolute;
+    right: 0;
+    top: 4px;
+z-index: 1;
+}
+
+.forumpost .row {
+	width: auto;
+}
+
+.forumpost .header.row {
+	background: #0092c8;
+	border-radius: 3px 3px 0 0;
+}
+
+.forumpost .header.row .author, .forumpost .header.row .author a {
+	color: #91E3F8;
+}
+
+.forumpost .header.row .author a {
+	font-weight: bold;
+	color: #fff;
+
+}
+
+.forumpost .topic .subject {
+	color:#d8ff00;
+	font-size: 24px;
+	line-height: 24px; 
+}
+
+.forumpost .header .picture {
+	position: absolute;
+	left: -20px;
+background: #fff;
+border: 1px solid #ddd;
+left: -50px;
+}
+
+.forumpost .row .topic, .forumpost .row .content-mask, .forumpost .row .options, .forumpost .row .content {
+	margin-left: 0px;
+	padding: 10px 20px;
+}
+
+.forumpost .maincontent .left {
+	display: none;
+}
+
+.forumpost .content .attachments {
+    text-align: left;
+}
+
+.forumpost .attachments {
+    font-size: 0.95em;
+    margin: 10px 0;
+}
+
+.forumpost {
+    	border: 1px solid #f2f2f2;
+	border-bottom: 1px solid #ccc;
+    display: block;
+    margin: 0 0 20px;
+	border-radius: 3px;
+    padding: 0px;
+    position: relative;
+ box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+}
+
+/*Assignment*/
+
+#page {
+	font-size: 100%;
+}
+
+.path-mod-assignment #intro {
+    border: 0 none;
+}
+
+#intro.generalbox {
+    margin-top: 20px;
+    padding: 0;
+}
+
+.boxaligncenter {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+h2.main, h3.main, h4.main {
+    margin: 0 0 20px;
+    padding: 0 0 10px;
+    text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+#page-mod-quiz-view .quizinfo, #page-mod-quiz-view #page .quizgradefeedback, #page-mod-quiz-view #page .quizattempt {
+    text-align: left;
+}
+
+x.continuebutton, x.singlebutton {
+   	margin: 20px 0;
+	padding: 10px 0 0;
+	text-align: left;
+border-top: 1px solid #ddd;
+}
+
+.quizinfo {
+	padding:10px 20px;
+	border:2px solid #ddd;
+	background:#fff6bf;
+	color:#514721;
+	border-color:#ffd324;
+border-radius: 5px;
+margin-bottom: 20px;
+}
+
+.generalbox {
+	border: 0 none;
+}
+
+.forumpost .options .commands {
+	color: #999;
+}
+
+/*Forms*/
+
+
+.mform fieldset {
+    	border: 1px solid #ddd;
+	border-bottom: 2px solid #ccc;
+	background: #f2f2f2;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.mform fieldset.hidden, .mform fieldset.felement {
+    background: none;
+    border-width: 0;
+}
+
+.mform fieldset legend {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+	color: #333;
+}
+
+.mform .fsubmit {
+    	text-align: left;
+	padding: 10px 0;
+}
+
+.mform .fdescription.required {
+    	color: #AA0000;
+    	text-align: left;
+	margin-top: 10px;
+}
+
+.nullcontrol {
+	display: none;
+}
+
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol {
+    width: auto;
+}
+
+.singleselect {
+    margin: 0;
+    text-align: left;
+}
+
+#page-mod-forum-discuss .discussioncontrols {
+    margin: 0 0 20px;
+    width: 100%;
+}
+
+#intro.generalbox {
+    margin-top: 0;
+    border-bottom: 1px solid #DDDDDD;
+    margin: 0 0 20px;
+    padding: 0 0 10px;
+    text-align: left;
+	font-size: 24px;
+}
+
+#urlintro, #pageintro, #resourceintro {
+    border: 0 none;
+    margin: 0;
+}
+
+.mod_introbox {
+padding: 0;
+}
+
+#adminsettings .form-buttons {
+    margin: 10px 0 40px;
+    text-align: left;
+    width: 100%;
+	border-top: 1px solid #ddd;
+	padding-top: 20px;
+}
+
+
+.resourceworkaround, .urlworkaround, .modified {
+
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#userselector_options {
+    font-size: 1em;
+}
+
+.path-admin-roles .backlink {
+	border-top: 1px solid #DDDDDD;
+	margin:20px 0 40px;
+ 	padding:10px 0 0;
+    	text-align: left;
+}
+
+#add, #remove, .centerpara, .mdl-align {
+    text-align: center;
+}
+
+.mform .fitem fieldset.felement {
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+width: auto;
+}
+
+.mform fieldset div {
+    margin: 0 0 10px;
+}
+.mform .fitem_fsubmit .felement {
+    border-width: 0;
+    margin-left: 0;
+    width: 100%;
+}
+
+
+
+/*Grids
+-----------------*/
+
+.formtable tbody th, .generaltable th.header {
+    text-align: left;
+    vertical-align: middle;
+	border: 1px solid #ddd;
+}
+
+/*Participants
+-----------------*/
+
+.rolesform {
+    font-weight: bold;
+    margin: 1em 0;
+    text-align: left;
+}
+
+.initialbar {
+    text-align: left;
+	margin-bottom: 6px;
+}
+
+.firstinitial {
+}
+
+.lastinitial {
+}
+
+.paging {
+    text-align: left;
+}
+
+.userlist .buttons {
+    text-align: left;
+	margin-top: 10px;
+}
+
+
+.tag-management-form {
+	text-align: left;
+	margin-bottom: 10px;
+	padding: 0;
+}
+
+tag-management-form.generalbox {
+	margin-bottom: 0px;
+}
+
+.addbloglink {
+    text-align: right;
+	margin: 0 0 15px;
+}
+
+/*Courses
+-----------------*/
+
+.categorylist .category .image img { /*hide silly icons*/
+	display: none;
+}
+
+.categorylist .category {
+	overflow: auto;
+	width: 100%;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.categorylist > .category > .name { /*level 1 catgegories*/
+	font-size: 20px;
+	color: #333;
+	padding: 10px 20px;
+	width: 95%;
+	background: #0092c8;
+	border-radius: 3px 3px 0 0;
+	text-transform: uppercase;
+	border-bottom: 1px solid #0075a4;
+
+	
+}
+
+.categorylist > .category > .name a {
+	color: #D8FF00;	
+}
+
+
+.categorylist > .category > .indentation {
+	padding-left: 0;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.categorylist > .category > .indentation > .name { /*level 2 catgegories*/
+	font-size: 16px;
+	background: #f2f2f2;
+	padding: 10px 20px;
+	width: 95%;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #ccc;
+}
+
+.categorylist > .category > .indentation > .name a {
+	color: #333;
+}
+
+.categorylist > .course {
+	overflow: auto;
+	width: 100%;
+	padding-left: 0;
+	padding: 3px 0;
+}
+
+.categorylist > .course > .indentation > .indentation {
+	padding-left: 0;
+}
+
+
+.categorylist > .course:last-child {
+	margin-bottom: 20px;
+}
+
+
+/*General Box*/
+
+#page-course-category table.category_subcategories {
+	width: 100%;
+	margin: 20px 0 40px;
+}
+
+table.category_subcategories th {
+	text-align: left;
+	font-size: 16px;
+	border-bottom: 1px solid #ccc;
+	
+} 
+
+table.category_subcategories td {
+	border-bottom: 1px dashed #ccc;
+}
+
+.categorypicker {
+    background: #F2F2F2;
+    margin: 15px 0 25px;
+    padding: 10px 20px;
+}
+
+.categorypicker .singleselect {
+	text-align: right;
+}
+
+#coursesearch, #coursesearch2 {
+    margin-top: 20px;
+    text-align: center;
+	background: #F2F2F2;
+    padding: 20px 20px 40px;
+}
+
+.coursebox {
+	border-bottom: 1px dashed #ccc;
+	padding: 0 0 8px;
+	margin-bottom: 8px;
+}
+
+.coursebox .info h3 {
+	margin-bottom: 0;
+}
+
+/*Login Page*/
+
+
+.loginbox {
+    margin: 40px auto 0;
+	width: 500px;
+	background: #fff;
+	box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	border: 1px solid #ddd;
+}
+
+.loginpanel {
+	margin: 0;
+	padding: 0;
+}
+
+.loginpanel h2 {
+	color: #0092C8;
+	background: #f2f2f2;
+}
+
+.loginpanel .subcontent {
+
+}
+
+.loginbox .loginpanel .desc {
+	color: #666;
+}
+
+.loginbox .guestsub {
+    border-top: 1px dashed #DDDDDD;
+	margin: 20px 5px;
+	background: #f2f2f2;
+}
+
+.block .minicalendar th, .block .minicalendar td {
+    font-size: 0.85em;
+    padding: 2px;
+}
+
+/*My Private Files*/
+
+.mform .fitem .felement {
+    margin-left: 0;
+}
+
+.mform .fitem .fitemtitle {
+    /* display: none; */
+}
+
+.mform .fitem .filemanager-toolbar {
+	margin-bottom: 20px;
+}
