@@ -34,6 +34,7 @@ $CFG = new stdClass();
 //=========================================================================
 // 1. ORVSD CONFIG
 //=========================================================================
+
 // HAProxy is now passing the X-Forwarded-Proto header to Nginx, which maps to the
 // fastcgi_param PHP variable HTTPS and triggers it either on or off based on the
 // protocol in use.  This lets us use loginhttps, disable the sslproxy and set the
