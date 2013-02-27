@@ -15,17 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Announcement module version info
+ * Strings for component 'block_mentees', language 'en', branch 'MOODLE_20_STABLE'
  *
- * @package    mod
- * @subpackage announcement
- * @copyright  2003 onwards Martin Dougiamas  {@link http://moodle.com}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   block_mentees
+ * @copyright  2012 Nathan Robbins (https://github.com/nrobbins)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$module->version   = 2011112900;       // The current module version (Date: YYYYMMDDXX)
-$module->requires  = 2011112900;       // Requires this Moodle version
-$module->component = 'mod_announcement'; // Full name of the plugin (used for diagnostics)
-$module->cron      = 0;
+$string['configtitle'] = 'Block title';
+$string['pluginname'] = 'My mentees';
+$string['online'] = 'Online';
+$string['offline'] = 'Offline';
+$string['mymentees:addinstance'] = 'Add a My mentees block';
+$string['mymentees:myaddinstance'] = 'Add a My mentees block to My Moodle';

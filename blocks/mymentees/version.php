@@ -15,17 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Announcement module version info
+ * Version details
  *
- * @package    mod
- * @subpackage announcement
- * @copyright  2003 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @package    block
+ * @subpackage mymentees
+ * @copyright  2012 Nathan Robbins (https://github.com/nrobbins)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$module->version   = 2011112900;       // The current module version (Date: YYYYMMDDXX)
-$module->requires  = 2011112900;       // Requires this Moodle version
-$module->component = 'mod_announcement'; // Full name of the plugin (used for diagnostics)
-$module->cron      = 0;
+$plugin->version   = 2012111800;         // The current plugin version (Date: YYYYMMDDXX)
+$plugin->requires  = 2011112900;         // Requires this Moodle version
+$plugin->component = 'block_mymentees';  // Full name of the plugin (used for diagnostics)
+$plugin->maturity  = MATURITY_STABLE;
+$plugin->release   = "1";              // User-friendly version number

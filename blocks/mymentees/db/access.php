@@ -15,17 +15,38 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Announcement module version info
+ * Blog tags block caps.
  *
- * @package    mod
- * @subpackage announcement
- * @copyright  2003 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @package   block_enrol_duration
+ * @copyright  2012 Nathan Robbins (https://github.com/nrobbins)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$module->version   = 2011112900;       // The current module version (Date: YYYYMMDDXX)
-$module->requires  = 2011112900;       // Requires this Moodle version
-$module->component = 'mod_announcement'; // Full name of the plugin (used for diagnostics)
-$module->cron      = 0;
+$capabilities = array(
+    'block/mymentees:myaddinstance' => array(
+        'riskbitmask' => '',
+
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => array(
+            'user' => CAP_ALLOW
+        ),
+
+        'clonepermissionsfrom' => 'moodle/my:manageblocks'
+    ),
+
+    'block/mymentees:addinstance' => array(
+        'riskbitmask' => '',
+
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ),
+
+        'clonepermissionsfrom' => 'moodle/site:manageblocks'
+    ),
+);

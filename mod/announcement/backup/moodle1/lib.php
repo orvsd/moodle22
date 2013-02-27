@@ -28,7 +28,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * announcement conversion handler
+ * Announcement conversion handler
  */
 class moodle1_mod_announcement_handler extends moodle1_mod_handler {
 
@@ -39,7 +39,7 @@ class moodle1_mod_announcement_handler extends moodle1_mod_handler {
      * For each path returned, the corresponding conversion method must be
      * defined.
      *
-     * Note that the path /MOODLE_BACKUP/COURSE/MODULES/MOD/announcement does not
+     * Note that the path /MOODLE_BACKUP/COURSE/MODULES/MOD/LABEL does not
      * actually exist in the file. The last element with the module name was
      * appended by the moodle1_converter class.
      *
@@ -48,7 +48,7 @@ class moodle1_mod_announcement_handler extends moodle1_mod_handler {
     public function get_paths() {
         return array(
             new convert_path(
-                'announcement', '/MOODLE_BACKUP/COURSE/MODULES/MOD/announcement',
+                'announcement', '/MOODLE_BACKUP/COURSE/MODULES/MOD/LABEL',
                 array(
                     'renamefields' => array(
                         'content' => 'intro'
@@ -62,7 +62,7 @@ class moodle1_mod_announcement_handler extends moodle1_mod_handler {
     }
 
     /**
-     * This is executed every time we have one /MOODLE_BACKUP/COURSE/MODULES/MOD/announcement
+     * This is executed every time we have one /MOODLE_BACKUP/COURSE/MODULES/MOD/LABEL
      * data available
      */
     public function process_announcement($data) {

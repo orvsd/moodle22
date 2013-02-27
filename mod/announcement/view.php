@@ -16,7 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * announcement module
+ * Announcement module
  *
  * @package    mod
  * @subpackage announcement
@@ -27,7 +27,7 @@
 require_once("../../config.php");
 
 $id = optional_param('id',0,PARAM_INT);    // Course Module ID, or
-$l = optional_param('l',0,PARAM_INT);     // announcement ID
+$l = optional_param('l',0,PARAM_INT);     // Announcement ID
 
 if ($id) {
     $PAGE->set_url('/mod/announcement/index.php', array('id'=>$id));

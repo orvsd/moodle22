@@ -15,17 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Announcement module version info
+ * Form for editing the My mentees block instances.
  *
- * @package    mod
- * @subpackage announcement
- * @copyright  2003 onwards Martin Dougiamas  {@link http://moodle.com}
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   block_mymentees
+ * @copyright  2012 Nathan Robbins (https://github.com/nrobbins)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
 
-$module->version   = 2011112900;       // The current module version (Date: YYYYMMDDXX)
-$module->requires  = 2011112900;       // Requires this Moodle version
-$module->component = 'mod_announcement'; // Full name of the plugin (used for diagnostics)
-$module->cron      = 0;
+class block_mymentees_edit_form extends block_edit_form {
+    protected function specific_definition($mform) {
+        // Fields for editing HTML block title and contents.
+        $mform->addElement('header', 'configheader', get_string('blocksettings', 'block'));
+
+        $mform->addElement('text', 'config_title', get_string('configtitle', 'block_mymentees'));
+        $mform->setType('config_title', PARAM_MULTILANG);
+    }
+}
