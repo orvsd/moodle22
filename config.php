@@ -43,12 +43,18 @@ $CFG = new stdClass();
 $CFG->sslproxy = false;
 $CFG->loginhttps = true;
 
+// ORVSD Performance tweaks
+$CFG->dbsessions = false;
+$CFG->enablestats = false;
+$CFG->themedesignermode = false;
+$CFG->loglifetime = 365;
+$CFG->gradehistorylifetime = 365;
+
 // Include relevant configuration from glusterfs mount.
 $orvsdcwd = explode("/", getcwd());
 $orvsduser = $orvsdcwd[3];
 $orvsdfqdn = $orvsdcwd[5];
 require_once('/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn . '/config.php');
-
 
 // Now you need to tell Moodle where it is located. Specify the full
 // web address to where moodle has been installed.
