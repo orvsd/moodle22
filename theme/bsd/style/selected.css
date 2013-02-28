@@ -1,0 +1,26 @@
+a:link,
+a:visited { color: #4183c4; }
+
+a:hover,
+a:active {text-decoration:underline;}
+
+.headermenu a:link, .headermenu a:visited {color: #fff}
+.headermenu a:hover, .headermenu a:active {text-decoration:none; color: #dfdfdf}
+
+#page-header  { background-color:#dadbdd;
+	background-image: url([[pix:theme|header]]);
+	background-repeat:repeat-x;
+	background-position:0 0;
+	color:#f1f1f1; }
+
+.path-course-view .course-content .section.main.current,
+#page-navigation {display:none;}
+
+#page-navigation a:link,
+#page-navigation a:visited,
+.path-course-view .course-content .current .left  { color:#fff; }
+
+#page-navigation a:hover,
+#page-navigation  a:active { background:#fff; }
+
+.path-course-view .section .content { background: #fff; }

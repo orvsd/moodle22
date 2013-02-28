@@ -1,0 +1,165 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,input,textarea { font-family: 'Helvetica Neue', Arial, sans-serif; }
+/* override from base */
+.bold,
+.warning,
+.errorbox .title,
+.pagingbar .title,
+.pagingbar .thispage,
+ {font-weight: bold;}
+
+.headingblock {font-weight:normal;}
+/* Header 
+-------------------------*/
+
+#page-header-wrapper { margin:0 50px; }
+
+#page-header { float:none; background-color:#fff;height:75px}
+#page-header .headermain { font-weight:300; color:#fff; margin:0.75em 0;font-size:2.0em;}
+#page-header .headermenu a:hover { text-decoration:underline; }
+
+
+#page-site-index .headermain { margin:0.85em 0;font-size:2.5em; font-weight:300; letter-spacing:0.5px;color:#fff; }
+
+/* Menu Navigation 
+--------------------------*/
+
+#page-navigation { margin:0;padding:0 40px;font-size:1.1em; }
+#page-navigation li { list-style:none;float:left; }
+#page-navigation a { display:block;padding:5px 10px; }
+
+
+/* Breadcrumb 
+---------------------------*/
+
+.navbar { padding:3px 50px; }
+.navbar .breadcrumb { font-size:0.8em;color:#555; }
+
+
+/* Content 
+---------------------------*/
+
+#page-content-wrapper { margin:10px 50px;background-color:#fff; }
+
+/* Tabs 
+---------------------------*/
+
+.tabtree .tabrow0 li.here a { background:#fff url([[pix:theme|gradient-sb]]) repeat-x 0 0; }
+.tabtree .tabrow0 .tabrow1 li a {background: none !important;}
+
+/* User
+---------------------------*/
+
+.userinfobox .content {border-width: 2px;background: url([[pix:theme|gradient-sb]]) repeat-x 0 0; }
+
+/* Forms
+------------------------*/
+
+.mform fieldset {border-color: #ddd;}
+.mform legend {border: 1px solid #ddd;padding: 2px 7px;background: url([[pix:theme|gradient-sb]]) repeat-x 0 -25%;}
+
+/* Footer
+--------------------------*/
+
+#page-footer { margin:25px 0; }
+#page-footer .logininfo  { margin: 1em 0; }
+
+/* custum menu */
+#custommenu {
+    margin:0 50px;
+}
+
+#custommenu,
+#custommenu .yui3-menu,
+#custommenu .yui3-menu-content {
+    border-width:0;
+}
+
+#custommenu {
+    /*background:url([[pix:theme|gradient-sb]]) repeat-x 0 30%;*/
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-top:1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+#custommenu .yui3-menu-label,
+#custommenu .yui3-menuitem-content {
+    border-width:0;
+}
+
+#custommenu .yui3-menu-content .yui3-menu-content {
+    border: 1px solid #ccc;
+    border-top-width: 0;
+    margin-top: 3px;
+}
+
+#custommenu .yui3-menu-content .yui3-menu-content .yui3-menu-content {
+    border-top: 1px solid #ccc;
+}
+
+#custommenu .yui3-menu-content .yui3-menu-content .yui3-menuitem-content,
+#custommenu .yui3-menu-content .yui3-menu-content .yui3-menu-label {
+    padding-top: 5px;
+}
+
+#custommenu .yui3-menu-label,
+#custommenu .yui3-menuitem-content {
+    color:#000;
+}
+
+#custommenu .yui3-menu .yui3-menuitem-active,
+#custommenu .yui3-menu-label-menuvisible,
+#custommenu .yui3-menu-label-active,
+#custommenu .yui3-menuitem-active .yui3-menuitem-content {
+    background-color:#ececec;
+}
+
+#custommenu .yui3-menu-label-active,
+#custommenu .yui3-menu-label-menuvisible,
+#custommenu .yui3-menuitem-active .yui3-menuitem-content {
+    ;
+}
+
+#custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content {
+    border-width:0;
+}
+
+/* buttons */
+button, select, input[type='submit'], input[type='button'] {
+	font-size:0.9em;
+	color:#444;
+	-moz-border-radius: 4px; /* Firefox */
+  	-webkit-border-radius: 4px; /* Safari, Chrome */
+  	border-radius: 4px; /* CSS3 */
+	border:1.0px solid #ccc;
+	margin:2px;
+	background: url([[pix:theme|gradient-sb]]) repeat-x 0 -10%;
+	padding:0.05em 0.25em;}
+
+select option {background-color:#f1f1f1; color:#4183c4;}
+
+button:hover, input:hover[type='submit'], input:hover[type='button'] {
+	border-color:#000;}
+/*
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"] ::-webkit-file-upload-button, button {
+-webkit-box-align: center;
+text-align: center;
+cursor: default;
+background-color:#f5f5f5;
+color:#444;
+padding: 4px 6px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+border: 1px solid #bbb;
+background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1));
+background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
+box-sizing: border-box;
+}
+*/
+
+input:hover[type="button"], input:hover[type="submit"], input:hover[type="reset"], input:hover[type="file"] ::-webkit-file-upload-button, button:hover {
+border-color:#777;
+}
