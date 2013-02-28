@@ -34,11 +34,6 @@ $CFG = new stdClass();
 //=========================================================================
 // 1. ORVSD CONFIG
 //=========================================================================
-// Include relevant configuration from glusterfs mount.
-$orvsdcwd = explode("/", getcwd());
-$orvsduser = $orvsdcwd[3];
-$orvsdfqdn = $orvsdcwd[5];
-require_once('/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn . '/config.php');
 
 // HAProxy is now passing the X-Forwarded-Proto header to Nginx, which maps to the
 // fastcgi_param PHP variable HTTPS and triggers it either on or off based on the
@@ -47,6 +42,13 @@ require_once('/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn . '/co
 // servers and external resources.
 $CFG->sslproxy = false;
 $CFG->loginhttps = true;
+
+// Include relevant configuration from glusterfs mount.
+$orvsdcwd = explode("/", getcwd());
+$orvsduser = $orvsdcwd[3];
+$orvsdfqdn = $orvsdcwd[5];
+require_once('/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn . '/config.php');
+
 
 // Now you need to tell Moodle where it is located. Specify the full
 // web address to where moodle has been installed.
