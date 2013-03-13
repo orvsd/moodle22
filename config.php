@@ -50,17 +50,19 @@ $CFG->themedesignermode = false;
 $CFG->loglifetime = 365;
 $CFG->gradehistorylifetime = 365;
 
-// Include relevant configuration from glusterfs mount.
+// ORVSD variables based on directory structure
 $orvsdcwd = explode("/", getcwd());
 $orvsduser = $orvsdcwd[3];
 $orvsdfqdn = $orvsdcwd[5];
-require_once('/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn . '/config.php');
 
 // Now you need to tell Moodle where it is located. Specify the full
 // web address to where moodle has been installed.
 $CFG->wwwroot   = 'http://' . $orvsdfqdn;
 $CFG->dataroot  = '/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn;
 $CFG->directorypermissions = 02770;
+
+// Include relevant configuration from glusterfs mount.
+require_once('/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn . '/config.php');
 
 //=========================================================================
 // ALL DONE!  To continue installation, visit your main page with a browser
