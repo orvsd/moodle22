@@ -61,6 +61,11 @@ $CFG->wwwroot   = 'http://' . $orvsdfqdn;
 $CFG->dataroot  = '/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn;
 $CFG->directorypermissions = 02770;
 
+// ORVSD ClamAV config
+$CFG->runclamonupload = true;
+$CFG->pathtoclam = '/usr/bin/clamscan';
+$CFG->quarantinedir = $CFG->dataroot . '/temp';
+
 // Include relevant configuration from glusterfs mount.
 require_once('/data/moodledata/' . $orvsduser . '/moodle22/' . $orvsdfqdn . '/config.php');
 
