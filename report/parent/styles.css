@@ -1,0 +1,50 @@
+.parentProgress {
+    width: 500px !important;
+}
+
+.parentHead {
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 10px; 
+}
+
+.parentGradeTable {
+    width: 100%; 
+}
+
+span.strong {
+    font-size: 17px;
+    font-weight: 400;
+    padding-left: 10px; 
+}
+
+span.strong {
+    font-weight: 600 !important;
+}
+
+div.report_parent {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid black;
+}
+
+.report_parent .addressBlock {
+    padding-left: 10px; 
+    padding-bottom: 60px;
+}
+
+.report_parent .addressBox {
+    width: 300px; 
+    height: 100px;
+    float: left;
+    border: 1px solid #ededed;
+}
+
+.parentProgressBar {
+    margin-bottom: 40px;
+}
+
+.report_parent .report_parent_body {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}

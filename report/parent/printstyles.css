@@ -1,0 +1,30 @@
+@media print {
+  html, body, div#page, div#wrapper,
+  div#region-main-box, div#region-main,
+  div#region-post-box {
+    margin: 0 !important;
+    padding: 0;
+    right: 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+  }
+
+  span.page-break {
+    page-break-after: always;
+  }
+
+  body {
+    background-color: White;
+    color: Black;
+    font-size: 75%;
+  }
+
+  div.tabtree, div#header, div.navbar, 
+  div.headermenu, div.paging, div#footer, 
+  div.datapreferences, div.block-region, div#dock,
+  div#page-header, div#page-footer, div#filterform,
+  h2.main {
+    display: none !important;
+  }
+}
