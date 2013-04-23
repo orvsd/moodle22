@@ -1,5 +1,8 @@
 <?php
 
+// Uncomment this line for using this tool
+die;
+
 /*
  *
  *
@@ -233,4 +236,3 @@ if (isset($_SERVER['REMOTE_ADDR'])) {
     }
 
 
-?>

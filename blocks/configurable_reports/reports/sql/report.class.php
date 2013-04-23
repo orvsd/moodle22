@@ -31,12 +31,18 @@ class report_sql extends report_base{
 	}	
 
 	function prepare_sql($sql) {
-		global $DB, $USER;
+		global $DB, $USER, $CFG;
 		
 		$sql = str_replace('%%USERID%%', $USER->id, $sql);
+        $sql = str_replace('%%COURSEID%%', $this->currentcourseid, $sql);
+
 		// See http://en.wikipedia.org/wiki/Year_2038_problem
 		$sql = str_replace(array('%%STARTTIME%%','%%ENDTIME%%'),array('0','2145938400'),$sql);
+		$sql = str_replace('%%WWWROOT%%', $CFG->wwwroot, $sql);
 		$sql = preg_replace('/%{2}[^%]+%{2}/i','',$sql);
+
+		$sql = str_replace('?', '[[QUESTIONMARK]]', $sql);
+
 		return $sql;
 	}
 	
@@ -84,7 +90,12 @@ class report_sql extends report_base{
 							$tablehead[] = str_replace('_', ' ', $colname);
 						}
 					}
-					$finaltable[] = array_values((array) $row);
+                    $array_row = array_values((array) $row);
+                    foreach($array_row as $ii => $cell) {
+                        $array_row[$ii] = str_replace('[[QUESTIONMARK]]', '?', $cell);
+                    }
+
+					$finaltable[] = $array_row;
 				}
 		}
 		
@@ -101,6 +112,9 @@ class report_sql extends report_base{
 		$calcs->data = array($finalcalcs);
 		$calcs->head = $tablehead;
 		
+        if(!$this->finalreport) {
+            $this->finalreport = new StdClass;
+        }
 		$this->finalreport->table = $table;
 		$this->finalreport->calcs = $calcs;
 		
@@ -109,4 +123,3 @@ class report_sql extends report_base{
 	
 }
 
-?>

@@ -67,6 +67,8 @@ $string['value'] = "Valor";
 $string['filter'] = "Filtro";
 $string['nofiltersyet'] = "No hay filtros todavía";
 $string['courses'] = "Cursos";
+$string['filter_all'] = 'Todo';
+$string['filter_apply'] = 'Aplicar';
 
 // Calcs
 $string['nocalcsyet'] = "No hay cálculos todavía";
@@ -109,6 +111,8 @@ $string['currentuserfinalgrade'] = "Nota final del usuario en el curso";
 
 $string['currentuserfinalgrade_summary'] = "Esta columna muestra la nota final en el curso de la fila actual del informe";
 $string['userfield'] = "Campo del perfil de usuario";
+$string['fsearchuserfield'] = "User field search box";
+$string['fsearchuserfieldtwo'] = "Second user field search box";
 
 $string['cuserfield'] = "Condición sobre campo del perfil de usuario";
 $string['direction'] = "Dirección";
@@ -181,7 +185,7 @@ $string['noexplicitprefix'] = "No se debe indicar el prefijo de tabla, usar pref
 $string['queryfailed'] = "La consulta SQL falló";
 $string['norowsreturned'] = "La consulta no ha devuelto ningún resultado";
 
-$string['listofsqlreports'] = '<a href=\"http://docs.moodle.org/en/ad-hoc_contributed_reports\" target=\"_blank\">Listado de informes en SQL</a>';
+$string['listofsqlreports'] = '<a href="http://docs.moodle.org/en/ad-hoc_contributed_reports" target="_blank">Listado de informes en SQL</a>';
 
 $string['usersincoursereport_summary'] = "Cualquier usuario en el curso donde se ha creado el informe";
 
@@ -239,4 +243,3 @@ $string['includesubcats'] = 'Incluir subcategorías';
 
 $string['coursededicationtime'] = 'Tiempo dedicado al curso';
 
-?>
