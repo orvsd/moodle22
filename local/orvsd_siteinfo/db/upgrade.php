@@ -30,7 +30,7 @@ function xmldb_local_orvsd_siteinfo_upgrade($oldversion = 0) {
 
     require_once("$CFG->dirroot/local/orvsd_siteinfo/lib.php");
 
-    siteinfo_update_db();
+    orvsd_siteinfo_update_db();
     return true;
 }
 

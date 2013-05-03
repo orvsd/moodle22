@@ -51,7 +51,7 @@ function orvsd_siteinfo_init_db() {
     $siteinfo->sitetype     = "moodle";
     $siteinfo->siteversion  = $CFG->version;
     $siteinfo->siterelease  = $CFG->release;
-    $siteinfo->location     = gethostname();
+    $siteinfo->location     = php_uname('n'); 
     $siteinfo->adminemail   = $CFG->supportemail;
     $siteinfo->totalusers   = orvsd_siteinfo_usercount(null, null);
     $siteinfo->adminusers   = intval($CFG->siteadmins);
@@ -92,7 +92,7 @@ function orvsd_siteinfo_update_db() {
     $siteinfo->sitetype     = "moodle";
     $siteinfo->siteversion  = $CFG->version;
     $siteinfo->siterelease  = $CFG->release;
-    $siteinfo->location     = gethostname();
+    $siteinfo->location     = php_uname('n');
     $siteinfo->adminemail   = $CFG->supportemail;
     $siteinfo->totalusers   = orvsd_siteinfo_usercount(null, null);
     $siteinfo->adminusers   = intval($CFG->siteadmins);
@@ -188,7 +188,8 @@ function orvsd_siteinfo_courselist() {
 //  print_r($courses);
   $course_list = array();
   foreach($courses as $course) {
-      $shortname = preg_replace('/"/', '\'', $course->shortname);
+      $shortname = preg_replace('/"/', '', $course->shortname);
+      $shortname = preg_replace("/'/", " ", $shortname);
       $enrolled = orvsd_siteinfo_get_enrolments($course->courseid);
       $course_list[] = '{"serial":"' . $course->serial . 
                         '","shortname":"' . htmlentities($shortname) . 
