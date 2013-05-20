@@ -218,8 +218,11 @@ div #region-main #Highlight {
 div #region-main div.no-overflow .TabbedPanelsContent div#Highlight {
 	background-color:#9999FF;
 }
-#Announcements, div.ComprehensionCheck {
+#Announcements, div.ComprehensionCheck, .announcement {
 	background-color:#F5DB00;
+}
+li.Voki {
+	display:inline;
 }
 	
 .Assessment {

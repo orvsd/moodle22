@@ -4,7 +4,11 @@ body, div, p, li, input, option, textarea, h1, h2, h3, h4, h5 {
 	font-family: Verdana, Geneva, sans-serif;
 	
 }
-
+/*TO DISTINGUISH DEVELOPMENT SERVER ONLY
+  DELETE FROM PRODUCTION SERVER CSS*/
+  /*html.yui3-js-enabled {
+	background-color: #F63;
+}*/
 option {
 	width: 130px;
 	font-size: 8pt;	
@@ -188,6 +192,22 @@ h2.headingblock {
 #page-grade-report-user-index div #report-main-content table.boxaligncenter td.item {
 	background-color: #EBEBEB;
 }
+/*To fix the gradebook scrolling problem?*/
+.page-grade-report-grader   .gradeparent {
+
+    width:   -moz-fit-content;
+    overflow: auto;
+}
+/*and*/
+.pagelayout-report #page {
+
+    background: none repeat scroll 0 0 transparent;
+    margin: 0   auto;
+    overflow:   visible;
+    padding:   0;
+    width:   -moz-fit-content;
+}
+
 
 #region-main ul.topics li img.icon{
 	padding-right:0px; !important
@@ -466,7 +486,12 @@ div #region-main #sectionhead-1 tr.cps td a {
 
 }
 /** Blocks **/
-.block {border:1px solid #C8C9C7;background-color: #E3E3E3;margin-bottom:10px;overflow:hidden;}
+.block {
+	border: 1px solid #C8C9C7;
+	background-color: #D66213;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
 .block h1,
 .block h2,
 .block h3,
@@ -489,6 +514,18 @@ div #region-main #sectionhead-1 tr.cps td a {
 	white-space:normal;
 	font-size: 90%;
 	font-family:Arial, Helvetica, sans-serif;
+}
+
+/*jmail css*/
+#contact_list_users.jmail-odd,#contact_list_users .jmail-even {
+    height: 39px;
+}
+#contact_list_users .profileimage {
+    margin-top: 2px;
+}
+#contact_list_users .fullname input.bto, #contact_list_users .fullname input.bcc, #contact_list_users .fullname input.bbcc {
+    font-size: .65em;
+    height: 16px;
 }
 
 /* Provides all CSS styles for the AJAX Marking block

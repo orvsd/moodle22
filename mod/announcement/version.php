@@ -15,17 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details.
+ * Announcement module version info
  *
- * @package    blocks
- * @subpackage jmail
- * @copyright  2011 Juan Leyva <juanleyvadelgado@gmail.com>
+ * @package    mod
+ * @subpackage announcement
+ * @copyright  2003 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version  = 2011122507;
-$plugin->requires = 2011070100;
-$plugin->maturity = MATURITY_STABLE;
-$plugin->release = 1.5;
+$module->version   = 2013050700;       // The current module version (Date: YYYYMMDDXX)
+$module->requires  = 2011112900;       // Requires this Moodle version
+$module->component = 'mod_announcement'; // Full name of the plugin (used for diagnostics)
+$module->cron      = 0;

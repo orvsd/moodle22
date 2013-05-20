@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -15,17 +16,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details.
+ * Strings for component 'announcement', language 'en', branch 'MOODLE_20_STABLE'
  *
- * @package    blocks
- * @subpackage jmail
- * @copyright  2011 Juan Leyva <juanleyvadelgado@gmail.com>
+ * @package    mod
+ * @subpackage announcement
+ * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->version  = 2011122507;
-$plugin->requires = 2011070100;
-$plugin->maturity = MATURITY_STABLE;
-$plugin->release = 1.5;
+$string['announcementtext'] = 'Announcement text';
+$string['modulename'] = 'Announcement';
+$string['modulename_help'] = 'A announcement enables text and images to be inserted among the activity links on the course page.';
+$string['modulenameplural'] = 'Announcements';
+$string['pluginadministration'] = 'Announcement administration';
+$string['pluginname'] = 'Announcement';

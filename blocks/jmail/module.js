@@ -24,7 +24,20 @@ M.block_jmail.magicNumSubject = 0;
 M.block_jmail.magicNumTop = 125;
 M.block_jmail.magicNumDataTableWidth = 10;
 M.block_jmail.currentComposeCourse = {id: 0, shortname: ''};
-
+ 
+if (typeof(YAHOO) == "undefined") {
+    var YAHOO;
+}
+ 
+// Init method for 2.4 and above. See MDL-34741
+M.block_jmail.initYAHOO = function(Y, cfg) {
+    YUI().use('yui2-event', 'yui2-dragdrop', 'yui2-element', 'yui2-animation', 'yui2-resize', 'yui2-layout', 'yui2-widget', 'yui2-button', 'yui2-editor', 'yui2-get', 'yui2-connection', 'yui2-datasource', 'yui2-datatable', 'yui2-container', 'yui2-utilities', 'yui2-menu', 'yui2-json', 'yui2-paginator', function(Y2) {
+	  YAHOO = Y2.YUI2;
+	  M.block_jmail.init(Y, cfg);
+	});
+};
+ 
+// Init method for 2.1, 2.2, 2.3. See MDL-34741
 M.block_jmail.init = function(Y, cfg) {
     M.block_jmail.logdiv = Y.one("#loginfo");
     if (location.href.indexOf("#debugon") > 0) {
@@ -41,8 +54,8 @@ M.block_jmail.init = function(Y, cfg) {
     // Panel for composing messages, this is the first we have to do for avoid problems with the tinymce editor
     // We must render first the panel
     
-    // Moodle 2.3 requires a bigger height panel
-    var panelHeight = (M.block_jmail.cfg.version >= 2012062500)? "700px": "600px";
+    // Moodle 2.3 requires a bigger height panel--Changed 600px to 620px
+    var panelHeight = (M.block_jmail.cfg.version >= 2012062500)? "700px": "620px";
     
     Y.one('#newemailpanel').setStyle('display', 'block');
     var panel = new YAHOO.widget.Panel("newemailpanel", {
@@ -322,7 +335,7 @@ M.block_jmail.init = function(Y, cfg) {
 
             if (M.block_jmail.currentLabel == 'sent' && oColumn.field == 'from') {
                 oData = oRecord.getData('userto');
-                Y.one('#maillist table a').setHTML(M.str.block_jmail.to);
+                Y.one('#maillist table a').setContent(M.str.block_jmail.to);
             }
 
             elCell.innerHTML = oData;
@@ -424,9 +437,9 @@ M.block_jmail.init = function(Y, cfg) {
             Y.all("#maillist .yui-pg-previous").set('text', M.str.block_jmail.previous);
             
             if (M.block_jmail.currentLabel == 'sent') {
-                Y.one('#maillist table a').setHTML(M.str.block_jmail.to);
+                Y.one('#maillist table a').setContent(M.str.block_jmail.to);
             } else {
-                 Y.one('#maillist table a').setHTML(M.str.block_jmail.from);	
+                 Y.one('#maillist table a').setContent(M.str.block_jmail.from);	
             }            
                 
         }, M.block_jmail.app.dataTable, true);
@@ -521,9 +534,9 @@ M.block_jmail.init = function(Y, cfg) {
         M.block_jmail.currentLabel = e.target.get('id');
 
         if (M.block_jmail.currentLabel == 'sent') {
-            Y.one('#maillist table a').setHTML(M.str.block_jmail.to);
+            Y.one('#maillist table a').setContent(M.str.block_jmail.to);
         } else {
-            Y.one('#maillist table a').setHTML(M.str.block_jmail.from);
+            Y.one('#maillist table a').setContent(M.str.block_jmail.from);
         }
 
         M.block_jmail.checkMail(M.block_jmail.currentLabel);
@@ -973,9 +986,9 @@ M.block_jmail.loadLabels = function() {
                         M.block_jmail.currentLabel = e.target.get('id').replace("label","");
                         
                         if (M.block_jmail.currentLabel == 'sent') {
-                            Y.one('#maillist table a').setHTML(M.str.block_jmail.to);
+                            Y.one('#maillist table a').setContent(M.str.block_jmail.to);
                         } else {
-                            Y.one('#maillist table a').setHTML(M.str.block_jmail.from);
+                            Y.one('#maillist table a').setContent(M.str.block_jmail.from);
                         }
                         
                         M.block_jmail.checkMail(M.block_jmail.currentLabel);                        
