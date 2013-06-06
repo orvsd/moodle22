@@ -1,0 +1,366 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+div #region-main #Header {
+	height: auto;
+}
+div #region-main #HeaderLeft {
+	width: 579px;
+	
+}
+div #region-main #HeaderRight {
+	
+}
+div #region-main #HeaderStretch {
+	background-image: url([[pix:theme|BannerBG]]);
+	background-position: 0px bottom;
+	border-bottom-width: 6px;
+	border-bottom-style: none;
+	border-bottom-color: #663399;
+	background-repeat: no-repeat;
+	background-color: #000000;
+}
+div #region-main #HeaderTitle {
+	z-index:100;
+	width:100%;
+	float: left;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;	
+}
+div #region-main #HeaderTitle img {
+	left: 0px;
+	bottom: 0px;
+}
+
+div #region-main h1, #page-mod-lesson-view span#maincontent+h2.main, p.ComprehensionCheck {
+	color: #F7EFFA;
+	font-family: Anton, "Times New Roman", Times, serif;
+	/*font-weight: bold;*/
+	padding-top: 0px;
+	margin-top: 0px;
+	font-size: 1.75em;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+	background-color: #000;
+	background-image: url([[pix:theme|H1BG]]);
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-top-color: #000;
+	text-indent: 5px;
+	letter-spacing: .05em;
+}
+div.ComprehensionCheck {
+	margin-right:15%;
+	margin-left:15%;
+}
+div #region-main h2 {
+	color: #650199;
+	background-color: #D6ABD6;
+	background-repeat: no-repeat;
+	background-position: left;
+	text-indent: 22px;
+	margin-right: 175px;
+	font-family: Anton, "Times New Roman", Times, serif;
+	border-top-width: 4px;
+	border-bottom-width: 2px;
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	border-top-color: #650199;
+	border-right-color: #650199;
+	border-bottom-color: #650199;
+	border-left-color: #650199;
+	letter-spacing: .05em;
+}
+#responseform h2.no {
+	text-indent:0px;
+}
+#page-mod-page-view h2 a.autolink {
+    color: #FFF;
+}
+div #region-main h2.main {
+	text-align:left;
+}
+
+div #region-main h1+h2 {
+	font-size: 18px;
+	color: #4B0072;
+	background-color: transparent;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-left: 0px;
+	text-indent: 0;
+	clear: none;
+}
+
+div #region-main h3 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #2E00D5;
+	margin-bottom: -1em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div #region-main h3.LessonAssignmentLabel {
+	margin-bottom: 0px;
+	margin-top: 6px;
+}
+
+div #region-main h4 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #650199;
+	margin-bottom: -1em;
+
+}
+div #region-main h5 {
+	font-weight: bold;
+	color: #000000;
+	font-size: 14px;
+}
+/*div #region-main td {
+	margin: 10px;
+	padding-top: 5px;
+	padding-right: 7px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}*/
+
+div #region-main a {
+	color: #660066;
+}
+div #region-main a:visited {
+	color:#7E7EC7;
+}
+
+/*column with question numbers in quizzes*/
+#region-main #responseform div div div.info, #page-mod-quiz-review #region-main form div div div.info {
+	width: 95px;
+}
+#response form h2.no, #page-mod-quiz-review h2.no {
+	text-indent: 0px;
+}
+#responseform h2.no, #responseform h2.no span.qno, #page-mod-quiz-review h2.no, #page-mod-quiz-review h2.no span.qno {
+	font-size: 14px;
+}
+
+
+div #region-main h2.headingblock, h2#pageheading.main, #page-mod-glossary-view h2.main {
+	color: #333;
+	background-color: transparent;
+	border:none;
+	text-indent: 0;
+}
+ 
+#page-course-view-topics h3.sectionname {
+	display:none;
+}
+
+div #region-main div.TabbedPanels h2 {
+	background-color: transparent;
+	color:#4747A4;
+	border:none;
+	text-indent:0;
+	padding-left: 0;
+}
+
+td.TableHead {
+	background-color:#4747A4;
+	font-weight:bold;
+	color:#FFF;
+}
+	
+.OSInstructions {
+	font-weight: bold;
+	margin-bottom: .1em;
+}
+
+#h2Float {
+
+	float: left;
+	height: 60px;
+	width: 22px;
+	position: relative;
+	top: -13px;
+	left: 7px;
+}
+
+div #region-main #Highlight {
+	background-color: #9999FF;
+	/*padding: 15px;
+	margin-right: 200px;
+	margin-left: 25px;
+	border: 3px ridge;
+	margin-bottom: 20px;*/
+}
+div #region-main div.no-overflow .TabbedPanelsContent div#Highlight {
+	background-color:#9999FF;
+}
+#Announcements, div.ComprehensionCheck, .announcement {
+	background-color:#F5DB00;
+}
+li.Voki {
+	display:inline;
+}
+	
+.Assessment {
+	background-image: url(file:///C|/Users/warden_kimber/Documents/MyWebs/courses/pe-health/HZ209217000/images/Banner.jpg);
+	background-repeat: no-repeat;
+	color: #FFF;
+	font-size: 24px;
+	background-color: #000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 1.3em;
+	font-weight: 700;
+	border-top-width: 4px;
+	border-bottom-width: 2px;
+	border-top-style: ridge;
+	border-top-color: #4C264C;
+	border-right-color: #4C264C;
+	border-bottom-color: #4C264C;
+	border-left-color: #4C264C;
+	background-position: right top;
+	filter: Alpha(Opacity=60%, FinishOpacity=60%, StartX=0, StartY=0, FinishX=0, FinishY=0);
+	height: auto;
+	border-bottom-style: ridge;
+	padding-top: 5px;
+}
+
+
+
+.Exercise {
+	color: #650199;
+	background-color: #D6ABD6;
+	background-repeat: no-repeat;
+	background-position: left;
+	text-indent: 22px;
+	margin-right: 175px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border-top-width: 2px;
+	border-bottom-width: 3px;
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	border-top-color: #650199;
+	border-right-color: #650199;
+	border-bottom-color: #650199;
+	border-left-color: #650199;
+}
+#RiskWellnessChoice {
+	padding: 7px;
+	height: auto;
+	border: 2px ridge #CC0099;
+	clear: left;
+	width: auto;
+}
+#RiskWellnessChoice h4, #RiskWellnessChoice p {
+
+}
+#Story {
+	padding-left: 150px;
+	margin-right: 170px;
+}
+
+#Coin {
+	width: 125px;
+	position: fixed;
+	float: left;
+	overflow: hidden;
+	border-left-width: 140px;
+	border-left-style: solid;
+	border-left-color: #F7EFFA;
+	left: -108px;
+	z-index: 100;
+}
+.Credit {
+	text-align: right;
+	font-size: 80%;
+}
+/*For Non-IE Only. IE handled with conditional comment.*/
+#CoinPositioning {
+	overflow: hidden;
+	z-index: 99;
+	left: -180px;
+	top: 0px;
+	position: relative;
+	
+}
+/*For Opera Only*/
+@media all and (min-width: 0px){
+   #CoinPositioning {
+   left: 0;
+   margin-left: -180px;
+   }
+}
+.UnitHead {
+	color: #6D023A;
+	text-align: center;
+	text-transform: uppercase;
+}
+.CenterDiv {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+.Mental {
+	font-weight: bold;
+	color: #06A38B;
+}
+.Physical {
+	font-weight: bold;
+	color: #F50;
+}
+.Social {
+	font-weight: bold;
+	color: #C09;
+}
+
+div #RequiredReading {
+	background-color: #D9D9FD;
+	border-top-color: #362251;
+	border-right-color: #362251;
+	border-bottom-color: #362251;
+	border-left-color: #362251;
+}
+div #RequiredReading p, div #RequiredReading ul li, div #RequiredReading a {	
+	color: #000;
+}
+div #RequiredReading a:hover {
+	text-decoration:underline;
+}
+div #RequiredReading a:visited {
+	color: #333;
+}
+div #RequiredReading h3 {
+	color: #362251;
+	background-color:transparent;
+}
+#webstunning_video_player {
+	border: medium solid #09C;
+}
+
+span.instancename {
+	font-weight:bold;
+}
+/*Collapsible panel*/
+div #region-main #sectionatag-1, div #region-main #sectionatag-2, div #region-main #sectionatag-3, div #region-main #sectionatag-4, div #region-main #sectionatag-5,div #region-main #sectionatag-6, div #region-main #sectionatag-7, div #region-main #sectionatag-8, div #region-main #sectionatag-9, div #region-main #sectionatag-10 {
+	background-color: #CECEEA;
+	border: 1px ridge #999;
+	color: #000;
+}
+div #region-main #sectionhead-1 td.cps_centre, div #region-main #sectionhead-2 td.cps_centre, div #region-main #sectionhead-3 td.cps_centre, div #region-main #sectionhead-4 td.cps_centre, div #region-main #sectionhead-5 td.cps_centre  {
+	color: #000;
+	background-color: #4747A4;	/*Needs an IE fix
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: ridge;
+	border-left-style: none;
+	border-bottom-color: #999;*/
+}
