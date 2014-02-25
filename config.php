@@ -67,7 +67,7 @@ $CFG->cachedir = '/var/tmp/orvsdplatform/'. $orvsduser . '/moodle22/' . $orvsdfq
 
 // ORVSD ClamAV config
 $CFG->runclamonupload = true;
-$CFG->pathtoclam = '/usr/bin/clamscan';
+$CFG->pathtoclam = '/usr/bin/clamdscan';
 $CFG->quarantinedir = $CFG->tempdir;
 
 // Include relevant configuration from glusterfs mount.
