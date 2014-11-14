@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * orvsd plugin function library 
+ * orvsd plugin function library
  *
  * @package    local
  * @subpackage orvsd_installcourse
@@ -28,14 +28,14 @@ defined('MOODLE_INTERNAL') || die;
 
 function orvsd_installcourse_init() {
   global $CFG, $DB;
-  
+
   $event_data = new stdClass();
   $event_data->modulename = 'ORVSD';
 
   // we can register an event, but for now this is redundant
-  //events_trigger('orvsd_updated', $eventdata); 
+  //events_trigger('orvsd_updated', $eventdata);
   //
-  orvsd_installcourse_update($event_data);  
+  orvsd_installcourse_update($event_data);
 }
 
 function orvsd_installcourse_update($event_data) {
@@ -58,7 +58,7 @@ function orvsd_installcourse_update($event_data) {
 
     if (!$protocols_config) {
         $protocols_config = new stdClass();
-        $protocols_config->name = 'webserviceprotocols';   
+        $protocols_config->name = 'webserviceprotocols';
         $protocols_config->value = 'rest';
         echo "Web Services REST protocol is not enabled, enabling now... ";
         $success = $DB->insert_record('config', $protocols_config);
@@ -83,12 +83,12 @@ function orvsd_installcourse_update($event_data) {
         }
     }
 
-    $service_id = $DB->get_field('external_services', 
+    $service_id = $DB->get_field('external_services',
       'id', array('component'=>'local_orvsd'), IGNORE_MISSING);
 
     if($service_id) {
         echo "Create Course web service is already installed, updating... <br>";
-        $token_id = $DB->get_field('external_tokens', 
+        $token_id = $DB->get_field('external_tokens',
             'id', array('externalserviceid'=>$service_id), IGNORE_MISSING);
     } else {
         echo "Create Course web service is not already installed, installing... <br>";
@@ -101,12 +101,12 @@ function orvsd_installcourse_update($event_data) {
     $external_token->userid = 2;
     $external_token->contextid = 1;
     $external_token->creatorid = 2;
-    $external_token->iprestriction = "140.211.167.0/27,140.211.15.0/24";
+    $external_token->iprestriction = "140.211.167.136/31,140.211.15.0/24,10.0.0.0/8";
     // old ip restriction "127.0.0.1,10.0.2.0/8,192.168.33.0/8";
     $external_token->validuntil = 0;
     $external_token->timecreated = time();
 
-    if($service_id) { 
+    if($service_id) {
       if($token_id) {
         echo "Updating Create Course token for user Admin... <br>";
         $external_token->externalserviceid = $service_id;

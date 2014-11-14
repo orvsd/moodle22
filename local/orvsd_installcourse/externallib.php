@@ -41,11 +41,13 @@ class local_orvsd_installcourse_external extends external_api {
    * @return string status
    */
   public static function install_course(
-      $filepath, $file, $courseid, $coursename, $shortname, 
-      $category, $firstname, $lastname, $city, $username, 
+      $filepath, $file, $courseid, $coursename, $shortname,
+      $category, $firstname, $lastname, $city, $username,
       $email, $pass) {
-    
+
     global $CFG, $USER, $DB;
+    // Include the coursecat methods for creating the category
+    require_once($CFG->libdir.'/coursecatlib.php');
     $status = true;
 
     $serial = $courseid;
@@ -81,6 +83,18 @@ class local_orvsd_installcourse_external extends external_api {
     if (!has_capability('moodle/restore:restorecourse', $context)) {
       throw new moodle_exception('cannotrestorecourse');
     }
+
+    // Create course category if it does not exist
+    $coursecat_record = $DB->get_record('course_categories', array('name' => $params['category']));
+    if (!$coursecat_record) {
+        $created = coursecat::create(array('name' => $params['category']));
+        $ccat_id = $created->id;
+    } else {
+        $ccat_id = $coursecat_record->id;
+    }
+
+    // Change from the name to the ID of the course category
+    $param_array['category'] = $ccat_id;
 
     //Restore the course file into this site
     $courseid = local_orvsd_installcourse_external::restore_course($param_array);
@@ -145,26 +159,25 @@ class local_orvsd_installcourse_external extends external_api {
     global $CFG, $USER, $DB;
 
     require_once($CFG->dirroot . '/backup/util/includes/restore_includes.php');
-    require_once($CFG->dirroot . '/lib/moodlelib.php'); 
+    require_once($CFG->dirroot . '/lib/moodlelib.php');
 
     // extract the given backup file to a temp dir
     $backup_unique_code = time();
 
-    $backup_file = $course_array['filepath'] . $course_array['file'];
+    $backup_file = $course_array['filepath'] . '/' . $course_array['file'];
 
-    $tempdir = $CFG->dataroot."/temp/backup/" . $backup_unique_code;
+    $tempdir = $CFG->tempdir. "/backup/" . $backup_unique_code;
 
-
-    try { 
+    try {
       $fb = get_file_packer();
       $fb->extract_to_pathname($backup_file, $tempdir);
     } catch (Exception $e) {
-      return $e->getMessage();
+      return $e->getTrace();
     }
 
     $newcourseid = restore_dbops::create_new_course(
-                    $course_array['coursename'], 
-                    $course_array['shortname'], 
+                    $course_array['coursename'],
+                    $course_array['shortname'],
                     $course_array['category']);
 
     $transaction = $DB->start_delegated_transaction();
@@ -176,25 +189,27 @@ class local_orvsd_installcourse_external extends external_api {
     * int $mode backup::MODE_[ GENERAL | HUB | IMPORT | SAMESITE ]
     * int $userid
     * int $target backup::TARGET_[ NEW_COURSE | CURRENT_ADDING |
-    * CURRENT_DELETING | EXISTING_ADDING | EXISTING_DELETING ]*/ 
+    * CURRENT_DELETING | EXISTING_ADDING | EXISTING_DELETING ]*/
     $rc = new restore_controller(
-                $backup_unique_code, 
-                $newcourseid, 
-                backup::INTERACTIVE_NO, 
-                backup::MODE_SAMESITE, 
-                $USER->id, 
+                $backup_unique_code,
+                $newcourseid,
+                backup::INTERACTIVE_NO,
+                backup::MODE_SAMESITE,
+                $USER->id,
                 backup::TARGET_NEW_COURSE);
 
     $rc->execute_precheck();
     $rc->execute_plan();
- 
-    $transaction->allow_commit();    
 
-    $rc->destroy();
+    $transaction->allow_commit();
+
     if (empty($CFG->keeptempdirectoriesonbackup)) {
        fulldelete($tempdir);
     }
-    // but restore doesn't keep our name or shortname. We'll just update 
+
+    $rc->destroy();
+
+    // but restore doesn't keep our name or shortname. We'll just update
     // the record and force the issue
     $course_fixname =  new object();
     $course_fixname->id         = $newcourseid;
@@ -249,7 +264,7 @@ class local_orvsd_installcourse_external extends external_api {
     // make the user a "course creator" in the site context
     $userid = $user->id;
     $roleid = '2';
-    
+
     $newra = new object;
     $newra->roleid    = $roleid;
     $newra->contextid = '1';
@@ -262,19 +277,19 @@ class local_orvsd_installcourse_external extends external_api {
     $timeend = '0';
     $hidden = '0';
     $success = $DB->insert_record('role_assignments', $newra);
-    return $user;  
+    return $user;
   }
 
-  /** 
+  /**
    * Assign a user a role in a given course
-   */ 
+   */
   private static function assign_user($courseid, $user, $roleid) {
     global $DB, $CFG;
     require_once($CFG->libdir.'/enrollib.php');
 
     //get enrolment instance (manual and student)
     $instances = enrol_get_instances($courseid, false);
-    $enrolment = "";
+    $enrolment = new stdClass();
     foreach ($instances as $instance) {
       if ($instance->enrol === 'manual') {
         $enrolment = $instance;
@@ -294,6 +309,6 @@ class local_orvsd_installcourse_external extends external_api {
     } else {
       return false;
     }
-    return true; 
+    return true;
   }
 }

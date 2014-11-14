@@ -29,7 +29,7 @@ This plugin should be called witht he following parameters:
 
 'filepath'    Where the backup file is located (absolute path)
 'file'        The backup filename
-'courseid'    The OSL course id (serial : updated timestamp)
+'courseid'    The OSL course id (serial + version + updated)
 'coursename'  The course full name
 'shortname'   The course shortname (must be unique in the Moodle site)
 'category'    The course category (integer, usually '1' for Miscellaneous)
