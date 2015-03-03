@@ -83,12 +83,11 @@ function orvsd_installcourse_update($event_data) {
         }
     }
 
-
     // Look up the service, if it doesn't exist, create it
-    $service_id = $DB->get_field('external_services',
-      'id', array('component'=>'local_orvsd'), IGNORE_MISSING);
+    $service = $DB->get_record('external_services', array('component'=>'local_orvsd_installcourse'));
 
-    if (!$service_id) {
+    if (!$service) {
+
         $tmp = $DB->get_records_sql('SHOW TABLE STATUS WHERE name = "mdl_external_services"');
         $service_id = $tmp['mdl_external_services']->auto_increment;
 
@@ -96,29 +95,25 @@ function orvsd_installcourse_update($event_data) {
         $service->id = $service_id;
     }
 
+    $admin_user = $DB->get_record('user', array('username' => "admin"));
+    $existing_tokens = $DB->get_record('external_tokens', array('userid'=>"$admin_user->id", 'externalserviceid'=>"$service->id"));
 
-    // Get the admin account
-    $admin_id = $DB->get_record_sql(
-        "SELECT value FROM `mdl_config` WHERE `name` LIKE 'siteadmins'",
-        null,
-        IGNORE_MISSING
-    );
+    if (!$existing_tokens) {
+        require('config.php');
+        require_once("$CFG->libdir/externallib.php");
 
-    require('config.php');
-    require_once("$CFG->libdir/externallib.php");
+        // Generate a new token for the Admin User
+        $token = external_generate_token(
+            EXTERNAL_TOKEN_PERMANENT,
+            $service,
+            $admin_user->id,
+            context_system::instance(),
+            $validuntil=0,
+            $IP_RESTRICTION
+        );
 
-    // Generate a new token for the Admin User
-    $token = external_generate_token(
-        EXTERNAL_TOKEN_PERMANENT,
-        $service,
-        $admin_id->value,
-        context_user::instance($admin_id->value),
-        $validuntil=0,
-        $IP_RESTRICTION
-    );
-
-    error_log("token = $token");
-    echo("token = $token");
+        $DB->set_field('external_tokens', 'creatorid', $admin_user->id, array("token"=>"$token"));
+    }
 
     return true;
 }
