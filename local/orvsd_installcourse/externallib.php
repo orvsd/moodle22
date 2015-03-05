@@ -82,22 +82,15 @@ class local_orvsd_installcourse_external extends external_api {
       throw new moodle_exception('cannotrestorecourse');
     }
 
-    if (file_exists($CFG->libdir.'/coursecatlib.php')) {
-        // Include the coursecat methods for creating the category
-        require_once($CFG->libdir.'/coursecatlib.php');
-
-        // Create course category if it does not exist
-        $coursecat_record = $DB->get_record('course_categories', array('name' => $params['category']));
-        if (!$coursecat_record) {
-            $created = coursecat::create(array('name' => $params['category']));
-            $ccat_id = $created->id;
-        } else {
-            $ccat_id = $coursecat_record->id;
-        }
-    } else {
+    // Create course category if it does not exist
+    // This assumes the course category lib is missing and in 2.2 it is
+    $coursecat_record = $DB->get_record('course_categories', array('name' => $params['category']));
+    if (!$coursecat_record) {
         $coursecat = new stdClass();
         $coursecat->name = $params['category'];
         $ccat_id = $DB->insert_record('course_categories', $coursecat);
+    } else {
+        $ccat_id = $coursecat_record->id;
     }
 
     // Change from the name to the ID of the course category
@@ -133,14 +126,6 @@ class local_orvsd_installcourse_external extends external_api {
 
         if(!$user) {
           return "Failed to create user " . $user_fullname;
-        }
-
-        //assign the user to the course
-        $roleid = 3; // "Teacher" role
-        $status = local_orvsd_installcourse_external::assign_user($courseid, $user, $roleid);
-
-        if(!$status) {
-          return "Failed to enrol user " . $user_fullname . " in course " . $coursename;
         }
     }
 
@@ -285,37 +270,5 @@ class local_orvsd_installcourse_external extends external_api {
     $hidden = '0';
     $success = $DB->insert_record('role_assignments', $newra);
     return $user;
-  }
-
-  /**
-   * Assign a user a role in a given course
-   */
-  private static function assign_user($courseid, $user, $roleid) {
-    global $DB, $CFG;
-    require_once($CFG->libdir.'/enrollib.php');
-
-    //get enrolment instance (manual and student)
-    $instances = enrol_get_instances($courseid, false);
-    $enrolment = new stdClass();
-    foreach ($instances as $instance) {
-      if ($instance->enrol === 'manual') {
-        $enrolment = $instance;
-        break;
-      }
-    }
-
-    //get enrolment plugin
-    $manual = enrol_get_plugin('manual');
-    $context = get_context_instance(CONTEXT_COURSE,$courseid);
-
-    //$user = $DB->get_record('user', array('email' => trim($line)));
-    if($user && !$user->deleted) {
-      if(!is_enrolled($context,$user)) {
-        $manual->enrol_user($enrolment,$user->id,$roleid,time());
-      }
-    } else {
-      return false;
-    }
-    return true;
   }
 }
